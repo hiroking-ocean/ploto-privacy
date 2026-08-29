@@ -164,8 +164,10 @@ function buildHtmlForLanguage(langKey) {
       try {
         const stored = localStorage.getItem('ploto-lang-selected');
         const urlParams = new URLSearchParams(window.location.search);
+        // If explicitly requested or user previously chose Japanese, stay on Japanese
         if (urlParams.has('lang') || stored === 'ja') return;
 
+        // If user previously selected another language, respect their choice
         if (stored) {
           const target = stored === 'pt-BR' ? 'pt-br' : stored.toLowerCase();
           if (['en', 'de', 'fr', 'es', 'ko', 'pt-br'].includes(target)) {
@@ -174,13 +176,25 @@ function buildHtmlForLanguage(langKey) {
           }
         }
 
-        const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (navLang.startsWith('en')) { window.location.replace('./en/'); }
-        else if (navLang.startsWith('de')) { window.location.replace('./de/'); }
-        else if (navLang.startsWith('fr')) { window.location.replace('./fr/'); }
-        else if (navLang.startsWith('es')) { window.location.replace('./es/'); }
-        else if (navLang.startsWith('ko')) { window.location.replace('./ko/'); }
-        else if (navLang.startsWith('pt')) { window.location.replace('./pt-br/'); }
+        // Detect browser language preferences
+        const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+        let matched = false;
+        for (const lang of userLangs) {
+          const l = (lang || '').toLowerCase();
+          if (l.startsWith('ja')) { matched = true; break; }
+          if (l.startsWith('en')) { window.location.replace('./en/'); matched = true; break; }
+          if (l.startsWith('de')) { window.location.replace('./de/'); matched = true; break; }
+          if (l.startsWith('fr')) { window.location.replace('./fr/'); matched = true; break; }
+          if (l.startsWith('es')) { window.location.replace('./es/'); matched = true; break; }
+          if (l.startsWith('ko')) { window.location.replace('./ko/'); matched = true; break; }
+          if (l.startsWith('pt')) { window.location.replace('./pt-br/'); matched = true; break; }
+        }
+
+        // If the user's primary language is NOT Japanese and no supported language matched,
+        // default to English as the global standard
+        if (!matched && userLangs.length > 0 && userLangs[0] && !userLangs[0].toLowerCase().startsWith('ja')) {
+          window.location.replace('./en/');
+        }
       } catch (e) {
         // Fallback: stay on Japanese page
       }
