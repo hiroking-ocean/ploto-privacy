@@ -31,8 +31,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "データ収集ゼロ",
-          "desc": "アカウント登録不要。アナリティクス、テレメトリ、クラッシュリポーター、広告トラッキングは一切組み込まれていません。"
+          "title": "データ収集ゼロ（アプリ本体）",
+          "desc": "アカウント登録不要。アプリ本体にはアナリティクス、テレメトリ、クラッシュリポーター、広告トラッキング等は一切含まれていません（※OS/Store標準の診断情報を除く）。"
         },
         {
           "icon": "database",
@@ -47,7 +47,7 @@
         {
           "icon": "globe",
           "title": "透明な外部連携",
-          "desc": "Microsoft Store、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。"
+          "desc": "Microsoft Store / Windows プラットフォーム診断、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。"
         }
       ]
     },
@@ -64,9 +64,10 @@
         "id": "collection",
         "title": "2. 収集する情報",
         "content": [
-          "**一切収集しません。**",
+          "**アプリ本体による個人データの収集は一切ありません。**",
           "本アプリは、ユーザーの氏名、メールアドレス、IPアドレス、位置情報、デバイス識別子、タスクの内容などの個人データを一切収集、記録、送信、販売しません。",
-          "本アプリには、アクセス解析ツール（Google Analytics等）、利用動向のテレメトリ収集、自動クラッシュリポーター、広告SDK、行動トラッキング等の追跡プログラムは一切組み込まれていません。また、アプリの利用開始にあたってアカウントの作成やログインを求められることもありません。"
+          "本アプリには、アクセス解析ツール（Google Analytics等）、利用動向のテレメトリ収集、自動クラッシュリポーター、広告SDK、行動トラッキング等の追跡プログラムは一切組み込まれていません。また、アプリの利用開始にあたってアカウントの作成やログインを求められることもありません。",
+          "※なお、Windows OS および Microsoft Store プラットフォームが標準機能として自動収集する診断データ（クラッシュログやインストール集計など）については、第4.1項をご確認ください。"
         ]
       },
       {
@@ -81,14 +82,18 @@
         "id": "network",
         "title": "4. ネットワーク利用と外部サービス",
         "content": [
-          "Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、一部のプラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。"
+          "Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、プラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。"
         ],
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store（配布と更新）",
+            "title": "4.1. Microsoft Store および Windows によるプラットフォーム診断データ",
             "content": [
-              "本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらには [Microsoft のプライバシーに関する声明](https://privacy.microsoft.com/ja-jp/privacystatement) が適用されます。"
+              "本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらに伴い、Windows OS および Microsoft Store は、OS レベルの標準機能（Windows Error Reporting 等）として以下の診断データや利用統計を自動的に収集する場合があります：",
+              "・アプリのインストール、更新、アンインストールなどの配信イベント",
+              "・アプリが異常終了（クラッシュ）または応答停止（ハング）した際のエラーログやスタックトレース",
+              "・集計されたOSバージョン、デバイスアーキテクチャ、大まかな地域情報",
+              "これらは Ploto アプリ独自の実装によって収集されるものではなく、Windows プラットフォームによって収集・管理されます。開発者は、Microsoft Partner Center の管理画面を通じて、個人を特定できない「集計された統計情報（クラッシュ発生率や総利用デバイス数など）」としてのみこれらを閲覧し、アプリの品質向上や不具合修正のために利用します。ユーザーのプロジェクトデータやタスクの内容が Microsoft や開発者に送信されることはありません。これらには [Microsoft のプライバシーに関する声明](https://privacy.microsoft.com/ja-jp/privacystatement) が適用されます。"
             ]
           },
           {
@@ -181,8 +186,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "Zero Data Collection",
-          "desc": "No account required. No analytics, no telemetry, no crash reporters, and no advertising trackers."
+          "title": "Zero App Data Collection",
+          "desc": "No account required. Ploto embeds no analytics, telemetry, crash reporters, or ad trackers (excluding standard OS/Store diagnostics)."
         },
         {
           "icon": "database",
@@ -197,7 +202,7 @@
         {
           "icon": "globe",
           "title": "Transparent Integrations",
-          "desc": "Clear disclosure regarding Microsoft Store distribution, Stripe checkout, and optional Google Forms feedback."
+          "desc": "Clear disclosure regarding Microsoft Store & Windows platform diagnostics, Stripe checkout, and optional Google Forms feedback."
         }
       ]
     },
@@ -214,9 +219,10 @@
         "id": "collection",
         "title": "2. Information We Collect",
         "content": [
-          "**Nothing.**",
+          "**Zero collection by the application itself.**",
           "Ploto does not collect, record, transmit, or sell personal data such as names, email addresses, IP addresses, location data, hardware identifiers, or task contents.",
-          "The Application contains no analytics SDKs (e.g., Google Analytics), no telemetry, no automated crash reporters, and no advertising or behavioral tracking libraries. You do not need to register an account or sign in to use Ploto."
+          "The Application contains no analytics SDKs (e.g., Google Analytics), no telemetry, no automated crash reporters, and no advertising or behavioral tracking libraries. You do not need to register an account or sign in to use Ploto.",
+          "*Note: For details on standard platform diagnostic data (such as crash logs and aggregate install metrics) collected automatically by Windows OS and the Microsoft Store, please refer to Section 4.1."
         ]
       },
       {
@@ -236,9 +242,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (Distribution & Updates)",
+            "title": "4.1. Microsoft Store & Windows Platform Diagnostics",
             "content": [
-              "The Application is distributed, updated, and optionally licensed via the Microsoft Store platform. These interactions are governed by [Microsoft's Privacy Statement](https://privacy.microsoft.com/privacystatement)."
+              "The Application is distributed, updated, and optionally licensed via the Microsoft Store. In connection with these operations, Windows OS and the Microsoft Store platform may automatically collect standard system diagnostics and usage metrics (via Windows Error Reporting and Store telemetry):",
+              "• Distribution events such as installations, updates, and uninstalls",
+              "• Crash logs, hang reports, and stack traces if the application terminates unexpectedly",
+              "• Aggregate metrics such as OS version, device architecture, and general geographic region",
+              "These diagnostics are collected and managed at the OS/platform level by Microsoft, not through any custom tracking code embedded in Ploto. The developer only has access to anonymized, aggregated statistics (e.g., total crash counts, active install volume) via Microsoft Partner Center to identify bugs and improve reliability. Your private project files, tasks, and notes are never transmitted to Microsoft or the developer. These practices are governed by [Microsoft's Privacy Statement](https://privacy.microsoft.com/privacystatement)."
             ]
           },
           {
@@ -331,8 +341,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "Keine Datenerfassung",
-          "desc": "Kein Konto erforderlich. Keine Analysetools, keine Telemetrie, keine Absturzberichte und kein Werbetracking."
+          "title": "Keine App-Datenerfassung",
+          "desc": "Kein Konto erforderlich. Ploto enthält keine Analysen, Telemetrie, Absturzmelder oder Werbe-Tracker (ausgenommen Standard-OS/Store-Diagnosen)."
         },
         {
           "icon": "database",
@@ -347,7 +357,7 @@
         {
           "icon": "globe",
           "title": "Transparente Dienste",
-          "desc": "Klare Offenlegung bezüglich Microsoft Store, Stripe-Zahlung und optionalen Google Forms-Umfragen."
+          "desc": "Klare Offenlegung bezüglich Microsoft Store & Windows Plattform-Diagnose, Stripe-Zahlung und optionalen Google Forms-Umfragen."
         }
       ]
     },
@@ -364,9 +374,10 @@
         "id": "collection",
         "title": "2. Erfasste Informationen",
         "content": [
-          "**Keine.**",
+          "**Keinerlei Erfassung durch die Anwendung selbst.**",
           "Ploto erfasst, speichert, übermittelt oder verkauft keinerlei personenbezogene Daten wie Namen, E-Mail-Adressen, IP-Adressen, Gerätekennungen oder Projektinhalte.",
-          "Die Anwendung enthält keine Analysedienste (z. B. Google Analytics), keine Telemetrie, keine automatischen Absturzmelder und kein Tracking. Zur Nutzung ist weder eine Registrierung noch ein Login erforderlich."
+          "Die Anwendung enthält keine Analysedienste (z. B. Google Analytics), keine Telemetrie, keine automatischen Absturzmelder und kein Tracking. Zur Nutzung ist weder eine Registrierung noch ein Login erforderlich.",
+          "*Hinweis: Einzelheiten zu standardmäßigen Plattform-Diagnosedaten (wie Absturzprotokolle und Installationsstatistiken), die von Windows und dem Microsoft Store automatisch erfasst werden, finden Sie in Abschnitt 4.1."
         ]
       },
       {
@@ -386,9 +397,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (Vertrieb & Updates)",
+            "title": "4.1. Microsoft Store & Windows Plattform-Diagnose",
             "content": [
-              "Bereitstellung, Updates und In-App-Käufe über den Microsoft Store unterliegen der [Microsoft-Datenschutzerklärung](https://privacy.microsoft.com/de-de/privacystatement)."
+              "Die Bereitstellung, Aktualisierung und der Erwerb von Add-Ons erfolgen über den Microsoft Store. Im Rahmen dieser Funktionen erfassen das Windows-Betriebssystem und der Microsoft Store über Standard-Systemmechanismen (z. B. Windows Error Reporting) automatisch bestimmte Diagnosedaten:",
+              "• Verteilungsereignisse wie Installationen, Updates und Deinstallationen",
+              "• Absturzberichte, Fehlerprotokolle und Stack-Traces bei unerwartetem Beenden der Anwendung",
+              "• Aggregierte Systemmetriken wie Betriebssystemversion, Gerätearchitektur und ungefähre Region",
+              "Diese Daten werden auf Plattformebene von Microsoft erhoben, nicht durch Tracking-Code innerhalb von Ploto. Der Entwickler hat über das Microsoft Partner Center lediglich Zugriff auf anonymisierte, zusammengefasste Statistiken (z. B. Absturzraten, Gesamtzahl aktiver Installationen), um Fehler zu beheben und die Stabilität zu verbessern. Ihre privaten Projektinhalte werden niemals an Microsoft oder den Entwickler übertragen. Es gilt die [Microsoft-Datenschutzerklärung](https://privacy.microsoft.com/de-de/privacystatement)."
             ]
           },
           {
@@ -481,8 +496,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "Zéro collecte de données",
-          "desc": "Aucun compte requis. Aucun outil analytique, télémétrie, rapport de crash automatique ou traceur publicitaire."
+          "title": "Zéro collecte par l'application",
+          "desc": "Aucun compte requis. Ploto n'embarque aucun outil d'analyse, télémétrie, rapporteur de plantage ou traceur publicitaire (hors diagnostics standard OS/Store)."
         },
         {
           "icon": "database",
@@ -497,7 +512,7 @@
         {
           "icon": "globe",
           "title": "Services externes clairs",
-          "desc": "Transparence totale concernant le Microsoft Store, le paiement Stripe et le formulaire Google Forms facultatif."
+          "desc": "Transparence totale concernant les diagnostics de la plateforme Microsoft Store et Windows, le paiement Stripe et Google Forms."
         }
       ]
     },
@@ -514,9 +529,10 @@
         "id": "collection",
         "title": "2. Informations collectées",
         "content": [
-          "**Aucune.**",
+          "**Aucune collecte par l'application elle-même.**",
           "Ploto ne collecte, n'enregistre, ne transmet ni ne vend de données personnelles telles que vos noms, adresses e-mail, adresses IP, identifiants d'appareil ou contenus de projets.",
-          "L'Application n'embarque aucun SDK d'analyse (ex: Google Analytics), aucune télémétrie, aucun rapporteur de plantage ni traçage publicitaire. L'utilisation ne requiert aucune inscription ni connexion."
+          "L'Application n'embarque aucun SDK d'analyse (ex: Google Analytics), aucune télémétrie, aucun rapporteur de plantage ni traçage publicitaire. L'utilisation ne requiert aucune inscription ni connexion.",
+          "*Remarque : Pour plus de détails sur les données de diagnostic standard (telles que les journaux de plantage et statistiques d'installation) collectées automatiquement par Windows et le Microsoft Store, veuillez vous référer à la section 4.1."
         ]
       },
       {
@@ -536,9 +552,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (Distribution & Mises à jour)",
+            "title": "4.1. Diagnostics de la plateforme Microsoft Store et Windows",
             "content": [
-              "La distribution, les mises à jour et les achats d'extensions via le Microsoft Store sont soumis à la [Déclaration de confidentialité de Microsoft](https://privacy.microsoft.com/fr-fr/privacystatement)."
+              "La distribution, la mise à jour et l'achat d'extensions s'effectuent via le Microsoft Store. À ce titre, le système d'exploitation Windows et le Microsoft Store peuvent collecter automatiquement des données de diagnostic standard (via Windows Error Reporting et la télémétrie du Store) :",
+              "• Événements de distribution (installations, mises à jour, désinstallations)",
+              "• Rapports d'erreur, journaux de plantage et traces de pile en cas d'arrêt inattendu de l'application",
+              "• Métriques système agrégées telles que la version de Windows, l'architecture matérielle et la région générale",
+              "Ces diagnostics sont gérés au niveau du système par Microsoft et non par un code de suivi propre à Ploto. Le développeur accède uniquement à des statistiques anonymisées et globales (ex. nombre d'incidents, volume d'installations actives) via le Microsoft Partner Center pour corriger les bugs et optimiser la stabilité. Le contenu de vos projets n'est jamais transmis à Microsoft ni au développeur. Ces traitements sont soumis à la [Déclaration de confidentialité de Microsoft](https://privacy.microsoft.com/fr-fr/privacystatement)."
             ]
           },
           {
@@ -631,8 +651,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "Cero recopilación de datos",
-          "desc": "Sin cuentas ni registros. Sin analíticas, telemetría, informes de fallos automáticos ni seguimiento publicitario."
+          "title": "Cero recopilación de la app",
+          "desc": "Sin registro. Ploto no incluye analíticas, telemetría, informes de fallos ni rastreadores publicitarios (salvo diagnósticos estándar del SO/Store)."
         },
         {
           "icon": "database",
@@ -647,7 +667,7 @@
         {
           "icon": "globe",
           "title": "Servicios externos claros",
-          "desc": "Transparencia total sobre Microsoft Store, pasarela de pago Stripe y encuestas opcionales de Google Forms."
+          "desc": "Transparencia total sobre diagnósticos de plataforma de Microsoft Store y Windows, pagos con Stripe y Google Forms."
         }
       ]
     },
@@ -664,9 +684,10 @@
         "id": "collection",
         "title": "2. Información recopilada",
         "content": [
-          "**Ninguna.**",
+          "**Cero recopilación por parte de la propia aplicación.**",
           "Ploto no recopila, almacena, transmite ni vende datos personales como nombres, correos electrónicos, direcciones IP, identificadores de dispositivo o contenidos de proyectos.",
-          "La Aplicación no incluye servicios de análisis (como Google Analytics), telemetría, informes de fallos ni herramientas de seguimiento publicitario. No es necesario crear una cuenta para utilizarla."
+          "La Aplicación no incluye servicios de análisis (como Google Analytics), telemetría, informes de fallos ni herramientas de seguimiento publicitario. No es necesario crear una cuenta para utilizarla.",
+          "*Nota: Para conocer más detalles sobre los datos de diagnóstico estándar de la plataforma (como registros de fallos y métricas de instalación) recopilados automáticamente por Windows y Microsoft Store, consulte la Sección 4.1."
         ]
       },
       {
@@ -686,9 +707,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (Distribución y actualizaciones)",
+            "title": "4.1. Diagnósticos de la plataforma Microsoft Store y Windows",
             "content": [
-              "La distribución, actualización y compra de complementos a través de Microsoft Store están sujetas a la [Declaración de privacidad de Microsoft](https://privacy.microsoft.com/es-es/privacystatement)."
+              "La distribución, actualización y compras de complementos se gestionan a través de Microsoft Store. Como parte de estas operaciones, el sistema operativo Windows y Microsoft Store recopilan automáticamente datos de diagnóstico estándar (mediante Windows Error Reporting y la telemetría de la tienda):",
+              "• Eventos de distribución como instalaciones, actualizaciones y desinstalaciones",
+              "• Registros de fallos e informes de errores si la aplicación se cierra de forma inesperada",
+              "• Métricas agregadas como versión del sistema operativo, arquitectura del hardware y región general",
+              "Estos diagnósticos son recopilados por Microsoft a nivel del sistema operativo, no mediante código de seguimiento propio en Ploto. El desarrollador solo puede consultar estadísticas anónimas y agregadas (como tasas de error e instalaciones activas) en Microsoft Partner Center para resolver fallos. El contenido de sus proyectos nunca se transmite a Microsoft ni al desarrollador. Aplica la [Declaración de privacidad de Microsoft](https://privacy.microsoft.com/es-es/privacystatement)."
             ]
           },
           {
@@ -781,8 +806,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "데이터 수집 제로",
-          "desc": "계정 가입 불필요. 분석 툴, 원격 측정(텔레메트리), 오류 자동 전송, 광고 추적기가 전혀 포함되어 있지 않습니다."
+          "title": "앱 자체 데이터 수집 제로",
+          "desc": "계정 불필요. Ploto 자체에는 분석 툴, 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않습니다(OS/Store 기본 진단 정보 제외)."
         },
         {
           "icon": "database",
@@ -797,7 +822,7 @@
         {
           "icon": "globe",
           "title": "투명한 외부 연계",
-          "desc": "Microsoft Store 배포, Stripe 결제 및 선택적 Google Forms 피드백과의 연동 방식을 투명하게 공개합니다."
+          "desc": "Microsoft Store 및 Windows 플랫폼 진단, Stripe 결제 및 선택적 Google Forms 피드백과의 연동 방식을 투명하게 공개합니다."
         }
       ]
     },
@@ -814,9 +839,10 @@
         "id": "collection",
         "title": "2. 수집하는 정보",
         "content": [
-          "**수집하지 않습니다.**",
+          "**애플리케이션 자체에 의한 개인정보 수집은 일절 없습니다.**",
           "Ploto는 사용자 이름, 이메일, IP 주소, 위치, 기기 식별자, 작업 내용 등 어떠한 개인 데이터도 수집, 저장, 전송, 판매하지 않습니다.",
-          "앱 내에는 분석 도구(Google Analytics 등), 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않으며, 회원가입이나 로그인 없이 즉시 사용할 수 있습니다."
+          "앱 내에는 분석 도구(Google Analytics 등), 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않으며, 회원가입이나 로그인 없이 즉시 사용할 수 있습니다.",
+          "*참고: Windows OS 및 Microsoft Store 플랫폼이 기본 기능으로 자동 수집하는 진단 데이터(오류 로그, 설치 집계 등)에 대한 자세한 내용은 제4.1항을 참조하시기 바랍니다."
         ]
       },
       {
@@ -836,9 +862,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (배포 및 업데이트)",
+            "title": "4.1. Microsoft Store 및 Windows 플랫폼 진단 데이터",
             "content": [
-              "앱 다운로드, 자동 업데이트 및 Microsoft Store를 통한 추가 기능 구매는 [Microsoft 개인정보 처리방침](https://privacy.microsoft.com/ko-kr/privacystatement)의 적용을 받습니다."
+              "본 애플리케이션의 배포, 자동 업데이트 및 추가 기능 구매는 Microsoft Store를 통해 이루어집니다. 이와 관련하여 Windows OS 및 Microsoft Store는 OS 기본 시스템 기능(Windows Error Reporting 등)을 통해 다음과 같은 표준 진단 데이터 및 통계를 자동으로 수집할 수 있습니다:",
+              "• 설치, 업데이트, 삭제 등의 앱 배포 이벤트",
+              "• 앱이 예기치 않게 종료(비정상 종료)되거나 응답이 중단될 때 생성되는 오류 로그 및 스택 추적",
+              "• OS 버전, 기기 아키텍처, 대략적인 지역 정보 등 집계된 시스템 통계",
+              "이러한 진단 데이터는 Ploto 자체의 추적 코드가 아닌 Windows 플랫폼에 의해 시스템 수준에서 수집·관리됩니다. 개발자는 앱의 안정성 개선과 버그 수정을 위해 Microsoft Partner Center를 통해 개인을 식별할 수 없는 '익명화된 집계 통계(오류 발생률, 총 활성 기기 수 등)'로만 이를 열람합니다. 사용자의 프로젝트 데이터나 업무 내용이 Microsoft 또는 개발자에게 전송되는 일은 전혀 없습니다. 이와 관련해서는 [Microsoft 개인정보 처리방침](https://privacy.microsoft.com/ko-kr/privacystatement)이 적용됩니다."
             ]
           },
           {
@@ -931,8 +961,8 @@
       "cards": [
         {
           "icon": "shield",
-          "title": "Zero Coleta de Dados",
-          "desc": "Nenhuma conta necessária. Sem ferramentas analíticas, telemetria, envio automático de falhas ou rastreadores de anúncios."
+          "title": "Zero Coleta pelo Aplicativo",
+          "desc": "Sem necessidade de conta. O Ploto não inclui analítica, telemetria, relatórios de falhas ou rastreadores de anúncios (exceto diagnósticos padrão do SO/Store)."
         },
         {
           "icon": "database",
@@ -947,7 +977,7 @@
         {
           "icon": "globe",
           "title": "Serviços Externos Transparentes",
-          "desc": "Total clareza sobre Microsoft Store, checkout do Stripe e pesquisas opcionais via Google Forms."
+          "desc": "Total clareza sobre diagnósticos da plataforma Microsoft Store e Windows, checkout do Stripe e pesquisas opcionais via Google Forms."
         }
       ]
     },
@@ -964,9 +994,10 @@
         "id": "collection",
         "title": "2. Informações Coletadas",
         "content": [
-          "**Nenhuma.**",
+          "**Zero coleta por parte do próprio aplicativo.**",
           "O Ploto não coleta, armazena, transmite ou vende dados pessoais como nomes, e-mails, endereços IP, localizações, identificadores de dispositivo ou conteúdos de projetos.",
-          "O Aplicativo não contém bibliotecas de análise (ex: Google Analytics), telemetria, relatórios automáticos de falhas ou rastreamento publicitário. Não é necessário criar uma conta para utilizá-lo."
+          "O Aplicativo não contém bibliotecas de análise (ex: Google Analytics), telemetria, relatórios automáticos de falhas ou rastreamento publicitário. Não é necessário criar uma conta para utilizá-lo.",
+          "*Observação: Para obter detalhes sobre os dados de diagnóstico padrão da plataforma (como relatórios de falhas e estatísticas agregadas de instalação) coletados automaticamente pelo Windows e pela Microsoft Store, consulte a Seção 4.1."
         ]
       },
       {
@@ -986,9 +1017,13 @@
         "subsections": [
           {
             "id": "network-store",
-            "title": "4.1. Microsoft Store (Distribuição e Atualizações)",
+            "title": "4.1. Diagnósticos da Plataforma Microsoft Store e Windows",
             "content": [
-              "A distribuição, atualização e compras no Microsoft Store são regidas pela [Declaração de Privacidade da Microsoft](https://privacy.microsoft.com/pt-br/privacystatement)."
+              "A distribuição, atualização e compra de complementos ocorrem por meio da Microsoft Store. Em decorrência disso, o sistema operacional Windows e a Microsoft Store podem coletar automaticamente métricas e diagnósticos padrão (via Windows Error Reporting e telemetria da loja):",
+              "• Eventos de distribuição, como instalações, atualizações e desinstalações",
+              "• Registros de falhas e relatórios de travamento caso o aplicativo seja encerrado inesperadamente",
+              "• Métricas agregadas como versão do sistema operacional, arquitetura do dispositivo e região aproximada",
+              "Esses diagnósticos são gerenciados no nível do sistema pela Microsoft, e não por código de rastreamento no Ploto. O desenvolvedor tem acesso apenas a estatísticas agregadas e anônimas (como taxas de falhas e volume de instalações ativas) pelo Microsoft Partner Center para corrigir bugs e aprimorar a estabilidade. Seus arquivos e dados de projeto nunca são transmitidos à Microsoft ou ao desenvolvedor. Aplica-se a [Declaração de Privacidade da Microsoft](https://privacy.microsoft.com/pt-br/privacystatement)."
             ]
           },
           {

@@ -145,8 +145,8 @@
         <path d="M9 12l2 2 4-4"></path>
       </svg>
             </div>
-            <h3>Keine Datenerfassung</h3>
-            <p>Kein Konto erforderlich. Keine Analysetools, keine Telemetrie, keine Absturzberichte und kein Werbetracking.</p>
+            <h3>Keine App-Datenerfassung</h3>
+            <p>Kein Konto erforderlich. Ploto enthält keine Analysen, Telemetrie, Absturzmelder oder Werbe-Tracker (ausgenommen Standard-OS/Store-Diagnosen).</p>
           </div>
 
           <div class="summary-card">
@@ -181,7 +181,7 @@
       </svg>
             </div>
             <h3>Transparente Dienste</h3>
-            <p>Klare Offenlegung bezüglich Microsoft Store, Stripe-Zahlung und optionalen Google Forms-Umfragen.</p>
+            <p>Klare Offenlegung bezüglich Microsoft Store & Windows Plattform-Diagnose, Stripe-Zahlung und optionalen Google Forms-Umfragen.</p>
           </div>
     </div>
   </section>
@@ -237,9 +237,10 @@
         <article class="section-card" id="collection">
           <h2 class="section-title">2. Erfasste Informationen</h2>
           <div class="section-body">
-                      <p><strong>Keine.</strong></p>
+                      <p><strong>Keinerlei Erfassung durch die Anwendung selbst.</strong></p>
           <p>Ploto erfasst, speichert, übermittelt oder verkauft keinerlei personenbezogene Daten wie Namen, E-Mail-Adressen, IP-Adressen, Gerätekennungen oder Projektinhalte.</p>
           <p>Die Anwendung enthält keine Analysedienste (z. B. Google Analytics), keine Telemetrie, keine automatischen Absturzmelder und kein Tracking. Zur Nutzung ist weder eine Registrierung noch ein Login erforderlich.</p>
+          <p>*Hinweis: Einzelheiten zu standardmäßigen Plattform-Diagnosedaten (wie Absturzprotokolle und Installationsstatistiken), die von Windows und dem Microsoft Store automatisch erfasst werden, finden Sie in Abschnitt 4.1.</p>
             
             
           </div>
@@ -263,8 +264,12 @@
           <div class="subsections">
             
             <div class="subsection-card" id="network-store">
-              <h3 class="subsection-title">4.1. Microsoft Store (Vertrieb & Updates)</h3>
-              <p>Bereitstellung, Updates und In-App-Käufe über den Microsoft Store unterliegen der <a href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft-Datenschutzerklärung</a>.</p>
+              <h3 class="subsection-title">4.1. Microsoft Store & Windows Plattform-Diagnose</h3>
+              <p>Die Bereitstellung, Aktualisierung und der Erwerb von Add-Ons erfolgen über den Microsoft Store. Im Rahmen dieser Funktionen erfassen das Windows-Betriebssystem und der Microsoft Store über Standard-Systemmechanismen (z. B. Windows Error Reporting) automatisch bestimmte Diagnosedaten:</p>
+<p>• Verteilungsereignisse wie Installationen, Updates und Deinstallationen</p>
+<p>• Absturzberichte, Fehlerprotokolle und Stack-Traces bei unerwartetem Beenden der Anwendung</p>
+<p>• Aggregierte Systemmetriken wie Betriebssystemversion, Gerätearchitektur und ungefähre Region</p>
+<p>Diese Daten werden auf Plattformebene von Microsoft erhoben, nicht durch Tracking-Code innerhalb von Ploto. Der Entwickler hat über das Microsoft Partner Center lediglich Zugriff auf anonymisierte, zusammengefasste Statistiken (z. B. Absturzraten, Gesamtzahl aktiver Installationen), um Fehler zu beheben und die Stabilität zu verbessern. Ihre privaten Projektinhalte werden niemals an Microsoft oder den Entwickler übertragen. Es gilt die <a href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft-Datenschutzerklärung</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">

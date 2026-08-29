@@ -187,8 +187,8 @@
         <path d="M9 12l2 2 4-4"></path>
       </svg>
             </div>
-            <h3>データ収集ゼロ</h3>
-            <p>アカウント登録不要。アナリティクス、テレメトリ、クラッシュリポーター、広告トラッキングは一切組み込まれていません。</p>
+            <h3>データ収集ゼロ（アプリ本体）</h3>
+            <p>アカウント登録不要。アプリ本体にはアナリティクス、テレメトリ、クラッシュリポーター、広告トラッキング等は一切含まれていません（※OS/Store標準の診断情報を除く）。</p>
           </div>
 
           <div class="summary-card">
@@ -223,7 +223,7 @@
       </svg>
             </div>
             <h3>透明な外部連携</h3>
-            <p>Microsoft Store、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。</p>
+            <p>Microsoft Store / Windows プラットフォーム診断、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。</p>
           </div>
     </div>
   </section>
@@ -279,9 +279,10 @@
         <article class="section-card" id="collection">
           <h2 class="section-title">2. 収集する情報</h2>
           <div class="section-body">
-                      <p><strong>一切収集しません。</strong></p>
+                      <p><strong>アプリ本体による個人データの収集は一切ありません。</strong></p>
           <p>本アプリは、ユーザーの氏名、メールアドレス、IPアドレス、位置情報、デバイス識別子、タスクの内容などの個人データを一切収集、記録、送信、販売しません。</p>
           <p>本アプリには、アクセス解析ツール（Google Analytics等）、利用動向のテレメトリ収集、自動クラッシュリポーター、広告SDK、行動トラッキング等の追跡プログラムは一切組み込まれていません。また、アプリの利用開始にあたってアカウントの作成やログインを求められることもありません。</p>
+          <p>※なお、Windows OS および Microsoft Store プラットフォームが標準機能として自動収集する診断データ（クラッシュログやインストール集計など）については、第4.1項をご確認ください。</p>
             
             
           </div>
@@ -300,13 +301,17 @@
         <article class="section-card" id="network">
           <h2 class="section-title">4. ネットワーク利用と外部サービス</h2>
           <div class="section-body">
-                      <p>Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、一部のプラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。</p>
+                      <p>Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、プラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。</p>
             
           <div class="subsections">
             
             <div class="subsection-card" id="network-store">
-              <h3 class="subsection-title">4.1. Microsoft Store（配布と更新）</h3>
-              <p>本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらには <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft のプライバシーに関する声明</a> が適用されます。</p>
+              <h3 class="subsection-title">4.1. Microsoft Store および Windows によるプラットフォーム診断データ</h3>
+              <p>本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらに伴い、Windows OS および Microsoft Store は、OS レベルの標準機能（Windows Error Reporting 等）として以下の診断データや利用統計を自動的に収集する場合があります：</p>
+<p>・アプリのインストール、更新、アンインストールなどの配信イベント</p>
+<p>・アプリが異常終了（クラッシュ）または応答停止（ハング）した際のエラーログやスタックトレース</p>
+<p>・集計されたOSバージョン、デバイスアーキテクチャ、大まかな地域情報</p>
+<p>これらは Ploto アプリ独自の実装によって収集されるものではなく、Windows プラットフォームによって収集・管理されます。開発者は、Microsoft Partner Center の管理画面を通じて、個人を特定できない「集計された統計情報（クラッシュ発生率や総利用デバイス数など）」としてのみこれらを閲覧し、アプリの品質向上や不具合修正のために利用します。ユーザーのプロジェクトデータやタスクの内容が Microsoft や開発者に送信されることはありません。これらには <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft のプライバシーに関する声明</a> が適用されます。</p>
             </div>
 
             <div class="subsection-card" id="network-license">

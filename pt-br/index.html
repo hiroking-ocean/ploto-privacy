@@ -145,8 +145,8 @@
         <path d="M9 12l2 2 4-4"></path>
       </svg>
             </div>
-            <h3>Zero Coleta de Dados</h3>
-            <p>Nenhuma conta necessária. Sem ferramentas analíticas, telemetria, envio automático de falhas ou rastreadores de anúncios.</p>
+            <h3>Zero Coleta pelo Aplicativo</h3>
+            <p>Sem necessidade de conta. O Ploto não inclui analítica, telemetria, relatórios de falhas ou rastreadores de anúncios (exceto diagnósticos padrão do SO/Store).</p>
           </div>
 
           <div class="summary-card">
@@ -181,7 +181,7 @@
       </svg>
             </div>
             <h3>Serviços Externos Transparentes</h3>
-            <p>Total clareza sobre Microsoft Store, checkout do Stripe e pesquisas opcionais via Google Forms.</p>
+            <p>Total clareza sobre diagnósticos da plataforma Microsoft Store e Windows, checkout do Stripe e pesquisas opcionais via Google Forms.</p>
           </div>
     </div>
   </section>
@@ -237,9 +237,10 @@
         <article class="section-card" id="collection">
           <h2 class="section-title">2. Informações Coletadas</h2>
           <div class="section-body">
-                      <p><strong>Nenhuma.</strong></p>
+                      <p><strong>Zero coleta por parte do próprio aplicativo.</strong></p>
           <p>O Ploto não coleta, armazena, transmite ou vende dados pessoais como nomes, e-mails, endereços IP, localizações, identificadores de dispositivo ou conteúdos de projetos.</p>
           <p>O Aplicativo não contém bibliotecas de análise (ex: Google Analytics), telemetria, relatórios automáticos de falhas ou rastreamento publicitário. Não é necessário criar uma conta para utilizá-lo.</p>
+          <p>*Observação: Para obter detalhes sobre os dados de diagnóstico padrão da plataforma (como relatórios de falhas e estatísticas agregadas de instalação) coletados automaticamente pelo Windows e pela Microsoft Store, consulte a Seção 4.1.</p>
             
             
           </div>
@@ -263,8 +264,12 @@
           <div class="subsections">
             
             <div class="subsection-card" id="network-store">
-              <h3 class="subsection-title">4.1. Microsoft Store (Distribuição e Atualizações)</h3>
-              <p>A distribuição, atualização e compras no Microsoft Store são regidas pela <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener noreferrer">Declaração de Privacidade da Microsoft</a>.</p>
+              <h3 class="subsection-title">4.1. Diagnósticos da Plataforma Microsoft Store e Windows</h3>
+              <p>A distribuição, atualização e compra de complementos ocorrem por meio da Microsoft Store. Em decorrência disso, o sistema operacional Windows e a Microsoft Store podem coletar automaticamente métricas e diagnósticos padrão (via Windows Error Reporting e telemetria da loja):</p>
+<p>• Eventos de distribuição, como instalações, atualizações e desinstalações</p>
+<p>• Registros de falhas e relatórios de travamento caso o aplicativo seja encerrado inesperadamente</p>
+<p>• Métricas agregadas como versão do sistema operacional, arquitetura do dispositivo e região aproximada</p>
+<p>Esses diagnósticos são gerenciados no nível do sistema pela Microsoft, e não por código de rastreamento no Ploto. O desenvolvedor tem acesso apenas a estatísticas agregadas e anônimas (como taxas de falhas e volume de instalações ativas) pelo Microsoft Partner Center para corrigir bugs e aprimorar a estabilidade. Seus arquivos e dados de projeto nunca são transmitidos à Microsoft ou ao desenvolvedor. Aplica-se a <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener noreferrer">Declaração de Privacidade da Microsoft</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">

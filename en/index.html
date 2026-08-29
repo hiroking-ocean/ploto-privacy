@@ -145,8 +145,8 @@
         <path d="M9 12l2 2 4-4"></path>
       </svg>
             </div>
-            <h3>Zero Data Collection</h3>
-            <p>No account required. No analytics, no telemetry, no crash reporters, and no advertising trackers.</p>
+            <h3>Zero App Data Collection</h3>
+            <p>No account required. Ploto embeds no analytics, telemetry, crash reporters, or ad trackers (excluding standard OS/Store diagnostics).</p>
           </div>
 
           <div class="summary-card">
@@ -181,7 +181,7 @@
       </svg>
             </div>
             <h3>Transparent Integrations</h3>
-            <p>Clear disclosure regarding Microsoft Store distribution, Stripe checkout, and optional Google Forms feedback.</p>
+            <p>Clear disclosure regarding Microsoft Store & Windows platform diagnostics, Stripe checkout, and optional Google Forms feedback.</p>
           </div>
     </div>
   </section>
@@ -237,9 +237,10 @@
         <article class="section-card" id="collection">
           <h2 class="section-title">2. Information We Collect</h2>
           <div class="section-body">
-                      <p><strong>Nothing.</strong></p>
+                      <p><strong>Zero collection by the application itself.</strong></p>
           <p>Ploto does not collect, record, transmit, or sell personal data such as names, email addresses, IP addresses, location data, hardware identifiers, or task contents.</p>
           <p>The Application contains no analytics SDKs (e.g., Google Analytics), no telemetry, no automated crash reporters, and no advertising or behavioral tracking libraries. You do not need to register an account or sign in to use Ploto.</p>
+          <p>*Note: For details on standard platform diagnostic data (such as crash logs and aggregate install metrics) collected automatically by Windows OS and the Microsoft Store, please refer to Section 4.1.</p>
             
             
           </div>
@@ -263,8 +264,12 @@
           <div class="subsections">
             
             <div class="subsection-card" id="network-store">
-              <h3 class="subsection-title">4.1. Microsoft Store (Distribution & Updates)</h3>
-              <p>The Application is distributed, updated, and optionally licensed via the Microsoft Store platform. These interactions are governed by <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft's Privacy Statement</a>.</p>
+              <h3 class="subsection-title">4.1. Microsoft Store & Windows Platform Diagnostics</h3>
+              <p>The Application is distributed, updated, and optionally licensed via the Microsoft Store. In connection with these operations, Windows OS and the Microsoft Store platform may automatically collect standard system diagnostics and usage metrics (via Windows Error Reporting and Store telemetry):</p>
+<p>• Distribution events such as installations, updates, and uninstalls</p>
+<p>• Crash logs, hang reports, and stack traces if the application terminates unexpectedly</p>
+<p>• Aggregate metrics such as OS version, device architecture, and general geographic region</p>
+<p>These diagnostics are collected and managed at the OS/platform level by Microsoft, not through any custom tracking code embedded in Ploto. The developer only has access to anonymized, aggregated statistics (e.g., total crash counts, active install volume) via Microsoft Partner Center to identify bugs and improve reliability. Your private project files, tasks, and notes are never transmitted to Microsoft or the developer. These practices are governed by <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft's Privacy Statement</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">
