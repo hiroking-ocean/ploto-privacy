@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー - Ploto</title>
+  <meta name="description" content="Ploto のプライバシーポリシー。完全オフライン動作、ローカルファースト設計、個人データの収集ゼロをお約束します。" />
+  <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+  <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+  <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/" />
+  <link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/" />
+  <link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/" />
+  <link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/" />
+  <link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
+  <link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/" />
+  <link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/" />
+  <meta property="og:title" content="プライバシーポリシー - Ploto" />
+  <meta property="og:description" content="Ploto のプライバシーポリシー。完全オフライン動作、ローカルファースト設計、個人データの収集ゼロをお約束します。" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="Ploto" />
+  <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="プライバシーポリシー - Ploto" />
+  <meta name="twitter:description" content="Ploto のプライバシーポリシー。完全オフライン動作、ローカルファースト設計、個人データの収集ゼロをお約束します。" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg" />
+
+  <!-- Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script>
+    (function() {
+      // Automatic language redirection for first-time visitors
+      try {
+        const stored = localStorage.getItem('ploto-lang-selected');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('lang') || stored === 'ja') return;
+
+        if (stored) {
+          const target = stored === 'pt-BR' ? 'pt-br' : stored.toLowerCase();
+          if (['en', 'de', 'fr', 'es', 'ko', 'pt-br'].includes(target)) {
+            window.location.replace('./' + target + '/');
+            return;
+          }
+        }
+
+        const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (navLang.startsWith('en')) { window.location.replace('./en/'); }
+        else if (navLang.startsWith('de')) { window.location.replace('./de/'); }
+        else if (navLang.startsWith('fr')) { window.location.replace('./fr/'); }
+        else if (navLang.startsWith('es')) { window.location.replace('./es/'); }
+        else if (navLang.startsWith('ko')) { window.location.replace('./ko/'); }
+        else if (navLang.startsWith('pt')) { window.location.replace('./pt-br/'); }
+      } catch (e) {
+        // Fallback: stay on Japanese page
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="https://hiroking-ocean.github.io/ploto-privacy/" class="brand-link" aria-label="Ploto Home">
+        <img src="./assets/logo.svg" alt="Ploto Logo" class="brand-logo" />
+        <span class="brand-title">Ploto</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="言語">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>日本語</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="lang-dropdown">
+            <li class="lang-item active"><a href="./" data-lang="ja">日本語</a></li>
+            <li class="lang-item"><a href="./en/" data-lang="en">English</a></li>
+            <li class="lang-item"><a href="./de/" data-lang="de">Deutsch</a></li>
+            <li class="lang-item"><a href="./fr/" data-lang="fr">Français</a></li>
+            <li class="lang-item"><a href="./es/" data-lang="es">Español</a></li>
+            <li class="lang-item"><a href="./ko/" data-lang="ko">한국어</a></li>
+            <li class="lang-item"><a href="./pt-br/" data-lang="pt-BR">Português (Brasil)</a></li>
+          </ul>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="ライトモード">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Product LP Link -->
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">
+          <span>製品サイトへ</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>プライバシーへの誓約</span>
+      </div>
+      <h1 class="hero-title">データ主権はお手元に。徹底したローカルファースト設計</h1>
+      <p class="hero-desc">Ploto は、すべての処理をユーザーご自身の端末内で行うデスクトップアプリです。個人データの収集・送信・販売は行わず、プロジェクト情報は完全にユーザーの管理下に留まります。</p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>最終更新日: <strong>2026-09-01</strong></span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>お問い合わせ: <strong>hiroki.lab@outlook.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Cards -->
+  <section class="container">
+    <div class="summary-grid">
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </svg>
+            </div>
+            <h3>データ収集ゼロ</h3>
+            <p>アカウント登録不要。アナリティクス、テレメトリ、クラッシュリポーター、広告トラッキングは一切組み込まれていません。</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+      </svg>
+            </div>
+            <h3>完全ローカル保存</h3>
+            <p>すべてのプロジェクト・タスク・ToDo・設定は、端末内のローカルファイル（SQLite）またはご自身が指定した社内共有先にのみ保存されます。</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="7.5" cy="15.5" r="4.5"></circle>
+        <path d="M10.7 12.3L21 2l2 2-2 2 2 2-2 2-1.5-1.5L18 12l-1.5-1.5"></path>
+      </svg>
+            </div>
+            <h3>オフライン署名認証</h3>
+            <p>Pro版ライセンス認証は端末内の Ed25519 暗号署名検証で完結。外部サーバーへの通信不要で閉域網でも動作します。</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+            </div>
+            <h3>透明な外部連携</h3>
+            <p>Microsoft Store、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。</p>
+          </div>
+    </div>
+  </section>
+
+  <!-- Main Policy Section -->
+  <main class="container policy-layout">
+    <!-- Sticky Table of Contents -->
+    <aside class="toc-sidebar">
+      <div class="toc-header">
+        <svg class="toc-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>目次</span>
+      </div>
+      <ul class="toc-list">
+
+              <li class="toc-item"><a href="#intro">1. はじめに</a></li>
+
+              <li class="toc-item"><a href="#collection">2. 収集する情報</a></li>
+
+              <li class="toc-item"><a href="#storage">3. データの保存と管理</a></li>
+
+              <li class="toc-item"><a href="#network">4. ネットワーク利用と外部サービス</a></li>
+
+              <li class="toc-item"><a href="#third-party">5. 第三者への情報提供</a></li>
+
+              <li class="toc-item"><a href="#children">6. 子どものプライバシー</a></li>
+
+              <li class="toc-item"><a href="#changes">7. 本ポリシーの変更</a></li>
+
+              <li class="toc-item"><a href="#contact">8. お問い合わせ</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content Articles -->
+    <div class="policy-content">
+
+        <article class="section-card" id="intro">
+          <h2 class="section-title">1. はじめに</h2>
+          <div class="section-body">
+                      <p>Ploto（以下「本アプリ」）は、Windows デスクトップ環境で動作するプロジェクト管理アプリケーションです。ガントチャート、カンバン、優先度マトリクス、メンバー別タスク、ノート、ホワイトボードなどの多彩なビューを提供しながら、すべてのデータをユーザー自身の手元で安全に管理できるように設計されています。</p>
+          <p>本プライバシーポリシーでは、本アプリにおけるデータのお取り扱いについて詳しく説明します。結論として、本アプリがユーザーの個人データやプロジェクト情報を秘密裏に収集したり、外部サーバーへ送信したりすることは一切ありません。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="collection">
+          <h2 class="section-title">2. 収集する情報</h2>
+          <div class="section-body">
+                      <p><strong>一切収集しません。</strong></p>
+          <p>本アプリは、ユーザーの氏名、メールアドレス、IPアドレス、位置情報、デバイス識別子、タスクの内容などの個人データを一切収集、記録、送信、販売しません。</p>
+          <p>本アプリには、アクセス解析ツール（Google Analytics等）、利用動向のテレメトリ収集、自動クラッシュリポーター、広告SDK、行動トラッキング等の追跡プログラムは一切組み込まれていません。また、アプリの利用開始にあたってアカウントの作成やログインを求められることもありません。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="storage">
+          <h2 class="section-title">3. データの保存と管理</h2>
+          <div class="section-body">
+                      <p>作成されたプロジェクト、タスク、ガントチャート、カンバン、優先度マトリクス、メンバー別タスク、ノート、ホワイトボード、ToDo、設定、およびカスタムテンプレート（.ploto-pack）などの全データは、<strong>すべてお使いの端末内</strong>、または<strong>ユーザーご自身が明示的に保存先に指定した共有場所</strong>（社内ファイルサーバーやネットワークドライブ等）に <code>.ploto</code> 形式（SQLite データベース）で保存されます。</p>
+          <p>これらのファイルは、ユーザー自身が移動や共有の操作を行わない限り、端末の外に出ることはありません。開発者（当方）は、ユーザーのデータを受信、保存、閲覧、または処理するサーバーを一切保有・運用していません。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="network">
+          <h2 class="section-title">4. ネットワーク利用と外部サービス</h2>
+          <div class="section-body">
+                      <p>Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、一部のプラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。</p>
+            
+          <div class="subsections">
+            
+            <div class="subsection-card" id="network-store">
+              <h3 class="subsection-title">4.1. Microsoft Store（配布と更新）</h3>
+              <p>本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらには <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft のプライバシーに関する声明</a> が適用されます。</p>
+            </div>
+
+            <div class="subsection-card" id="network-license">
+              <h3 class="subsection-title">4.2. 有料ライセンス（Pro版）と決済（Stripe）</h3>
+              <p>公式Webサイト経由で Pro 版ライセンスをご購入いただく場合、決済処理は米 Stripe 社のセキュアな決済基盤を通じて行われます。開発者がユーザーのクレジットカード番号等の機密決済情報を直接取得・保持することはありません。</p>
+<p>ご購入後に発行されるライセンスキーの認証は、<strong>アプリ内のオフライン暗号署名検証（Ed25519）</strong> により端末内で完結します。ライセンス認証のために端末の識別情報や通信ログを開発者のサーバーへ送信することはありません。インターネットに接続されていない閉域環境でも問題なくご利用いただけます。</p>
+            </div>
+
+            <div class="subsection-card" id="network-survey">
+              <h3 class="subsection-title">4.3. 任意のフィードバック・アンケート（Google Forms）</h3>
+              <p>本アプリのヘルプメニューや起動画面から「ご意見・不具合報告」を選択した場合、お使いのシステムの既定Webブラウザが起動し、Google Forms のアンケートページが開きます。</p>
+<p>回答の送信や連絡先メールアドレスの入力は完全に任意であり、ユーザーがフォーム上で直接入力した内容のみが Google 社のサーバーを経由して開発者に届きます。これには <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google プライバシー ポリシー</a> が適用されます。アプリがバックグラウンドで無断送信することはありません。</p>
+            </div>
+          </div>
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="third-party">
+          <h2 class="section-title">5. 第三者への情報提供</h2>
+          <div class="section-body">
+                      <p>当方はユーザーのプロジェクトデータや個人情報を収集・保有しないため、第三者へ販売、共有、貸与、提供することはあり得ません。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="children">
+          <h2 class="section-title">6. 子どものプライバシー</h2>
+          <div class="section-body">
+                      <p>Ploto は、子どもを含むいかなる方からも意図的に個人情報を収集することはありません。すべての機能は年齢を問わず安全にご利用いただけます。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="changes">
+          <h2 class="section-title">7. 本ポリシーの変更</h2>
+          <div class="section-body">
+                      <p>本プライバシーポリシーを変更する場合は、本Webページ上に新しい「最終更新日」とともに改訂版を掲載します。重要な変更がある場合には、アプリ内のリリースノート等でも告知します。</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="contact">
+          <h2 class="section-title">8. お問い合わせ</h2>
+          <div class="section-body">
+                      <p>本プライバシーポリシーまたはアプリに関するご質問やご相談は、下記のお問い合わせ先までお気軽にご連絡ください。</p>
+            
+            
+          <div class="contact-box">
+            <div class="contact-email-wrap">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="contact-email">hiroki.lab@outlook.com</span>
+            </div>
+            <button class="copy-btn" id="copy-email-btn" data-copy="hiroki.lab@outlook.com" data-copied-label="コピーしました">
+              <svg class="contact-icon" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>コピー</span>
+            </button>
+            <div class="contact-note">開発者宛てに直接届きます。</div>
+          </div>
+          </div>
+        </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>© 2026 Ploto. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://github.com/hiroking-ocean/ploto-privacy" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Ploto 公式サイト</a>
+        <a href="#top" class="back-to-top-btn" id="back-to-top-btn">
+          <span>ページ上部へ戻る</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="./app.js"></script>
+</body>
+</html>

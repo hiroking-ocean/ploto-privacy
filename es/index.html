@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de privacidad - Ploto</title>
+  <meta name="description" content="Política de privacidad de Ploto. Funcionamiento 100% sin conexión, arquitectura local-first, cero recopilación de datos personales." />
+  <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/es/" />
+  <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+  <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/" />
+  <link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/" />
+  <link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/" />
+  <link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/" />
+  <link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
+  <link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/" />
+  <link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/es/" />
+  <meta property="og:title" content="Política de privacidad - Ploto" />
+  <meta property="og:description" content="Política de privacidad de Ploto. Funcionamiento 100% sin conexión, arquitectura local-first, cero recopilación de datos personales." />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Ploto" />
+  <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Política de privacidad - Ploto" />
+  <meta name="twitter:description" content="Política de privacidad de Ploto. Funcionamiento 100% sin conexión, arquitectura local-first, cero recopilación de datos personales." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/app-icon.svg" />
+
+  <!-- Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="https://hiroking-ocean.github.io/ploto-privacy/es/" class="brand-link" aria-label="Ploto Home">
+        <img src="../assets/logo.svg" alt="Ploto Logo" class="brand-logo" />
+        <span class="brand-title">Ploto</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Español</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="lang-dropdown">
+            <li class="lang-item"><a href="../" data-lang="ja">日本語</a></li>
+            <li class="lang-item"><a href="../en/" data-lang="en">English</a></li>
+            <li class="lang-item"><a href="../de/" data-lang="de">Deutsch</a></li>
+            <li class="lang-item"><a href="../fr/" data-lang="fr">Français</a></li>
+            <li class="lang-item active"><a href="../es/" data-lang="es">Español</a></li>
+            <li class="lang-item"><a href="../ko/" data-lang="ko">한국어</a></li>
+            <li class="lang-item"><a href="../pt-br/" data-lang="pt-BR">Português (Brasil)</a></li>
+          </ul>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="Modo claro">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Product LP Link -->
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">
+          <span>Sitio oficial</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Compromiso de privacidad</span>
+      </div>
+      <h1 class="hero-title">Sus datos bajo su control total. Diseño Local-First.</h1>
+      <p class="hero-desc">Ploto es una aplicación de escritorio que se ejecuta por completo en su propio dispositivo. No recopilamos, transmitimos ni comercializamos datos personales.</p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Última actualización: <strong>2026-09-01</strong></span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Contacto: <strong>hiroki.lab@outlook.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Cards -->
+  <section class="container">
+    <div class="summary-grid">
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </svg>
+            </div>
+            <h3>Cero recopilación de datos</h3>
+            <p>Sin cuentas ni registros. Sin analíticas, telemetría, informes de fallos automáticos ni seguimiento publicitario.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+      </svg>
+            </div>
+            <h3>Almacenamiento 100% local</h3>
+            <p>Todos los proyectos, tareas, notas y ajustes se guardan en su ordenador (.ploto en SQLite) o en su red compartida.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="7.5" cy="15.5" r="4.5"></circle>
+        <path d="M10.7 12.3L21 2l2 2-2 2 2 2-2 2-1.5-1.5L18 12l-1.5-1.5"></path>
+      </svg>
+            </div>
+            <h3>Firma criptográfica offline</h3>
+            <p>Las licencias Pro se validan localmente mediante firmas Ed25519. No requiere conexión a servidores para su activación.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+            </div>
+            <h3>Servicios externos claros</h3>
+            <p>Transparencia total sobre Microsoft Store, pasarela de pago Stripe y encuestas opcionales de Google Forms.</p>
+          </div>
+    </div>
+  </section>
+
+  <!-- Main Policy Section -->
+  <main class="container policy-layout">
+    <!-- Sticky Table of Contents -->
+    <aside class="toc-sidebar">
+      <div class="toc-header">
+        <svg class="toc-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>Índice</span>
+      </div>
+      <ul class="toc-list">
+
+              <li class="toc-item"><a href="#intro">1. Introducción</a></li>
+
+              <li class="toc-item"><a href="#collection">2. Información recopilada</a></li>
+
+              <li class="toc-item"><a href="#storage">3. Almacenamiento y control de datos</a></li>
+
+              <li class="toc-item"><a href="#network">4. Uso de red y servicios externos</a></li>
+
+              <li class="toc-item"><a href="#third-party">5. Comunicación de datos a terceros</a></li>
+
+              <li class="toc-item"><a href="#children">6. Privacidad de menores</a></li>
+
+              <li class="toc-item"><a href="#changes">7. Cambios en esta política</a></li>
+
+              <li class="toc-item"><a href="#contact">8. Contacto</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content Articles -->
+    <div class="policy-content">
+
+        <article class="section-card" id="intro">
+          <h2 class="section-title">1. Introducción</h2>
+          <div class="section-body">
+                      <p>Ploto ("la Aplicación") es una solución de gestión de proyectos para Windows. Ofrece diagramas de Gantt, tableros Kanban, matrices de prioridad, vistas por miembro, notas y pizarras, todo diseñado para que el usuario mantenga el control total de sus datos.</p>
+          <p>Esta política explica cómo se tratan los datos. En resumen: Ploto no recopila información personal encubierta ni envía proyectos a servidores externos.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="collection">
+          <h2 class="section-title">2. Información recopilada</h2>
+          <div class="section-body">
+                      <p><strong>Ninguna.</strong></p>
+          <p>Ploto no recopila, almacena, transmite ni vende datos personales como nombres, correos electrónicos, direcciones IP, identificadores de dispositivo o contenidos de proyectos.</p>
+          <p>La Aplicación no incluye servicios de análisis (como Google Analytics), telemetría, informes de fallos ni herramientas de seguimiento publicitario. No es necesario crear una cuenta para utilizarla.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="storage">
+          <h2 class="section-title">3. Almacenamiento y control de datos</h2>
+          <div class="section-body">
+                      <p>Todos los proyectos, tareas, cronogramas de Gantt, tableros Kanban, matrices de prioridad, notas, ToDos y plantillas (.ploto-pack) se guardan <strong>localmente en su ordenador</strong> o en una <strong>ubicación de red compartida</strong> que usted elija, en formato <code>.ploto</code> (base de datos SQLite).</p>
+          <p>Sus archivos nunca salen de su entorno a menos que usted los mueva o comparta. El desarrollador no posee servidores para recibir, almacenar o procesar sus datos de proyecto.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="network">
+          <h2 class="section-title">4. Uso de red y servicios externos</h2>
+          <div class="section-body">
+                      <p>Ploto está diseñado para operar completamente fuera de línea. Sin embargo, existen interacciones con servicios externos para funciones específicas:</p>
+            
+          <div class="subsections">
+            
+            <div class="subsection-card" id="network-store">
+              <h3 class="subsection-title">4.1. Microsoft Store (Distribución y actualizaciones)</h3>
+              <p>La distribución, actualización y compra de complementos a través de Microsoft Store están sujetas a la <a href="https://privacy.microsoft.com/es-es/privacystatement" target="_blank" rel="noopener noreferrer">Declaración de privacidad de Microsoft</a>.</p>
+            </div>
+
+            <div class="subsection-card" id="network-license">
+              <h3 class="subsection-title">4.2. Licencias Pro y pagos (Stripe)</h3>
+              <p>Al adquirir una licencia Pro en la web oficial, los pagos se procesan de forma segura a través de Stripe. El desarrollador no almacena datos bancarios ni de tarjetas de crédito.</p>
+<p>La validación de la licencia se realiza <strong>completamente fuera de línea mediante verificación de firma criptográfica Ed25519</strong>. No se envían datos del equipo ni registros a nuestros servidores, permitiendo su uso en redes corporativas cerradas.</p>
+            </div>
+
+            <div class="subsection-card" id="network-survey">
+              <h3 class="subsection-title">4.3. Comentarios y sugerencias opcionales (Google Forms)</h3>
+              <p>Al seleccionar "Comentarios y errores" desde el menú de Ayuda o la pantalla de inicio, se abrirá un formulario de Google Forms en su navegador web predeterminado.</p>
+<p>La participación es enteramente voluntaria. Solo la información que introduzca explícitamente se enviará al desarrollador mediante los servidores de Google, bajo la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</p>
+            </div>
+          </div>
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="third-party">
+          <h2 class="section-title">5. Comunicación de datos a terceros</h2>
+          <div class="section-body">
+                      <p>Dado que no recopilamos ni guardamos información de sus proyectos o datos personales, nunca los vendemos, compartimos ni cedemos a terceros.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="children">
+          <h2 class="section-title">6. Privacidad de menores</h2>
+          <div class="section-body">
+                      <p>Ploto no recopila deliberadamente información de menores de edad. Su uso es seguro para usuarios de cualquier edad.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="changes">
+          <h2 class="section-title">7. Cambios en esta política</h2>
+          <div class="section-body">
+                      <p>Cualquier modificación será publicada en esta misma página web con su fecha de actualización correspondiente.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="contact">
+          <h2 class="section-title">8. Contacto</h2>
+          <div class="section-body">
+                      <p>Si tiene dudas o consultas sobre esta política de privacidad o sobre la aplicación, puede escribirnos a:</p>
+            
+            
+          <div class="contact-box">
+            <div class="contact-email-wrap">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="contact-email">hiroki.lab@outlook.com</span>
+            </div>
+            <button class="copy-btn" id="copy-email-btn" data-copy="hiroki.lab@outlook.com" data-copied-label="¡Copiado!">
+              <svg class="contact-icon" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copiar</span>
+            </button>
+            <div class="contact-note">Llega directamente al desarrollador.</div>
+          </div>
+          </div>
+        </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>© 2026 Ploto. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="https://github.com/hiroking-ocean/ploto-privacy" class="footer-link" target="_blank" rel="noopener noreferrer">Repositorio GitHub</a>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Sitio web de Ploto</a>
+        <a href="#top" class="back-to-top-btn" id="back-to-top-btn">
+          <span>Volver arriba</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="../app.js"></script>
+</body>
+</html>

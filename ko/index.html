@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인정보 처리방침 - Ploto</title>
+  <meta name="description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+  <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
+  <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+  <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/" />
+  <link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/" />
+  <link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/" />
+  <link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/" />
+  <link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
+  <link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/" />
+  <link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
+  <meta property="og:title" content="개인정보 처리방침 - Ploto" />
+  <meta property="og:description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="Ploto" />
+  <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="개인정보 처리방침 - Ploto" />
+  <meta name="twitter:description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/app-icon.svg" />
+
+  <!-- Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="https://hiroking-ocean.github.io/ploto-privacy/ko/" class="brand-link" aria-label="Ploto Home">
+        <img src="../assets/logo.svg" alt="Ploto Logo" class="brand-logo" />
+        <span class="brand-title">Ploto</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="언어">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>한국어</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="lang-dropdown">
+            <li class="lang-item"><a href="../" data-lang="ja">日本語</a></li>
+            <li class="lang-item"><a href="../en/" data-lang="en">English</a></li>
+            <li class="lang-item"><a href="../de/" data-lang="de">Deutsch</a></li>
+            <li class="lang-item"><a href="../fr/" data-lang="fr">Français</a></li>
+            <li class="lang-item"><a href="../es/" data-lang="es">Español</a></li>
+            <li class="lang-item active"><a href="../ko/" data-lang="ko">한국어</a></li>
+            <li class="lang-item"><a href="../pt-br/" data-lang="pt-BR">Português (Brasil)</a></li>
+          </ul>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="라이트 모드">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Product LP Link -->
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">
+          <span>공식 웹사이트</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>개인정보 보호 약속</span>
+      </div>
+      <h1 class="hero-title">데이터의 주인은 사용자입니다. 철저한 로컬 우선 아키텍처.</h1>
+      <p class="hero-desc">Ploto는 사용자의 PC 내에서 모든 작업이 완결되는 데스크톱 앱입니다. 개인정보를 수집, 전송, 판매하지 않으며 프로젝트 데이터는 안전하게 사용자의 기기에 보관됩니다.</p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>최종 수정일: <strong>2026-09-01</strong></span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>문의: <strong>hiroki.lab@outlook.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Cards -->
+  <section class="container">
+    <div class="summary-grid">
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </svg>
+            </div>
+            <h3>데이터 수집 제로</h3>
+            <p>계정 가입 불필요. 분석 툴, 원격 측정(텔레메트리), 오류 자동 전송, 광고 추적기가 전혀 포함되어 있지 않습니다.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+      </svg>
+            </div>
+            <h3>100% 로컬 저장</h3>
+            <p>모든 프로젝트, 간트 차트, 칸반, 메모 및 설정은 PC 내부(.ploto SQLite) 또는 직접 지정한 사내 네트워크 드라이브에만 저장됩니다.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="7.5" cy="15.5" r="4.5"></circle>
+        <path d="M10.7 12.3L21 2l2 2-2 2 2 2-2 2-1.5-1.5L18 12l-1.5-1.5"></path>
+      </svg>
+            </div>
+            <h3>오프라인 서명 인증</h3>
+            <p>Pro 라이선스는 Ed25519 암호화 서명 검증을 통해 기기 내에서 인증됩니다. 외부 서버와의 통신이 필요 없어 폐쇄망에서도 동작합니다.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="card-icon-wrap">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+            </div>
+            <h3>투명한 외부 연계</h3>
+            <p>Microsoft Store 배포, Stripe 결제 및 선택적 Google Forms 피드백과의 연동 방식을 투명하게 공개합니다.</p>
+          </div>
+    </div>
+  </section>
+
+  <!-- Main Policy Section -->
+  <main class="container policy-layout">
+    <!-- Sticky Table of Contents -->
+    <aside class="toc-sidebar">
+      <div class="toc-header">
+        <svg class="toc-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>목차</span>
+      </div>
+      <ul class="toc-list">
+
+              <li class="toc-item"><a href="#intro">1. 개요</a></li>
+
+              <li class="toc-item"><a href="#collection">2. 수집하는 정보</a></li>
+
+              <li class="toc-item"><a href="#storage">3. 데이터의 저장 및 관리</a></li>
+
+              <li class="toc-item"><a href="#network">4. 네트워크 이용 및 외부 서비스</a></li>
+
+              <li class="toc-item"><a href="#third-party">5. 제3자 제공</a></li>
+
+              <li class="toc-item"><a href="#children">6. 아동의 개인정보 보호</a></li>
+
+              <li class="toc-item"><a href="#changes">7. 처리방침의 변경</a></li>
+
+              <li class="toc-item"><a href="#contact">8. 문의처</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content Articles -->
+    <div class="policy-content">
+
+        <article class="section-card" id="intro">
+          <h2 class="section-title">1. 개요</h2>
+          <div class="section-body">
+                      <p>Ploto("본 애플리케이션")는 Windows 환경에서 작동하는 프로젝트 관리 프로그램입니다. 간트 차트, 칸반 보드, 우선순위 매트릭스, 멤버별 업무, 노트, 화이트보드 등 다양한 기능을 제공하며, 사용자가 자신의 데이터를 완전히 통제할 수 있도록 설계되었습니다.</p>
+          <p>본 개인정보 처리방침은 데이터 처리에 대해 설명합니다. 요약하자면, Ploto는 개인정보를 수집하거나 프로젝트 데이터를 외부 서버로 전송하지 않습니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="collection">
+          <h2 class="section-title">2. 수집하는 정보</h2>
+          <div class="section-body">
+                      <p><strong>수집하지 않습니다.</strong></p>
+          <p>Ploto는 사용자 이름, 이메일, IP 주소, 위치, 기기 식별자, 작업 내용 등 어떠한 개인 데이터도 수집, 저장, 전송, 판매하지 않습니다.</p>
+          <p>앱 내에는 분석 도구(Google Analytics 등), 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않으며, 회원가입이나 로그인 없이 즉시 사용할 수 있습니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="storage">
+          <h2 class="section-title">3. 데이터의 저장 및 관리</h2>
+          <div class="section-body">
+                      <p>생성된 모든 프로젝트, 작업, 간트 일정, 칸반 보드, 메모, ToDo, 템플릿(.ploto-pack) 등은 <strong>사용자의 기기 내부</strong> 또는 <strong>직접 지정한 공유 경로</strong>(사내 파일 서버, 네트워크 드라이브 등)에 <code>.ploto</code>(SQLite 형식)로 저장됩니다.</p>
+          <p>사용자가 직접 파일을 이동하거나 공유하지 않는 한 파일이 기기 외부로 나가지 않습니다. 개발자는 사용자 데이터를 수신, 보관, 처리하는 서버를 운영하지 않습니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="network">
+          <h2 class="section-title">4. 네트워크 이용 및 외부 서비스</h2>
+          <div class="section-body">
+                      <p>Ploto는 완전한 오프라인 환경에서 동작하도록 설계되어 있으며 프로젝트 데이터를 네트워크로 전송하지 않습니다. 단, 플랫폼 기능 및 사용자가 직접 선택한 기능에서 다음 외부 서비스가 사용될 수 있습니다:</p>
+            
+          <div class="subsections">
+            
+            <div class="subsection-card" id="network-store">
+              <h3 class="subsection-title">4.1. Microsoft Store (배포 및 업데이트)</h3>
+              <p>앱 다운로드, 자동 업데이트 및 Microsoft Store를 통한 추가 기능 구매는 <a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 개인정보 처리방침</a>의 적용을 받습니다.</p>
+            </div>
+
+            <div class="subsection-card" id="network-license">
+              <h3 class="subsection-title">4.2. Pro 라이선스 및 결제 (Stripe)</h3>
+              <p>공식 웹사이트를 통한 라이선스 구매는 Stripe의 보안 결제 시스템을 통해 처리됩니다. 개발자는 신용카드 정보를 직접 수집하거나 보관하지 않습니다.</p>
+<p>발급된 라이선스 키는 <strong>앱 내 Ed25519 암호화 서명 검증을 통해 완전 오프라인으로 인증</strong>됩니다. 인증을 위해 기기 정보나 통신 로그를 서버로 전송하지 않으므로 인터넷이 연결되지 않은 폐쇄망에서도 안전하게 작동합니다.</p>
+            </div>
+
+            <div class="subsection-card" id="network-survey">
+              <h3 class="subsection-title">4.3. 피드백 및 설문조사 (Google Forms)</h3>
+              <p>도움말 메뉴나 시작 화면에서 '의견 및 오류 신고'를 선택하면 기본 웹 브라우저에서 Google Forms 페이지가 열립니다.</p>
+<p>참여 및 정보 입력은 전적으로 자율적이며, 사용자가 직접 입력한 내용만 Google 서버를 거쳐 개발자에게 전달됩니다(<a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a> 적용). 앱이 백그라운드에서 임의로 데이터를 전송하지 않습니다.</p>
+            </div>
+          </div>
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="third-party">
+          <h2 class="section-title">5. 제3자 제공</h2>
+          <div class="section-body">
+                      <p>개발자는 프로젝트 데이터나 개인정보를 수집하거나 보유하지 않으므로, 어떠한 정보도 제3자에게 판매, 공유, 제공하지 않습니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="children">
+          <h2 class="section-title">6. 아동의 개인정보 보호</h2>
+          <div class="section-body">
+                      <p>Ploto는 아동을 포함하여 누구로부터도 의도적으로 개인정보를 수집하지 않으며, 모든 연령층에서 안전하게 사용할 수 있습니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="changes">
+          <h2 class="section-title">7. 처리방침의 변경</h2>
+          <div class="section-body">
+                      <p>본 방침이 변경되는 경우, 새로운 최종 수정일과 함께 본 웹페이지에 개정판을 게시합니다.</p>
+            
+            
+          </div>
+        </article>
+
+        <article class="section-card" id="contact">
+          <h2 class="section-title">8. 문의처</h2>
+          <div class="section-body">
+                      <p>본 개인정보 처리방침 또는 앱에 관한 질문이 있으신 경우 아래로 문의해 주시기 바랍니다:</p>
+            
+            
+          <div class="contact-box">
+            <div class="contact-email-wrap">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="contact-email">hiroki.lab@outlook.com</span>
+            </div>
+            <button class="copy-btn" id="copy-email-btn" data-copy="hiroki.lab@outlook.com" data-copied-label="복사되었습니다">
+              <svg class="contact-icon" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>복사</span>
+            </button>
+            <div class="contact-note">개발자에게 직접 전달됩니다.</div>
+          </div>
+          </div>
+        </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>© 2026 Ploto. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://github.com/hiroking-ocean/ploto-privacy" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub 저장소</a>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Ploto 공식 사이트</a>
+        <a href="#top" class="back-to-top-btn" id="back-to-top-btn">
+          <span>맨 위로 이동</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="../app.js"></script>
+</body>
+</html>
