@@ -101,10 +101,17 @@ function renderContactMeta(meta) {
   const rows = meta.map((item) => `
               <div class="contact-meta-row">
                 <dt>${item.label}</dt>
-                <dd>${formatMarkdown(item.value)}</dd>
+                <dd>${formatContactMetaValue(item.value)}</dd>
               </div>`).join('\n');
   return `<dl class="contact-meta">${rows}
             </dl>`;
+}
+
+function formatContactMetaValue(value) {
+  const match = value.match(/^(.*?)(\s*[（(][^（）()]+[）)])$/u);
+  if (!match) return formatMarkdown(value);
+
+  return `${formatMarkdown(match[1].trimEnd())}<span class="contact-meta-note">${formatMarkdown(match[2].trim())}</span>`;
 }
 
 function buildHtmlForLanguage(langKey) {
@@ -112,12 +119,7 @@ function buildHtmlForLanguage(langKey) {
   const isRoot = langKey === 'ja';
   const relPrefix = isRoot ? './' : '../';
   const languageLpUrl = data.lpUrl || LP_URL;
-  const fontLinks = isRoot ? '' : `  <!-- Fonts (Outfit & Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
-
-`;
+  const fontLinks = '';
   // Each language keeps its technical page directly under its own directory (ja: /it/, en: /en/it/, ...)
   const technicalLink = `        <a href="./it/" class="secondary-link-btn">${data.nav.technical}</a>\n`;
 
@@ -159,7 +161,7 @@ function buildHtmlForLanguage(langKey) {
             <h3>${card.title}</h3>
             <p>${card.desc}</p>
           </div>`).join('\n');
-  const summarySectionHtml = isRoot ? '' : `  <!-- Summary Cards -->
+  const summarySectionHtml = data.summary.cards.length === 0 ? '' : `  <!-- Summary Cards -->
   <section class="container">
     <div class="summary-grid">
 ${summaryCardsHtml}
@@ -170,7 +172,7 @@ ${summaryCardsHtml}
 
   // Table of Contents
   const tocItemsHtml = data.sections.map((sec) => {
-    const subItems = isRoot && sec.subsections
+    const subItems = sec.subsections
       ? `<ul class="toc-sublist">${sec.subsections.map((sub) => `<li><a href="#${sub.id}">${sub.title}</a></li>`).join('')}</ul>`
       : '';
     return `
@@ -274,7 +276,7 @@ ${summaryCardsHtml}
   </script>` : '';
 
   return `<!DOCTYPE html>
-<html lang="${data.code}" data-theme="${isRoot ? 'light' : 'dark'}">
+<html lang="${data.code}" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -303,7 +305,7 @@ ${fontLinks}  <!-- Stylesheet -->
   <link rel="stylesheet" href="${relPrefix}styles.css" />
 ${rootRedirectScript}
 </head>
-<body${isRoot ? ' class="document-layout privacy-document"' : ''}>
+<body class="document-layout privacy-document">
   <!-- Header -->
   <header class="header">
     <div class="container header-container">

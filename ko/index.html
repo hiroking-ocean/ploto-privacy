@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>개인정보 처리방침 - Ploto</title>
-  <meta name="description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+  <meta name="description" content="Ploto 개인정보 처리방침. 프로젝트 저장 위치, 외부 서비스 사용, 구매 및 문의 시 정보 처리 방법을 설명합니다." />
   <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
   <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/" />
   <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/" />
@@ -19,27 +19,22 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
   <meta property="og:title" content="개인정보 처리방침 - Ploto" />
-  <meta property="og:description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+  <meta property="og:description" content="Ploto 개인정보 처리방침. 프로젝트 저장 위치, 외부 서비스 사용, 구매 및 문의 시 정보 처리 방법을 설명합니다." />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="Ploto" />
   <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="개인정보 처리방침 - Ploto" />
-  <meta name="twitter:description" content="Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙." />
+  <meta name="twitter:description" content="Ploto 개인정보 처리방침. 프로젝트 저장 위치, 외부 서비스 사용, 구매 및 문의 시 정보 처리 방법을 설명합니다." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../assets/app-icon.svg" />
-
-  <!-- Fonts (Outfit & Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../styles.css" />
 
 </head>
-<body>
+<body class="document-layout privacy-document">
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
@@ -109,10 +104,10 @@
         <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
-        <span>개인정보 보호 약속</span>
+        <span>개인정보 처리방침</span>
       </div>
-      <h1 class="hero-title">데이터의 주인은 사용자입니다. 철저한 로컬 우선 아키텍처.</h1>
-      <p class="hero-desc">Ploto는 사용자의 PC 내에서 모든 작업이 완결되는 데스크톱 앱입니다. 개인정보를 수집, 전송, 판매하지 않으며 프로젝트 데이터는 안전하게 사용자의 기기에 보관됩니다.</p>
+      <h1 class="hero-title">Ploto 개인정보 처리방침</h1>
+      <p class="hero-desc">Ploto는 사용자가 지정한 위치에 프로젝트를 저장하는 Windows 앱입니다. 일반적인 사용에는 계정이나 인터넷 연결이 필요하지 않으며 프로젝트 내용을 Ploto 제공자의 서버로 자동 전송하지 않습니다.</p>
       
       <div class="hero-meta">
         <div class="meta-item">
@@ -122,7 +117,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>최종 수정일: <strong>2026-09-01</strong></span>
+          <span>최종 수정일: <strong>2026-09-03</strong></span>
         </div>
         <div class="meta-item">
           <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -144,58 +139,6 @@
     </div>
   </section>
 
-  <!-- Summary Cards -->
-  <section class="container">
-    <div class="summary-grid">
-
-          <div class="summary-card">
-            <div class="card-icon-wrap">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-        <path d="M9 12l2 2 4-4"></path>
-      </svg>
-            </div>
-            <h3>앱 자체 데이터 수집 제로</h3>
-            <p>계정 불필요. Ploto 자체에는 분석 툴, 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않습니다(OS/Store 기본 진단 정보 제외).</p>
-          </div>
-
-          <div class="summary-card">
-            <div class="card-icon-wrap">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-      </svg>
-            </div>
-            <h3>100% 로컬 저장</h3>
-            <p>모든 프로젝트, 간트 차트, 칸반, 메모 및 설정은 PC 내부(.ploto SQLite) 또는 직접 지정한 사내 네트워크 드라이브에만 저장됩니다.</p>
-          </div>
-
-          <div class="summary-card">
-            <div class="card-icon-wrap">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="7.5" cy="15.5" r="4.5"></circle>
-        <path d="M10.7 12.3L21 2l2 2-2 2 2 2-2 2-1.5-1.5L18 12l-1.5-1.5"></path>
-      </svg>
-            </div>
-            <h3>오프라인 서명 인증</h3>
-            <p>Pro 라이선스는 Ed25519 암호화 서명 검증을 통해 기기 내에서 인증됩니다. 외부 서버와의 통신이 필요 없어 폐쇄망에서도 동작합니다.</p>
-          </div>
-
-          <div class="summary-card">
-            <div class="card-icon-wrap">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-            </div>
-            <h3>투명한 외부 연계</h3>
-            <p>Microsoft Store 및 Windows 플랫폼 진단, Stripe 결제 및 선택적 Google Forms 피드백과의 연동 방식을 투명하게 공개합니다.</p>
-          </div>
-    </div>
-  </section>
-
   <!-- Main Policy Section -->
   <main class="container policy-layout">
     <!-- Sticky Table of Contents -->
@@ -213,122 +156,106 @@
       </div>
       <ul class="toc-list">
 
-              <li class="toc-item"><a href="#intro">1. 개요</a></li>
+              <li class="toc-item"><a href="#principles">1. 기본 방침</a></li>
 
-              <li class="toc-item"><a href="#collection">2. 수집하는 정보</a></li>
+              <li class="toc-item"><a href="#local-data">2. 단말에 저장되는 정보</a></li>
 
-              <li class="toc-item"><a href="#storage">3. 데이터의 저장 및 관리</a></li>
+              <li class="toc-item"><a href="#external-services">3. 외부 서비스를 사용하는 경우</a><ul class="toc-sublist"><li><a href="#microsoft">3.1. Microsoft Store 및 Windows</a></li><li><a href="#purchase">3.2. 웹을 통한 Pro 라이선스 구매</a></li><li><a href="#feedback">3.3. 문의 및 선택적 양식</a></li><li><a href="#websites">3.4. 공식 사이트 및 본 방침 열람</a></li></ul></li>
 
-              <li class="toc-item"><a href="#network">4. 네트워크 이용 및 외부 서비스</a></li>
+              <li class="toc-item"><a href="#use-and-sharing">4. 이용 목적 및 제3자에 의한 처리</a></li>
 
-              <li class="toc-item"><a href="#third-party">5. 제3자 제공</a></li>
+              <li class="toc-item"><a href="#retention">5. 보유 기간, 삭제 및 확인 등의 요청</a></li>
 
-              <li class="toc-item"><a href="#children">6. 아동의 개인정보 보호</a></li>
-
-              <li class="toc-item"><a href="#changes">7. 처리방침의 변경</a></li>
-
-              <li class="toc-item"><a href="#contact">8. 문의처</a></li>
+              <li class="toc-item"><a href="#changes">6. 변경 및 문의</a></li>
       </ul>
     </aside>
 
     <!-- Content Articles -->
     <div class="policy-content">
 
-        <article class="section-card" id="intro">
-          <h2 class="section-title">1. 개요</h2>
+        <article class="section-card" id="principles">
+          <h2 class="section-title">1. 기본 방침</h2>
           <div class="section-body">
-                      <p>Ploto("본 애플리케이션")는 Windows 환경에서 작동하는 프로젝트 관리 프로그램입니다. 간트 차트, 칸반 보드, 우선순위 매트릭스, 멤버별 업무, 노트, 화이트보드 등 다양한 기능을 제공하며, 사용자가 자신의 데이터를 완전히 통제할 수 있도록 설계되었습니다.</p>
-          <p>본 개인정보 처리방침은 데이터 처리에 대해 설명합니다. 요약하자면, Ploto는 개인정보를 수집하거나 프로젝트 데이터를 외부 서버로 전송하지 않습니다.</p>
+                      <p>Ploto(이하 「본 앱」)는 Windows용 프로젝트 관리 앱입니다. 본 앱을 사용하는 데 계정 생성이나 로그인이 필요하지 않습니다.</p>
+          <p>프로젝트는 사용자가 지정한 단말 또는 공유 위치에 저장됩니다. Ploto 자체 클라우드 동기화 기능은 없으며, 사용자가 입력한 작업, 담당자, 일정, 노트, 화이트보드 등의 프로젝트 내용을 Ploto 제공자의 서버로 자동 전송하는 기능도 없습니다.</p>
+          <p>앱 자체에는 Ploto 고유의 분석, 텔레메트리, 광고 SDK, 행동 추적 또는 외부 자동 오류 보고 기능을 포함하지 않습니다.</p>
             
             
           </div>
         </article>
 
-        <article class="section-card" id="collection">
-          <h2 class="section-title">2. 수집하는 정보</h2>
+        <article class="section-card" id="local-data">
+          <h2 class="section-title">2. 단말에 저장되는 정보</h2>
           <div class="section-body">
-                      <p><strong>애플리케이션 자체에 의한 개인정보 수집은 일절 없습니다.</strong></p>
-          <p>Ploto는 사용자 이름, 이메일, IP 주소, 위치, 기기 식별자, 작업 내용 등 어떠한 개인 데이터도 수집, 저장, 전송, 판매하지 않습니다.</p>
-          <p>앱 내에는 분석 도구(Google Analytics 등), 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않으며, 회원가입이나 로그인 없이 즉시 사용할 수 있습니다.</p>
-          <p>*참고: Windows OS 및 Microsoft Store 플랫폼이 기본 기능으로 자동 수집하는 진단 데이터(오류 로그, 설치 집계 등)에 대한 자세한 내용은 제4.1항을 참조하시기 바랍니다.</p>
+                      <p>프로젝트는 사용자가 선택한 위치에 <code>.ploto</code> 파일로 저장됩니다. 화면 설정, 라이선스 키, 최근에 연 파일, 안내 표시 상태 등은 단말에 저장됩니다. 프로젝트가 열려 있는 동안에는 안정적인 편집과 저장을 위해 단말에 작업 사본을 만들며 정상적으로 닫으면 삭제합니다.</p>
+          <p>공유 위치에서 여러 사용자가 같은 프로젝트를 동시에 편집하는 것을 방지하기 위해 프로젝트와 같은 위치에 임시 잠금 파일을 만듭니다. 이 파일에는 Windows 사용자 이름, 컴퓨터 이름, 프로세스 ID 및 시각이 포함되며 정상 종료 시 삭제됩니다.</p>
+          <p><code>.ploto</code> 파일에는 Ploto 자체 암호화가 적용되지 않습니다. 업무상 기밀 정보를 저장하는 경우 조직의 규정에 따라 단말 암호화, 저장 위치 접근 권한, 공유 권한 및 백업을 설정하십시오. 저장 위치, 파일 이름 및 삭제 방법 등에 대한 자세한 내용은 <a href="./it/" target="_blank" rel="noopener noreferrer">정보시스템 부서용 기술 정보</a>에서 확인할 수 있습니다.</p>
             
             
           </div>
         </article>
 
-        <article class="section-card" id="storage">
-          <h2 class="section-title">3. 데이터의 저장 및 관리</h2>
+        <article class="section-card" id="external-services">
+          <h2 class="section-title">3. 외부 서비스를 사용하는 경우</h2>
           <div class="section-body">
-                      <p>생성된 모든 프로젝트, 작업, 간트 일정, 칸반 보드, 메모, ToDo, 템플릿(.ploto-pack) 등은 <strong>사용자의 기기 내부</strong> 또는 <strong>직접 지정한 공유 경로</strong>(사내 파일 서버, 네트워크 드라이브 등)에 <code>.ploto</code>(SQLite 형식)로 저장됩니다.</p>
-          <p>사용자가 직접 파일을 이동하거나 공유하지 않는 한 파일이 기기 외부로 나가지 않습니다. 개발자는 사용자 데이터를 수신, 보관, 처리하는 서버를 운영하지 않습니다.</p>
-            
-            
-          </div>
-        </article>
-
-        <article class="section-card" id="network">
-          <h2 class="section-title">4. 네트워크 이용 및 외부 서비스</h2>
-          <div class="section-body">
-                      <p>Ploto는 완전한 오프라인 환경에서 동작하도록 설계되어 있으며 프로젝트 데이터를 네트워크로 전송하지 않습니다. 단, 플랫폼 기능 및 사용자가 직접 선택한 기능에서 다음 외부 서비스가 사용될 수 있습니다:</p>
+                      <p>일반적인 프로젝트 생성, 편집 및 저장은 오프라인으로 할 수 있습니다. 사용자가 다음 작업 중 하나를 선택하면 외부 서비스가 필요한 정보를 처리합니다.</p>
             
           <div class="subsections">
             
-            <div class="subsection-card" id="network-store">
-              <h3 class="subsection-title">4.1. Microsoft Store 및 Windows 플랫폼 진단 데이터</h3>
-                            <p>본 애플리케이션의 배포, 자동 업데이트 및 추가 기능 구매는 Microsoft Store를 통해 이루어집니다. 이와 관련하여 Windows OS 및 Microsoft Store는 OS 기본 시스템 기능(Windows Error Reporting 등)을 통해 다음과 같은 표준 진단 데이터 및 통계를 자동으로 수집할 수 있습니다:</p>
-              <p>• 설치, 업데이트, 삭제 등의 앱 배포 이벤트</p>
-              <p>• 앱이 예기치 않게 종료(비정상 종료)되거나 응답이 중단될 때 생성되는 오류 로그 및 스택 추적</p>
-              <p>• OS 버전, 기기 아키텍처, 대략적인 지역 정보 등 집계된 시스템 통계</p>
-              <p>이러한 진단 데이터는 Ploto 자체의 추적 코드가 아닌 Windows 플랫폼에 의해 시스템 수준에서 수집·관리됩니다. 개발자는 앱의 안정성 개선과 버그 수정을 위해 Microsoft Partner Center를 통해 개인을 식별할 수 없는 '익명화된 집계 통계(오류 발생률, 총 활성 기기 수 등)'로만 이를 열람합니다. 사용자의 프로젝트 데이터나 업무 내용이 Microsoft 또는 개발자에게 전송되는 일은 전혀 없습니다. 이와 관련해서는 <a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 개인정보 처리방침</a>이 적용됩니다.</p>
+            <div class="subsection-card" id="microsoft">
+              <h3 class="subsection-title">3.1. Microsoft Store 및 Windows</h3>
+                            <p>앱 배포, 업데이트, Store 내 구매 및 리뷰는 Microsoft Store에서 처리합니다. Windows와 Microsoft Store는 단말 및 조직의 설정에 따라 설치 정보, 오류 정보, OS 및 단말 진단 정보 등을 처리할 수 있습니다. Ploto 제공자는 개인을 직접 식별하지 않는 집계 정보를 품질 개선에 사용할 수 있습니다. <a href="https://www.microsoft.com/ko-kr/privacy/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 개인정보처리방침</a>이 적용됩니다.</p>
             </div>
 
-            <div class="subsection-card" id="network-license">
-              <h3 class="subsection-title">4.2. Pro 라이선스 및 결제 (Stripe)</h3>
-                            <p>공식 웹사이트를 통한 라이선스 구매는 Stripe의 보안 결제 시스템을 통해 처리됩니다. 개발자는 신용카드 정보를 직접 수집하거나 보관하지 않습니다.</p>
-              <p>발급된 라이선스 키는 <strong>앱 내 Ed25519 암호화 서명 검증을 통해 완전 오프라인으로 인증</strong>됩니다. 인증을 위해 기기 정보나 통신 로그를 서버로 전송하지 않으므로 인터넷이 연결되지 않은 폐쇄망에서도 안전하게 작동합니다.</p>
+            <div class="subsection-card" id="purchase">
+              <h3 class="subsection-title">3.2. 웹을 통한 Pro 라이선스 구매</h3>
+                            <p>웹 구매 시 Stripe는 구매자의 이메일 주소, 결제 수단, 구매 상품, 금액, 통화, 일시 및 연결 정보를 처리합니다. 카드 번호 등의 민감한 결제 정보는 Stripe가 직접 처리하며 Ploto 제공자의 서버에서는 취득하거나 저장하지 않습니다.</p>
+              <p>단말 연동 라이선스를 발급하기 위해 구매 시작 시 Windows가 게시자에게 제공하는 단말 식별 값에서 Ploto 전용 단방향 해시를 단말 내에서 생성하여 Stripe로 전송합니다. 원래 단말 식별 값은 전송하지 않습니다. Vercel에서 실행되는 처리가 라이선스 키를 발급하고 Resend가 구매자의 이메일 주소로 전송합니다. 구매 후 라이선스 확인은 단말 내에서 이루어집니다.</p>
+              <p><a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe 개인정보 보호정책</a>, <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">Vercel Privacy Notice</a>, <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend Privacy Policy</a>가 각각 적용됩니다.</p>
             </div>
 
-            <div class="subsection-card" id="network-survey">
-              <h3 class="subsection-title">4.3. 피드백 및 설문조사 (Google Forms)</h3>
-                            <p>도움말 메뉴나 시작 화면에서 '의견 및 오류 신고'를 선택하면 기본 웹 브라우저에서 Google Forms 페이지가 열립니다.</p>
-              <p>참여 및 정보 입력은 전적으로 자율적이며, 사용자가 직접 입력한 내용만 Google 서버를 거쳐 개발자에게 전달됩니다(<a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a> 적용). 앱이 백그라운드에서 임의로 데이터를 전송하지 않습니다.</p>
+            <div class="subsection-card" id="feedback">
+              <h3 class="subsection-title">3.3. 문의 및 선택적 양식</h3>
+                            <p>사용자가 문의 이메일 또는 Google Forms를 제출한 경우 입력한 내용과 선택적으로 제공한 이메일 주소를 답변, 지원, 오류 조사 및 품질 개선에 사용합니다. 본 앱은 프로젝트 내용을 자동으로 첨부하거나 전송하지 않습니다. 조직의 허가 없이 기밀 정보, 개인정보, 프로젝트 파일 또는 화면 캡처를 전송하지 마십시오. <a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>이 적용됩니다.</p>
+            </div>
+
+            <div class="subsection-card" id="websites">
+              <h3 class="subsection-title">3.4. 공식 사이트 및 본 방침 열람</h3>
+                            <p>공식 사이트 <code>ploto-app.com</code>은 GitHub Pages를 통해 제공되며 Google Analytics 4를 사용합니다. 공식 사이트를 <code>?ga=off</code>와 함께 열면 해당 브라우저에서 측정 태그를 불러오지 않도록 설정이 저장됩니다.</p>
+              <p>본 방침은 <code>hiroking-ocean.github.io</code>의 GitHub Pages를 통해 제공됩니다. 이 페이지에는 Ploto 자체 접근 분석을 설치하지 않으며 외부 웹 글꼴을 불러오지 않습니다. GitHub가 일반적인 접근 정보를 처리할 수 있습니다. 이 페이지가 브라우저에 저장하는 정보는 테마와 표시 언어 선택뿐입니다. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub General Privacy Statement</a>가 적용됩니다.</p>
             </div>
           </div>
             
           </div>
         </article>
 
-        <article class="section-card" id="third-party">
-          <h2 class="section-title">5. 제3자 제공</h2>
+        <article class="section-card" id="use-and-sharing">
+          <h2 class="section-title">4. 이용 목적 및 제3자에 의한 처리</h2>
           <div class="section-body">
-                      <p>개발자는 프로젝트 데이터나 개인정보를 수집하거나 보유하지 않으므로, 어떠한 정보도 제3자에게 판매, 공유, 제공하지 않습니다.</p>
+                      <p>Ploto 제공자가 구매, 문의, 선택적 양식 등을 통해 받은 정보는 라이선스 발급, 재전송 및 단말 연동, 부정 이용 방지, 결제와 지원 대응, 오류 조사, 품질 개선, 회계, 세무, 분쟁 대응 및 기타 법령 준수에 필요한 범위에서 사용합니다.</p>
+          <p>프로젝트 데이터, 구매자 정보 또는 문의 정보를 판매, 대여, 광고 제공 또는 데이터 브로커 제공에 사용하지 않습니다. 배포, 구매, 라이선스 발급, 이메일 발송, 양식 제출 및 웹 열람을 위해 필요한 범위에서 Microsoft, Stripe, Vercel, Resend, Google 및 GitHub가 정보를 처리합니다. 각 회사의 방침에 따라 대한민국 및 일본 외 국가나 지역을 포함하여 처리 또는 저장될 수 있습니다.</p>
+          <p>법령에 따른 경우, 사람의 생명·신체·재산 보호에 필요한 경우 또는 권리 보호와 부정 방지에 필요한 경우에는 적용 법령의 범위에서 관계 기관 등에 정보를 공개할 수 있습니다.</p>
             
             
           </div>
         </article>
 
-        <article class="section-card" id="children">
-          <h2 class="section-title">6. 아동의 개인정보 보호</h2>
+        <article class="section-card" id="retention">
+          <h2 class="section-title">5. 보유 기간, 삭제 및 확인 등의 요청</h2>
           <div class="section-body">
-                      <p>Ploto는 아동을 포함하여 누구로부터도 의도적으로 개인정보를 수집하지 않으며, 모든 연령층에서 안전하게 사용할 수 있습니다.</p>
+                      <p>구매 및 라이선스 정보는 라이선스 재표시와 재전송, 구매 지원, 부정 방지, 회계, 세무 및 기타 법령 준수에 필요한 기간 동안 보유합니다. 문의 및 양식 응답은 답변, 조사, 품질 개선 및 법령 준수에 필요한 기간 동안 보유합니다. 외부 사업자가 자체 목적을 위해 보유하는 정보의 기간은 각 회사의 방침에 따릅니다.</p>
+          <p>사용자가 저장한 프로젝트 등은 사용자가 삭제할 때까지 남습니다. 앱을 제거해도 사용자가 선택한 저장 위치의 파일과 일부 단말 내 보조 파일은 남습니다. 완전한 삭제 방법은 <a href="./it/#removal" target="_blank" rel="noopener noreferrer">정보시스템 부서용 기술 정보</a>를 확인하십시오.</p>
+          <p>Ploto 제공자가 보유하는 구매자 정보, 문의 정보 등의 확인, 정정, 이용 중지 또는 삭제를 원하는 경우 아래 연락처로 요청하십시오. 본인 확인 후 법령 또는 거래·라이선스 기록상 보유가 필요한 정보를 제외하고 합리적인 범위에서 대응합니다. 프로젝트 내용은 제공자가 보유하지 않으므로 제공자 측에서 공개, 복원 또는 삭제할 수 없습니다.</p>
             
             
           </div>
         </article>
 
         <article class="section-card" id="changes">
-          <h2 class="section-title">7. 처리방침의 변경</h2>
+          <h2 class="section-title">6. 변경 및 문의</h2>
           <div class="section-body">
-                      <p>본 방침이 변경되는 경우, 새로운 최종 수정일과 함께 본 웹페이지에 개정판을 게시합니다.</p>
-            
-            
-          </div>
-        </article>
-
-        <article class="section-card" id="contact">
-          <h2 class="section-title">8. 문의처</h2>
-          <div class="section-body">
-                      <p>본 개인정보 처리방침 또는 앱에 관한 질문이 있으신 경우 아래로 문의해 주시기 바랍니다:</p>
+                      <p>본 방침을 변경하는 경우 이 페이지에 개정된 내용과 최종 수정일을 게시합니다. 정보의 종류, 이용 목적, 외부 전송 대상 등에 중요한 변경이 있는 경우 필요에 따라 앱 내 릴리스 노트 등으로도 안내합니다.</p>
+          <p>본 방침, 사용자 정보 처리, 법인·단체 도입 또는 라이선스에 관한 질문은 아래로 문의하십시오.</p>
             
             
           <div class="contact-box">
@@ -349,7 +276,7 @@
             <dl class="contact-meta">
               <div class="contact-meta-row">
                 <dt>제공자</dt>
-                <dd>Hiroki Tanaka(개인 개발자, 상호: hiroki.lab)</dd>
+                <dd>Hiroki Tanaka<span class="contact-meta-note">(개인 개발자, 상호: hiroki.lab)</span></dd>
               </div>
 
               <div class="contact-meta-row">
@@ -358,8 +285,8 @@
               </div>
 
               <div class="contact-meta-row">
-                <dt>회신 목표</dt>
-                <dd>통상 3영업일 이내(일본 기준 영업일)</dd>
+                <dt>답변 기준</dt>
+                <dd>일반적으로 3영업일 이내<span class="contact-meta-note">(일본 영업일)</span></dd>
               </div>
 
               <div class="contact-meta-row">

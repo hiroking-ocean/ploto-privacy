@@ -157,7 +157,7 @@
     "ogLocale": "en_US",
     "lpUrl": "https://ploto-app.com/",
     "title": "Privacy Policy - Ploto",
-    "description": "Privacy Policy for Ploto. Fully offline, local-first architecture, zero personal data collection.",
+    "description": "Ploto Privacy Policy. Explains where projects are stored, the use of external services, and how information is handled during purchases and inquiries.",
     "nav": {
       "privacy": "Privacy Policy",
       "lpLink": "Official Website",
@@ -173,126 +173,99 @@
       "name": "Ploto",
       "tagline": "Offline-First Project Management for Windows",
       "lastUpdatedLabel": "Last updated",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "Contact",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "Our Privacy Commitment",
-      "title": "Your Data, Entirely in Your Hands. Built Local-First.",
-      "description": "Ploto is a desktop application running entirely on your own device. We never collect, transmit, or monetize your personal data. Your project information remains strictly under your control.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "Zero App Data Collection",
-          "desc": "No account required. Ploto embeds no analytics, telemetry, crash reporters, or ad trackers (excluding standard OS/Store diagnostics)."
-        },
-        {
-          "icon": "database",
-          "title": "100% Local Storage",
-          "desc": "All projects, tasks, notes, and settings are saved on your local machine (.ploto SQLite file) or your designated network drive."
-        },
-        {
-          "icon": "key",
-          "title": "Offline Signature Verification",
-          "desc": "Pro licenses are verified locally via Ed25519 cryptographic signatures. No server pings or activation calls needed."
-        },
-        {
-          "icon": "globe",
-          "title": "Transparent Integrations",
-          "desc": "Clear disclosure regarding Microsoft Store & Windows platform diagnostics, Stripe checkout, and optional Google Forms feedback."
-        }
-      ]
+      "badge": "Privacy Policy",
+      "title": "Ploto Privacy Policy",
+      "description": "Ploto is a Windows application that saves projects in a location chosen by the user. Normal use requires neither an account nor an internet connection, and project content is not sent automatically to servers operated by the provider of Ploto.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. Introduction",
+        "id": "principles",
+        "title": "1. Basic Principles",
         "content": [
-          "Ploto (\"the Application\") is a desktop project management application for Windows. It provides comprehensive views including Gantt charts, Kanban boards, Priority Matrices, Member Task Views, Notes, and Whiteboards, all engineered so that users retain full ownership and custody of their data.",
-          "This Privacy Policy outlines how data is handled. In short: Ploto does not covertly harvest your personal data or transmit your project content to external servers."
+          "Ploto (the app) is a project management application for Windows. No account registration or sign-in is required to use it.",
+          "Projects are saved on the device or in a shared location chosen by the user. Ploto has no proprietary cloud synchronization feature and does not automatically send project content entered by the user, such as tasks, assignees, schedules, notes or whiteboards, to servers operated by the provider of Ploto.",
+          "The app does not include Ploto-operated analytics or telemetry, advertising SDKs, behavioral tracking, or automatic crash reporting to external services."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. Information We Collect",
+        "id": "local-data",
+        "title": "2. Information Stored on the Device",
         "content": [
-          "**Zero collection by the application itself.**",
-          "Ploto does not collect, record, transmit, or sell personal data such as names, email addresses, IP addresses, location data, hardware identifiers, or task contents.",
-          "The Application contains no analytics SDKs (e.g., Google Analytics), no telemetry, no automated crash reporters, and no advertising or behavioral tracking libraries. You do not need to register an account or sign in to use Ploto.",
-          "*Note: For details on standard platform diagnostic data (such as crash logs and aggregate install metrics) collected automatically by Windows OS and the Microsoft Store, please refer to Section 4.1."
+          "Projects are saved as `.ploto` files in a location chosen by the user. Display settings, the license key, recently opened files, notice display state and similar information are stored on the device. While a project is open, a working copy is created on the device for stable editing and saving, and is deleted when the project is closed normally.",
+          "To prevent multiple people from editing the same project simultaneously in a shared location, a temporary lock file is created in the same location as the project. This file contains the Windows user name, computer name, process ID and timestamps, and is deleted on normal exit.",
+          "Ploto does not apply its own encryption to `.ploto` files. If you store confidential business information, configure device encryption, access and sharing permissions for the storage location, and backups in accordance with your organization's rules. See the [technical information for IT departments](./it/) for details about storage locations, file names and removal."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. Data Storage & Management",
+        "id": "external-services",
+        "title": "3. Situations Where External Services Are Used",
         "content": [
-          "All projects, tasks, Gantt schedules, Kanban boards, priority matrices, member assignments, notes, whiteboards, ToDos, user preferences, and custom templates (.ploto-pack) are stored **locally on your device**, or on a **shared network location** (such as an internal network drive) that you explicitly choose, formatted as a `.ploto` SQLite database file.",
-          "Your files never leave your environment unless you choose to move or transfer them yourself. The developer does not operate any servers that receive, store, inspect, or process your project data."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. Network Use & External Services",
-        "content": [
-          "Ploto is designed to operate completely offline without sending project data across the network. However, for certain platform functions and optional user-initiated actions, the following external services are involved:"
+          "Normal project creation, editing and saving can be performed offline. When the user chooses one of the following operations, the relevant external service processes the information required."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Microsoft Store & Windows Platform Diagnostics",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store and Windows",
             "content": [
-              "The Application is distributed, updated, and optionally licensed via the Microsoft Store. In connection with these operations, Windows OS and the Microsoft Store platform may automatically collect standard system diagnostics and usage metrics (via Windows Error Reporting and Store telemetry):",
-              "• Distribution events such as installations, updates, and uninstalls",
-              "• Crash logs, hang reports, and stack traces if the application terminates unexpectedly",
-              "• Aggregate metrics such as OS version, device architecture, and general geographic region",
-              "These diagnostics are collected and managed at the OS/platform level by Microsoft, not through any custom tracking code embedded in Ploto. The developer only has access to anonymized, aggregated statistics (e.g., total crash counts, active install volume) via Microsoft Partner Center to identify bugs and improve reliability. Your private project files, tasks, and notes are never transmitted to Microsoft or the developer. These practices are governed by [Microsoft's Privacy Statement](https://privacy.microsoft.com/privacystatement)."
+              "The Microsoft Store processes app distribution, updates, in-Store purchases and reviews. Depending on device and organization settings, Windows and the Microsoft Store may process installation information, crash information, and diagnostic information about the operating system and device. The provider of Ploto may use aggregated information that does not directly identify an individual to improve quality. The [Microsoft Privacy Statement](https://www.microsoft.com/en-us/privacy/privacystatement) applies."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Paid Licenses (Pro) & Payments (Stripe)",
+            "id": "purchase",
+            "title": "3.2. Purchasing a Pro License on the Web",
             "content": [
-              "When purchasing a Pro license through the official website, payments are processed securely by Stripe, Inc. The developer does not receive or store payment details such as credit card numbers.",
-              "License key verification is executed entirely **offline within the app using Ed25519 cryptographic signatures**. No device telemetry, IP logs, or activation calls are transmitted to our servers during verification. The app operates normally in air-gapped or restricted enterprise networks."
+              "For web purchases, Stripe processes the purchaser's email address, payment method, product, amount, currency, date and time, and connection information. Sensitive payment information such as card numbers is processed directly by Stripe and is not obtained or stored on servers operated by the provider of Ploto.",
+              "To issue a device-bound license, when a purchase starts the app generates a Ploto-specific one-way hash on the device from a device identifier made available to the publisher by Windows, and sends it to Stripe. The original device identifier is not sent. A process hosted on Vercel issues the license key, and Resend sends it to the purchaser's email address. After purchase, the license is verified on the device.",
+              "The [Stripe Privacy Policy](https://stripe.com/privacy), [Vercel Privacy Notice](https://vercel.com/legal/privacy-notice) and [Resend Privacy Policy](https://resend.com/legal/privacy-policy) apply respectively."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. Optional Feedback & Surveys (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. Contact and Optional Forms",
             "content": [
-              "If you select \"Feedback & bug reports\" from the Help menu or Startup Screen, the Application opens a Google Forms page in your system's default web browser.",
-              "Participating and providing feedback or contact info is entirely voluntary. Only information you explicitly type into the form is submitted via Google servers to the developer, subject to [Google's Privacy Policy](https://policies.google.com/privacy). The desktop application does not silently transmit any data."
+              "If a user sends a contact email or submits a Google Form, the information entered and any optional email address are used to respond, provide support, investigate issues and improve quality. The app does not automatically attach or send project content. Do not send confidential information, personal data, project files or screenshots without your organization's permission. The [Google Privacy Policy](https://policies.google.com/privacy?hl=en) applies."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. Viewing the Official Site and This Policy",
+            "content": [
+              "The official site at `ploto-app.com` is delivered through GitHub Pages and uses Google Analytics 4. If the official site is opened with `?ga=off`, a preference is stored in that browser so the measurement tag is not loaded.",
+              "This policy is delivered through GitHub Pages at `hiroking-ocean.github.io`. This page does not include Ploto-operated access analytics or load external web fonts. GitHub may process standard access information. This page stores only the selected theme and display language in the browser. The [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) applies."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. Third-Party Disclosure",
+        "id": "use-and-sharing",
+        "title": "4. Purposes of Use and Processing by Third Parties",
         "content": [
-          "Because we do not harvest or retain your project data or personal information, we never sell, share, rent, or disclose your information to any third party."
+          "Information received by the provider of Ploto through purchases, inquiries, optional forms and similar channels is used only as necessary to issue, resend and bind licenses to devices; prevent misuse; handle payments and support; investigate defects; improve quality; maintain accounting and tax records; resolve disputes; and comply with other legal obligations.",
+          "Project data, purchaser information and inquiry information are not used for sale, rental, advertising or provision to data brokers. Microsoft, Stripe, Vercel, Resend, Google and GitHub process information as necessary for distribution, purchases, license issuance, email delivery, form submission and web browsing. In accordance with each company's policies, information may be processed or stored in countries or regions outside the user's country.",
+          "Information may be disclosed to relevant authorities within the scope of applicable law when required by law, when necessary to protect a person's life, physical safety or property, or when necessary to protect rights or prevent fraud."
         ]
       },
       {
-        "id": "children",
-        "title": "6. Children's Privacy",
+        "id": "retention",
+        "title": "5. Retention, Deletion and Requests",
         "content": [
-          "Ploto does not knowingly collect personal information from anyone, including children under the age of 13. All capabilities are safe for users of all ages."
+          "Purchase and license information is retained for as long as necessary to redisplay or resend licenses, provide purchase support, prevent fraud, and comply with accounting, tax and other legal obligations. Inquiries and form responses are retained for as long as necessary to respond, investigate, improve quality and comply with the law. The retention period for information held by external providers for their own purposes is governed by each provider's policies.",
+          "Projects and other files saved by the user remain until the user deletes them. Uninstalling the app does not remove files in locations chosen by the user or some auxiliary files on the device. See the [technical information for IT departments](./it/#removal) for complete removal instructions.",
+          "To request access to, correction of, restriction of use of, or deletion of purchaser information, inquiry information or other data held by the provider of Ploto, contact the address below. After verifying identity, the provider will respond within reasonable limits, except for information that must be retained under legal, transaction or license-record requirements. Because the provider does not hold project content, it cannot disclose, restore or delete that content."
         ]
       },
       {
         "id": "changes",
-        "title": "7. Changes to This Policy",
+        "title": "6. Changes and Contact",
         "content": [
-          "If this policy is updated, the revised version will be published on this web page with a new \"Last updated\" date. Material updates may also be noted in app release highlights."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. Contact Us",
-        "content": [
-          "If you have any questions or inquiries regarding this Privacy Policy or the Application, please feel free to contact us:"
+          "If this policy is changed, the revised content and updated date will be published on this page. Material changes to the types of information, purposes of use or external recipients may also be announced in the app's release notes when necessary.",
+          "For questions about this policy, the handling of user information, deployment by a company or organization, or licenses, please use the contact below."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
@@ -335,7 +308,7 @@
     "ogLocale": "de_DE",
     "lpUrl": "https://ploto-app.com/",
     "title": "Datenschutzerklärung - Ploto",
-    "description": "Datenschutzerklärung für Ploto. Vollständig offline nutzbar, Local-First-Architektur, keine Erfassung personenbezogener Daten.",
+    "description": "Datenschutzerklärung für Ploto. Erläutert Speicherorte von Projekten, die Nutzung externer Dienste und den Umgang mit Informationen bei Käufen und Anfragen.",
     "nav": {
       "privacy": "Datenschutz",
       "lpLink": "Offizielle Website",
@@ -351,133 +324,106 @@
       "name": "Ploto",
       "tagline": "Offline-First Projektmanagement für Windows",
       "lastUpdatedLabel": "Zuletzt aktualisiert",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "Kontakt",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "Unser Datenschutzversprechen",
-      "title": "Ihre Daten bleiben vollständig bei Ihnen. Konsequent Local-First.",
-      "description": "Ploto ist eine Desktop-Anwendung, die vollständig auf Ihrem eigenen Gerät ausgeführt wird. Wir erfassen, übertragen oder verkaufen keine personenbezogenen Daten. Ihre Projektdaten bleiben unter Ihrer vollen Kontrolle.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "Keine App-Datenerfassung",
-          "desc": "Kein Konto erforderlich. Ploto enthält keine Analysen, Telemetrie, Absturzmelder oder Werbe-Tracker (ausgenommen Standard-OS/Store-Diagnosen)."
-        },
-        {
-          "icon": "database",
-          "title": "100% lokale Speicherung",
-          "desc": "Alle Projekte, Aufgaben, Notizen und Einstellungen werden lokal auf Ihrem PC (.ploto SQLite-Datei) oder Ihrem Netzwerklaufwerk gespeichert."
-        },
-        {
-          "icon": "key",
-          "title": "Offline-Signaturprüfung",
-          "desc": "Pro-Lizenzen werden lokal über kryptografische Ed25519-Signaturen verifiziert. Keine Serververbindung oder Aktivierung erforderlich."
-        },
-        {
-          "icon": "globe",
-          "title": "Transparente Dienste",
-          "desc": "Klare Offenlegung bezüglich Microsoft Store & Windows Plattform-Diagnose, Stripe-Zahlung und optionalen Google Forms-Umfragen."
-        }
-      ]
+      "badge": "Datenschutzerklärung",
+      "title": "Datenschutzerklärung für Ploto",
+      "description": "Ploto ist eine Windows-App, die Projekte an einem vom Benutzer gewählten Ort speichert. Für die normale Nutzung sind weder ein Konto noch eine Internetverbindung erforderlich, und Projektinhalte werden nicht automatisch an die Server des Ploto-Anbieters übertragen.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. Einleitung",
+        "id": "principles",
+        "title": "1. Grundsätze",
         "content": [
-          "Ploto („die Anwendung“) ist eine Projektmanagement-Software für Windows. Sie bietet vielseitige Ansichten wie Gantt-Diagramme, Kanban-Boards, Prioritätenmatrizen, Aufgaben nach Mitgliedern, Notizen und Whiteboards, entwickelt für die vollständige Datenhoheit des Nutzers.",
-          "Diese Datenschutzerklärung erläutert den Umgang mit Daten. Kurz gesagt: Ploto sammelt keine persönlichen Daten und überträgt Ihre Projektinhalte nicht an externe Server."
+          "Ploto (nachfolgend „die App“) ist eine Projektmanagement-App für Windows. Zur Nutzung sind weder die Erstellung eines Kontos noch eine Anmeldung erforderlich.",
+          "Projekte werden auf dem Gerät oder an einem vom Benutzer gewählten freigegebenen Speicherort abgelegt. Ploto bietet keine eigene Cloud-Synchronisierung und überträgt vom Benutzer eingegebene Projektinhalte wie Aufgaben, Verantwortliche, Zeitpläne, Notizen oder Whiteboards nicht automatisch an die Server des Anbieters.",
+          "Die App enthält keine Ploto-eigenen Analyse- oder Telemetriefunktionen, Werbe-SDKs, Verhaltensverfolgung oder automatische Übermittlung von Absturzberichten an externe Dienste."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. Erfasste Informationen",
+        "id": "local-data",
+        "title": "2. Auf dem Gerät gespeicherte Informationen",
         "content": [
-          "**Keinerlei Erfassung durch die Anwendung selbst.**",
-          "Ploto erfasst, speichert, übermittelt oder verkauft keinerlei personenbezogene Daten wie Namen, E-Mail-Adressen, IP-Adressen, Gerätekennungen oder Projektinhalte.",
-          "Die Anwendung enthält keine Analysedienste (z. B. Google Analytics), keine Telemetrie, keine automatischen Absturzmelder und kein Tracking. Zur Nutzung ist weder eine Registrierung noch ein Login erforderlich.",
-          "*Hinweis: Einzelheiten zu standardmäßigen Plattform-Diagnosedaten (wie Absturzprotokolle und Installationsstatistiken), die von Windows und dem Microsoft Store automatisch erfasst werden, finden Sie in Abschnitt 4.1."
+          "Projekte werden als `.ploto`-Dateien an dem vom Benutzer gewählten Ort gespeichert. Oberflächeneinstellungen, Lizenzschlüssel, zuletzt geöffnete Dateien, der Anzeigestatus von Hinweisen und ähnliche Informationen werden auf dem Gerät gespeichert. Solange ein Projekt geöffnet ist, wird für stabiles Bearbeiten und Speichern eine lokale Arbeitskopie angelegt und beim ordnungsgemäßen Schließen gelöscht.",
+          "Um die gleichzeitige Bearbeitung desselben Projekts durch mehrere Personen an einem freigegebenen Ort zu verhindern, wird am Speicherort des Projekts vorübergehend eine Sperrdatei erstellt. Sie enthält den Windows-Benutzernamen, den Computernamen, die Prozess-ID und Zeitangaben und wird beim ordnungsgemäßen Beenden gelöscht.",
+          "Ploto verschlüsselt `.ploto`-Dateien nicht selbst. Wenn Sie vertrauliche Geschäftsinformationen speichern, richten Sie Geräteverschlüsselung, Zugriffs- und Freigaberechte des Speicherorts sowie Sicherungen gemäß den Vorgaben Ihrer Organisation ein. Einzelheiten zu Speicherorten, Dateinamen und Löschung finden Sie in den [technischen Informationen für IT-Abteilungen](./it/)."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. Datenspeicherung und -verwaltung",
+        "id": "external-services",
+        "title": "3. Situationen, in denen externe Dienste verwendet werden",
         "content": [
-          "Alle erstellten Projekte, Aufgaben, Gantt-Pläne, Kanban-Boards, Prioritätenmatrizen, Notizen, Whiteboards, ToDos und Vorlagen (.ploto-pack) werden **lokal auf Ihrem Gerät** oder an einem **von Ihnen gewählten Netzwerkspeicher** (z. B. Netzlaufwerk) als `.ploto` SQLite-Datenbankdatei gespeichert.",
-          "Ihre Dateien verlassen Ihr System nur dann, wenn Sie diese selbst verschieben oder teilen. Der Entwickler betreibt keinerlei Server, die Ihre Projektdaten empfangen, speichern oder verarbeiten."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. Netzwerknutzung und externe Dienste",
-        "content": [
-          "Ploto ist für den vollständigen Offline-Betrieb ausgelegt und sendet keine Projektdaten über das Netzwerk. In folgenden Fällen bestehen Schnittstellen zu externen Plattformen:"
+          "Das normale Erstellen, Bearbeiten und Speichern von Projekten ist offline möglich. Wenn der Benutzer eine der folgenden Aktionen auswählt, verarbeitet der jeweilige externe Dienst die erforderlichen Informationen."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Microsoft Store & Windows Plattform-Diagnose",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store und Windows",
             "content": [
-              "Die Bereitstellung, Aktualisierung und der Erwerb von Add-Ons erfolgen über den Microsoft Store. Im Rahmen dieser Funktionen erfassen das Windows-Betriebssystem und der Microsoft Store über Standard-Systemmechanismen (z. B. Windows Error Reporting) automatisch bestimmte Diagnosedaten:",
-              "• Verteilungsereignisse wie Installationen, Updates und Deinstallationen",
-              "• Absturzberichte, Fehlerprotokolle und Stack-Traces bei unerwartetem Beenden der Anwendung",
-              "• Aggregierte Systemmetriken wie Betriebssystemversion, Gerätearchitektur und ungefähre Region",
-              "Diese Daten werden auf Plattformebene von Microsoft erhoben, nicht durch Tracking-Code innerhalb von Ploto. Der Entwickler hat über das Microsoft Partner Center lediglich Zugriff auf anonymisierte, zusammengefasste Statistiken (z. B. Absturzraten, Gesamtzahl aktiver Installationen), um Fehler zu beheben und die Stabilität zu verbessern. Ihre privaten Projektinhalte werden niemals an Microsoft oder den Entwickler übertragen. Es gilt die [Microsoft-Datenschutzerklärung](https://privacy.microsoft.com/de-de/privacystatement)."
+              "Der Microsoft Store verarbeitet die Verteilung, Aktualisierung, Käufe im Store und Rezensionen. Abhängig von den Geräte- und Organisationseinstellungen können Windows und der Microsoft Store Installations- und Absturzinformationen sowie Diagnoseinformationen zum Betriebssystem und Gerät verarbeiten. Der Anbieter von Ploto kann zusammengefasste Informationen, die keine Person direkt identifizieren, zur Qualitätsverbesserung verwenden. Es gilt die [Datenschutzerklärung von Microsoft](https://www.microsoft.com/de-de/privacy/privacystatement)."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Pro-Lizenzen & Zahlungen (Stripe)",
+            "id": "purchase",
+            "title": "3.2. Webkauf einer Pro-Lizenz",
             "content": [
-              "Beim Kauf einer Pro-Lizenz über die offizielle Website werden Zahlungen sicher über Stripe abgewickelt. Der Entwickler erhält oder speichert keine sensiblen Kreditkartendaten.",
-              "Die Lizenzschlüssel-Validierung erfolgt **vollständig offline in der Anwendung mittels kryptografischer Ed25519-Signaturprüfung**. Es werden keine Geräte- oder Telemetriedaten an unsere Server gesendet. Die Anwendung funktioniert auch in isolierten Netzwerken ohne Internet."
+              "Bei einem Webkauf verarbeitet Stripe die E-Mail-Adresse des Käufers, Zahlungsmethode, Produkt, Betrag, Währung, Datum und Uhrzeit sowie Verbindungsinformationen. Vertrauliche Zahlungsdaten wie Kartennummern werden direkt von Stripe verarbeitet und von den Servern des Ploto-Anbieters weder erfasst noch gespeichert.",
+              "Zur Ausstellung einer gerätegebundenen Lizenz erzeugt die App zu Beginn des Kaufs auf dem Gerät aus einem von Windows für den Herausgeber bereitgestellten Gerätekennwert einen Ploto-spezifischen Einweg-Hash und übermittelt ihn an Stripe. Der ursprüngliche Gerätekennwert wird nicht übertragen. Ein auf Vercel ausgeführter Prozess stellt den Lizenzschlüssel aus, und Resend sendet ihn an die E-Mail-Adresse des Käufers. Nach dem Kauf wird die Lizenz auf dem Gerät überprüft.",
+              "Es gelten jeweils die [Datenschutzerklärung von Stripe](https://stripe.com/privacy), der [Datenschutzhinweis von Vercel](https://vercel.com/legal/privacy-notice) und die [Datenschutzerklärung von Resend](https://resend.com/legal/privacy-policy)."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. Freiwilliges Feedback (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. Kontakt und optionale Formulare",
             "content": [
-              "Wenn Sie im Menü „Hilfe“ oder im Startbildschirm „Feedback & Fehlerberichte“ aufrufen, öffnet sich ein Google Forms-Formular in Ihrem Standard-Webbrowser.",
-              "Die Teilnahme ist vollkommen freiwillig. Nur Daten, die Sie explizit eintragen, werden über Google an den Entwickler übermittelt, gemäß den [Google-Datenschutzbestimmungen](https://policies.google.com/privacy?hl=de)."
+              "Wenn der Benutzer eine Kontakt-E-Mail oder ein Google-Forms-Formular absendet, werden die eingegebenen Inhalte und die optionale E-Mail-Adresse für Antworten, Support, Fehleruntersuchung und Qualitätsverbesserung verwendet. Die App hängt Projektinhalte nicht automatisch an und übermittelt sie nicht. Senden Sie ohne Genehmigung Ihrer Organisation keine vertraulichen Informationen, personenbezogenen Daten, Projektdateien oder Bildschirmaufnahmen. Es gilt die [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de)."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. Aufruf der offiziellen Website und dieser Erklärung",
+            "content": [
+              "Die offizielle Website `ploto-app.com` wird über GitHub Pages bereitgestellt und verwendet Google Analytics 4. Wird die offizielle Website mit `?ga=off` geöffnet, speichert der Browser eine Einstellung, durch die das Analyse-Tag nicht geladen wird.",
+              "Diese Erklärung wird über GitHub Pages unter `hiroking-ocean.github.io` bereitgestellt. Auf dieser Seite ist keine Ploto-eigene Zugriffsanalyse eingerichtet, und sie lädt keine externen Webfonts. GitHub kann übliche Zugriffsinformationen verarbeiten. Diese Seite speichert im Browser ausschließlich die gewählte Darstellung und Sprache. Es gilt die [Allgemeine Datenschutzerklärung von GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. Weitergabe an Dritte",
+        "id": "use-and-sharing",
+        "title": "4. Verwendungszwecke und Verarbeitung durch Dritte",
         "content": [
-          "Da wir keine Daten sammeln oder besitzen, erfolgt keinerlei Verkauf, Weitergabe oder Vermietung von Daten an Dritte."
+          "Informationen, die der Ploto-Anbieter über Käufe, Anfragen oder optionale Formulare erhält, werden nur soweit erforderlich für Ausstellung, erneute Zusendung und Gerätebindung von Lizenzen, Missbrauchsprävention, Zahlungs- und Supportabwicklung, Fehleruntersuchung, Qualitätsverbesserung, Buchhaltung, Steuern, Streitbeilegung und sonstige gesetzliche Pflichten verwendet.",
+          "Projektdaten, Käufer- oder Kontaktinformationen werden nicht für Verkauf, Vermietung, Werbung oder die Weitergabe an Datenhändler verwendet. Microsoft, Stripe, Vercel, Resend, Google und GitHub verarbeiten Informationen im erforderlichen Umfang für Verteilung, Kauf, Lizenzausstellung, E-Mail-Versand, Formularübermittlung und Webzugriff. Nach den Richtlinien der jeweiligen Unternehmen kann die Verarbeitung oder Speicherung auch in anderen Ländern oder Regionen erfolgen.",
+          "Informationen können im Rahmen des anwendbaren Rechts an zuständige Stellen weitergegeben werden, wenn dies gesetzlich vorgeschrieben, zum Schutz von Leben, körperlicher Unversehrtheit oder Eigentum einer Person oder zum Schutz von Rechten und zur Betrugsprävention erforderlich ist."
         ]
       },
       {
-        "id": "children",
-        "title": "6. Schutz von Minderjährigen",
+        "id": "retention",
+        "title": "5. Aufbewahrung, Löschung und Auskunftsersuchen",
         "content": [
-          "Ploto erfasst wissentlich keine personenbezogenen Daten von Minderjährigen. Die Anwendung ist für alle Altersgruppen sicher nutzbar."
+          "Kauf- und Lizenzinformationen werden so lange aufbewahrt, wie dies zur erneuten Anzeige oder Zusendung von Lizenzen, zum Kaufsupport, zur Betrugsprävention und zur Erfüllung buchhalterischer, steuerlicher und sonstiger gesetzlicher Pflichten erforderlich ist. Anfragen und Formularantworten werden so lange aufbewahrt, wie dies für Antworten, Untersuchungen, Qualitätsverbesserung und Rechtskonformität erforderlich ist. Die Aufbewahrungsdauer von Informationen, die externe Anbieter für eigene Zwecke speichern, richtet sich nach deren Richtlinien.",
+          "Vom Benutzer gespeicherte Projekte und andere Dateien bleiben erhalten, bis der Benutzer sie löscht. Bei der Deinstallation der App werden Dateien an benutzerdefinierten Speicherorten und einige lokale Hilfsdateien nicht gelöscht. Hinweise zur vollständigen Entfernung finden Sie in den [technischen Informationen für IT-Abteilungen](./it/#removal).",
+          "Wenn Sie Auskunft, Berichtigung, Einschränkung der Nutzung oder Löschung von Käufer-, Kontakt- oder anderen Informationen wünschen, die der Ploto-Anbieter besitzt, wenden Sie sich an den unten angegebenen Kontakt. Nach Identitätsprüfung wird der Anbieter im angemessenen Umfang reagieren, ausgenommen Informationen, die aufgrund gesetzlicher oder transaktions- und lizenzbezogener Pflichten aufbewahrt werden müssen. Da der Anbieter keine Projektinhalte besitzt, kann er diese weder offenlegen noch wiederherstellen oder löschen."
         ]
       },
       {
         "id": "changes",
-        "title": "7. Änderungen dieser Erklärung",
+        "title": "6. Änderungen und Kontakt",
         "content": [
-          "Änderungen dieser Datenschutzerklärung werden auf dieser Webseite mit aktualisiertem Datum veröffentlicht."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. Kontakt",
-        "content": [
-          "Bei Fragen zu dieser Datenschutzerklärung oder zur Anwendung kontaktieren Sie uns gerne direkt:"
+          "Wenn diese Erklärung geändert wird, werden die überarbeitete Fassung und das neue Aktualisierungsdatum auf dieser Seite veröffentlicht. Wesentliche Änderungen an Informationsarten, Verwendungszwecken oder externen Empfängern können bei Bedarf auch in den Versionshinweisen der App angekündigt werden.",
+          "Bei Fragen zu dieser Erklärung, zur Verarbeitung von Benutzerinformationen, zur Einführung in einem Unternehmen oder einer Organisation oder zu Lizenzen wenden Sie sich bitte an den unten angegebenen Kontakt."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
           "meta": [
             {
               "label": "Anbieter",
-              "value": "Hiroki Tanaka (Einzelentwickler, Firmierung: hiroki.lab)"
+              "value": "Hiroki Tanaka (unabhängiger Entwickler, Geschäftsname: hiroki.lab)"
             },
             {
               "label": "Standort",
@@ -485,7 +431,7 @@
             },
             {
               "label": "Antwortzeit",
-              "value": "In der Regel innerhalb von 3 Werktagen (Werktage in Japan)"
+              "value": "In der Regel innerhalb von 3 Geschäftstagen (japanische Geschäftstage)"
             },
             {
               "label": "Sprachen",
@@ -513,7 +459,7 @@
     "ogLocale": "fr_FR",
     "lpUrl": "https://ploto-app.com/",
     "title": "Politique de confidentialité - Ploto",
-    "description": "Politique de confidentialité de Ploto. Fonctionnement 100% hors ligne, architecture locale, aucune collecte de données personnelles.",
+    "description": "Politique de confidentialité de Ploto. Présente le stockage des projets, l'utilisation de services externes et le traitement des informations lors des achats et des prises de contact.",
     "nav": {
       "privacy": "Confidentialité",
       "lpLink": "Site officiel",
@@ -529,133 +475,106 @@
       "name": "Ploto",
       "tagline": "Gestion de projet hors ligne pour Windows",
       "lastUpdatedLabel": "Dernière mise à jour",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "Contact",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "Notre engagement",
-      "title": "Vos données vous appartiennent. Conception locale absolue.",
-      "description": "Ploto est une application de bureau s'exécutant intégralement sur votre propre ordinateur. Nous ne collectons, ne transmettons et ne commercialisons aucune donnée personnelle.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "Zéro collecte par l'application",
-          "desc": "Aucun compte requis. Ploto n'embarque aucun outil d'analyse, télémétrie, rapporteur de plantage ou traceur publicitaire (hors diagnostics standard OS/Store)."
-        },
-        {
-          "icon": "database",
-          "title": "Stockage 100% local",
-          "desc": "Tous vos projets, tâches, notes et paramètres sont enregistrés localement (.ploto au format SQLite) ou sur votre réseau d'entreprise."
-        },
-        {
-          "icon": "key",
-          "title": "Signature cryptographique",
-          "desc": "Les licences Pro sont vérifiées hors ligne par signature Ed25519. Aucune connexion serveur requise pour l'activation."
-        },
-        {
-          "icon": "globe",
-          "title": "Services externes clairs",
-          "desc": "Transparence totale concernant les diagnostics de la plateforme Microsoft Store et Windows, le paiement Stripe et Google Forms."
-        }
-      ]
+      "badge": "Politique de confidentialité",
+      "title": "Politique de confidentialité de Ploto",
+      "description": "Ploto est une application Windows qui enregistre les projets à l'emplacement choisi par l'utilisateur. L'utilisation normale ne nécessite ni compte ni connexion Internet, et le contenu des projets n'est pas envoyé automatiquement aux serveurs du fournisseur de Ploto.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. Introduction",
+        "id": "principles",
+        "title": "1. Principes fondamentaux",
         "content": [
-          "Ploto (« l'Application ») est un logiciel de gestion de projet conçu pour Windows. Il intègre des diagrammes de Gantt, des tableaux Kanban, des matrices de priorité, la gestion des tâches par membre, des notes et un tableau blanc, tout en préservant la souveraineté complète des données de l'utilisateur.",
-          "Cette politique de confidentialité détaille notre gestion des données. En résumé : Ploto ne collecte aucune donnée personnelle et ne transfère jamais vos projets vers des serveurs distants."
+          "Ploto (ci-après « l'application ») est une application de gestion de projet pour Windows. Aucun compte ni aucune connexion ne sont nécessaires pour l'utiliser.",
+          "Les projets sont enregistrés sur l'appareil ou dans un emplacement partagé choisi par l'utilisateur. Ploto ne propose pas de synchronisation propriétaire dans le cloud et n'envoie pas automatiquement aux serveurs du fournisseur le contenu saisi par l'utilisateur, tel que les tâches, responsables, calendriers, notes ou tableaux blancs.",
+          "L'application n'intègre aucun outil d'analyse ou de télémétrie propre à Ploto, SDK publicitaire, suivi comportemental ni envoi automatique de rapports de plantage vers un service externe."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. Informations collectées",
+        "id": "local-data",
+        "title": "2. Informations enregistrées sur l'appareil",
         "content": [
-          "**Aucune collecte par l'application elle-même.**",
-          "Ploto ne collecte, n'enregistre, ne transmet ni ne vend de données personnelles telles que vos noms, adresses e-mail, adresses IP, identifiants d'appareil ou contenus de projets.",
-          "L'Application n'embarque aucun SDK d'analyse (ex: Google Analytics), aucune télémétrie, aucun rapporteur de plantage ni traçage publicitaire. L'utilisation ne requiert aucune inscription ni connexion.",
-          "*Remarque : Pour plus de détails sur les données de diagnostic standard (telles que les journaux de plantage et statistiques d'installation) collectées automatiquement par Windows et le Microsoft Store, veuillez vous référer à la section 4.1."
+          "Les projets sont enregistrés sous forme de fichiers `.ploto` à l'emplacement choisi par l'utilisateur. Les réglages d'affichage, la clé de licence, les fichiers récemment ouverts, l'état d'affichage des messages et les informations similaires sont enregistrés sur l'appareil. Tant qu'un projet est ouvert, une copie de travail locale est créée pour assurer une édition et un enregistrement stables, puis supprimée lors d'une fermeture normale.",
+          "Pour éviter la modification simultanée d'un même projet dans un emplacement partagé, un fichier de verrouillage temporaire est créé au même emplacement que le projet. Il contient le nom d'utilisateur Windows, le nom de l'ordinateur, l'identifiant du processus et des horodatages, puis est supprimé lors d'une fermeture normale.",
+          "Ploto n'applique aucun chiffrement propriétaire aux fichiers `.ploto`. Si vous enregistrez des informations professionnelles confidentielles, configurez le chiffrement de l'appareil, les droits d'accès et de partage de l'emplacement et les sauvegardes conformément aux règles de votre organisation. Consultez les [informations techniques pour les services informatiques](./it/) pour connaître les emplacements, noms de fichiers et procédures de suppression."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. Stockage et gestion des données",
+        "id": "external-services",
+        "title": "3. Situations faisant appel à des services externes",
         "content": [
-          "Tous les projets, tâches, plannings Gantt, tableaux Kanban, matrices de priorité, attributions, notes, ToDos et modèles (.ploto-pack) sont enregistrés **sur votre propre ordinateur**, ou sur un **emplacement partagé** (ex. lecteur réseau) que vous définissez, sous la forme d'un fichier SQLite `.ploto`.",
-          "Vos fichiers ne quittent jamais votre environnement sauf action volontaire de votre part. Le développeur ne gère aucun serveur recevant ou traitant vos données."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. Réseau et services tiers",
-        "content": [
-          "Ploto fonctionne parfaitement hors ligne et n'envoie aucune donnée de projet sur le réseau. Certaines interactions externes spécifiques existent néanmoins :"
+          "La création, la modification et l'enregistrement ordinaires des projets peuvent s'effectuer hors ligne. Lorsqu'un utilisateur choisit l'une des opérations suivantes, le service externe concerné traite les informations nécessaires."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Diagnostics de la plateforme Microsoft Store et Windows",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store et Windows",
             "content": [
-              "La distribution, la mise à jour et l'achat d'extensions s'effectuent via le Microsoft Store. À ce titre, le système d'exploitation Windows et le Microsoft Store peuvent collecter automatiquement des données de diagnostic standard (via Windows Error Reporting et la télémétrie du Store) :",
-              "• Événements de distribution (installations, mises à jour, désinstallations)",
-              "• Rapports d'erreur, journaux de plantage et traces de pile en cas d'arrêt inattendu de l'application",
-              "• Métriques système agrégées telles que la version de Windows, l'architecture matérielle et la région générale",
-              "Ces diagnostics sont gérés au niveau du système par Microsoft et non par un code de suivi propre à Ploto. Le développeur accède uniquement à des statistiques anonymisées et globales (ex. nombre d'incidents, volume d'installations actives) via le Microsoft Partner Center pour corriger les bugs et optimiser la stabilité. Le contenu de vos projets n'est jamais transmis à Microsoft ni au développeur. Ces traitements sont soumis à la [Déclaration de confidentialité de Microsoft](https://privacy.microsoft.com/fr-fr/privacystatement)."
+              "Le Microsoft Store traite la distribution, les mises à jour, les achats dans le Store et les avis. Selon les réglages de l'appareil et de l'organisation, Windows et le Microsoft Store peuvent traiter des informations d'installation et de plantage ainsi que des données de diagnostic relatives au système et à l'appareil. Le fournisseur de Ploto peut utiliser des informations agrégées n'identifiant pas directement une personne afin d'améliorer la qualité. La [Déclaration de confidentialité de Microsoft](https://www.microsoft.com/fr-fr/privacy/privacystatement) s'applique."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Licences Pro et paiements (Stripe)",
+            "id": "purchase",
+            "title": "3.2. Achat d'une licence Pro sur le Web",
             "content": [
-              "Les achats effectués sur le site officiel sont sécurisés par Stripe. Le développeur n'a jamais accès à vos coordonnées bancaires.",
-              "La vérification de la clé de licence s'effectue **intégralement hors ligne grâce à une signature cryptographique Ed25519**. Aucune donnée d'appareil ni requête d'activation n'est transmise à nos serveurs. L'application fonctionne sans problème en réseau sécurisé isolé."
+              "Lors d'un achat en ligne, Stripe traite l'adresse e-mail de l'acheteur, le moyen de paiement, le produit, le montant, la devise, la date et l'heure ainsi que les informations de connexion. Les données de paiement sensibles, telles que les numéros de carte, sont traitées directement par Stripe et ne sont ni obtenues ni enregistrées par les serveurs du fournisseur de Ploto.",
+              "Pour émettre une licence liée à l'appareil, au début de l'achat l'application génère localement un hachage unidirectionnel propre à Ploto à partir d'un identifiant d'appareil fourni à l'éditeur par Windows, puis l'envoie à Stripe. L'identifiant d'origine n'est pas envoyé. Un traitement hébergé sur Vercel émet la clé de licence, et Resend l'envoie à l'adresse e-mail de l'acheteur. Après l'achat, la licence est vérifiée sur l'appareil.",
+              "La [Politique de confidentialité de Stripe](https://stripe.com/privacy), l'[Avis de confidentialité de Vercel](https://vercel.com/legal/privacy-notice) et la [Politique de confidentialité de Resend](https://resend.com/legal/privacy-policy) s'appliquent respectivement."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. Retours et commentaires facultatifs (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. Contact et formulaires facultatifs",
             "content": [
-              "Si vous cliquez sur « Retours et signalements » dans le menu Aide ou l'écran d'accueil, un formulaire Google Forms s'ouvre dans votre navigateur par défaut.",
-              "Votre participation est totalement volontaire. Seules les informations que vous saisissez sont transmises au développeur, selon les [Règles de confidentialité de Google](https://policies.google.com/privacy?hl=fr)."
+              "Si l'utilisateur envoie un e-mail de contact ou un formulaire Google Forms, le contenu saisi et l'adresse e-mail facultative sont utilisés pour répondre, fournir une assistance, examiner les problèmes et améliorer la qualité. L'application ne joint ni n'envoie automatiquement le contenu des projets. N'envoyez aucune information confidentielle, donnée personnelle, fichier de projet ou capture d'écran sans l'autorisation de votre organisation. La [Politique de confidentialité de Google](https://policies.google.com/privacy?hl=fr) s'applique."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. Consultation du site officiel et de la présente politique",
+            "content": [
+              "Le site officiel `ploto-app.com` est diffusé par GitHub Pages et utilise Google Analytics 4. Lorsque le site officiel est ouvert avec `?ga=off`, une préférence est enregistrée dans ce navigateur afin de ne pas charger la balise de mesure.",
+              "La présente politique est diffusée par GitHub Pages sur `hiroking-ocean.github.io`. Cette page n'intègre aucune analyse d'audience propre à Ploto et ne charge aucune police Web externe. GitHub peut traiter les informations d'accès habituelles. Cette page n'enregistre dans le navigateur que le thème et la langue d'affichage choisis. La [Déclaration générale de confidentialité de GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) s'applique."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. Partage avec des tiers",
+        "id": "use-and-sharing",
+        "title": "4. Finalités d'utilisation et traitement par des tiers",
         "content": [
-          "Comme nous ne collectons aucune donnée personnelle ni de projet, aucune information n'est transmise, vendue ou louée à des tiers."
+          "Les informations reçues par le fournisseur de Ploto lors d'achats, de prises de contact ou de formulaires facultatifs sont utilisées uniquement dans la mesure nécessaire à l'émission, au renvoi et à la liaison des licences aux appareils, à la prévention des abus, au traitement des paiements et de l'assistance, à l'étude des problèmes, à l'amélioration de la qualité, à la comptabilité, à la fiscalité, au règlement des litiges et au respect des autres obligations légales.",
+          "Les données de projet, les informations sur les acheteurs et les informations de contact ne sont pas utilisées à des fins de vente, de location, de publicité ou de transmission à des courtiers en données. Microsoft, Stripe, Vercel, Resend, Google et GitHub traitent les informations dans la mesure nécessaire à la distribution, aux achats, à l'émission de licences, à l'envoi d'e-mails et de formulaires et à la navigation Web. Selon les politiques de chaque société, le traitement ou le stockage peut avoir lieu dans d'autres pays ou régions.",
+          "Les informations peuvent être communiquées aux autorités compétentes dans les limites du droit applicable lorsque la loi l'exige, lorsque cela est nécessaire pour protéger la vie, l'intégrité physique ou les biens d'une personne, ou pour protéger des droits et prévenir la fraude."
         ]
       },
       {
-        "id": "children",
-        "title": "6. Protection des mineurs",
+        "id": "retention",
+        "title": "5. Conservation, suppression et demandes d'accès",
         "content": [
-          "Ploto ne collecte délibérément aucune information auprès de mineurs. L'application est adaptée et sécurisée pour tout utilisateur."
+          "Les informations d'achat et de licence sont conservées pendant la durée nécessaire à l'affichage ou au renvoi des licences, à l'assistance relative aux achats, à la prévention de la fraude et au respect des obligations comptables, fiscales et légales. Les demandes et réponses aux formulaires sont conservées pendant la durée nécessaire pour répondre, enquêter, améliorer la qualité et respecter la loi. La durée de conservation des informations détenues par les prestataires externes pour leurs propres finalités est régie par leurs politiques.",
+          "Les projets et autres fichiers enregistrés par l'utilisateur restent présents jusqu'à ce qu'il les supprime. La désinstallation de l'application ne supprime ni les fichiers situés aux emplacements choisis par l'utilisateur ni certains fichiers auxiliaires locaux. Consultez les [informations techniques pour les services informatiques](./it/#removal) pour connaître la procédure de suppression complète.",
+          "Pour demander l'accès, la rectification, la limitation de l'utilisation ou la suppression des informations sur les acheteurs, les prises de contact ou d'autres données détenues par le fournisseur de Ploto, utilisez le contact ci-dessous. Après vérification de l'identité, le fournisseur répondra dans une mesure raisonnable, à l'exception des informations qui doivent être conservées en vertu de la loi ou des exigences relatives aux transactions et aux licences. Le fournisseur ne détenant pas le contenu des projets, il ne peut ni le communiquer, ni le restaurer, ni le supprimer."
         ]
       },
       {
         "id": "changes",
-        "title": "7. Modifications de cette politique",
+        "title": "6. Modifications et contact",
         "content": [
-          "Toute mise à jour sera publiée sur cette page avec une date révisée."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. Contact",
-        "content": [
-          "Pour toute question relative à cette politique ou à l'application, contactez-nous par e-mail :"
+          "Lorsque la présente politique est modifiée, sa version révisée et la nouvelle date de mise à jour sont publiées sur cette page. Les changements importants concernant les catégories d'informations, les finalités d'utilisation ou les destinataires externes peuvent également être annoncés dans les notes de version de l'application, si nécessaire.",
+          "Pour toute question concernant la présente politique, le traitement des informations des utilisateurs, le déploiement dans une entreprise ou une organisation ou les licences, utilisez le contact ci-dessous."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
           "meta": [
             {
               "label": "Fournisseur",
-              "value": "Hiroki Tanaka (développeur indépendant, sous le nom hiroki.lab)"
+              "value": "Hiroki Tanaka (développeur individuel, nom commercial : hiroki.lab)"
             },
             {
               "label": "Localisation",
@@ -691,7 +610,7 @@
     "ogLocale": "es_ES",
     "lpUrl": "https://ploto-app.com/",
     "title": "Política de privacidad - Ploto",
-    "description": "Política de privacidad de Ploto. Funcionamiento 100% sin conexión, arquitectura local-first, cero recopilación de datos personales.",
+    "description": "Política de privacidad de Ploto. Explica dónde se guardan los proyectos, el uso de servicios externos y el tratamiento de la información durante las compras y consultas.",
     "nav": {
       "privacy": "Privacidad",
       "lpLink": "Sitio oficial",
@@ -707,141 +626,114 @@
       "name": "Ploto",
       "tagline": "Gestión de proyectos local y sin conexión para Windows",
       "lastUpdatedLabel": "Última actualización",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "Contacto",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "Compromiso de privacidad",
-      "title": "Sus datos bajo su control total. Diseño Local-First.",
-      "description": "Ploto es una aplicación de escritorio que se ejecuta por completo en su propio dispositivo. No recopilamos, transmitimos ni comercializamos datos personales.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "Cero recopilación de la app",
-          "desc": "Sin registro. Ploto no incluye analíticas, telemetría, informes de fallos ni rastreadores publicitarios (salvo diagnósticos estándar del SO/Store)."
-        },
-        {
-          "icon": "database",
-          "title": "Almacenamiento 100% local",
-          "desc": "Todos los proyectos, tareas, notas y ajustes se guardan en su ordenador (.ploto en SQLite) o en su red compartida."
-        },
-        {
-          "icon": "key",
-          "title": "Firma criptográfica offline",
-          "desc": "Las licencias Pro se validan localmente mediante firmas Ed25519. No requiere conexión a servidores para su activación."
-        },
-        {
-          "icon": "globe",
-          "title": "Servicios externos claros",
-          "desc": "Transparencia total sobre diagnósticos de plataforma de Microsoft Store y Windows, pagos con Stripe y Google Forms."
-        }
-      ]
+      "badge": "Política de privacidad",
+      "title": "Política de privacidad de Ploto",
+      "description": "Ploto es una aplicación para Windows que guarda los proyectos en la ubicación elegida por el usuario. El uso normal no requiere una cuenta ni conexión a Internet, y el contenido de los proyectos no se envía automáticamente a los servidores del proveedor de Ploto.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. Introducción",
+        "id": "principles",
+        "title": "1. Principios básicos",
         "content": [
-          "Ploto (\"la Aplicación\") es una solución de gestión de proyectos para Windows. Ofrece diagramas de Gantt, tableros Kanban, matrices de prioridad, vistas por miembro, notas y pizarras, todo diseñado para que el usuario mantenga el control total de sus datos.",
-          "Esta política explica cómo se tratan los datos. En resumen: Ploto no recopila información personal encubierta ni envía proyectos a servidores externos."
+          "Ploto (en adelante, «la aplicación») es una aplicación de gestión de proyectos para Windows. No es necesario crear una cuenta ni iniciar sesión para utilizarla.",
+          "Los proyectos se guardan en el dispositivo o en una ubicación compartida elegida por el usuario. Ploto no dispone de una función propia de sincronización en la nube ni de una función que envíe automáticamente a los servidores del proveedor el contenido introducido por el usuario, como tareas, responsables, calendarios, notas o pizarras.",
+          "La aplicación no incorpora análisis o telemetría propios de Ploto, SDK publicitarios, seguimiento del comportamiento ni envío automático de informes de fallos a servicios externos."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. Información recopilada",
+        "id": "local-data",
+        "title": "2. Información guardada en el dispositivo",
         "content": [
-          "**Cero recopilación por parte de la propia aplicación.**",
-          "Ploto no recopila, almacena, transmite ni vende datos personales como nombres, correos electrónicos, direcciones IP, identificadores de dispositivo o contenidos de proyectos.",
-          "La Aplicación no incluye servicios de análisis (como Google Analytics), telemetría, informes de fallos ni herramientas de seguimiento publicitario. No es necesario crear una cuenta para utilizarla.",
-          "*Nota: Para conocer más detalles sobre los datos de diagnóstico estándar de la plataforma (como registros de fallos y métricas de instalación) recopilados automáticamente por Windows y Microsoft Store, consulte la Sección 4.1."
+          "Los proyectos se guardan como archivos `.ploto` en la ubicación elegida por el usuario. La configuración de la interfaz, la clave de licencia, los archivos abiertos recientemente, el estado de los avisos y datos similares se guardan en el dispositivo. Mientras un proyecto está abierto, se crea una copia de trabajo local para permitir una edición y un guardado estables, y se elimina cuando el proyecto se cierra correctamente.",
+          "Para evitar que varias personas editen simultáneamente el mismo proyecto en una ubicación compartida, se crea un archivo de bloqueo temporal en la misma ubicación que el proyecto. Este archivo contiene el nombre de usuario de Windows, el nombre del equipo, el identificador del proceso y las horas correspondientes, y se elimina al cerrar correctamente.",
+          "Ploto no aplica cifrado propio a los archivos `.ploto`. Si almacena información empresarial confidencial, configure el cifrado del dispositivo, los permisos de acceso y uso compartido de la ubicación y las copias de seguridad conforme a las normas de su organización. Consulte la [información técnica para departamentos de TI](./it/) para obtener detalles sobre ubicaciones, nombres de archivo y eliminación."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. Almacenamiento y control de datos",
+        "id": "external-services",
+        "title": "3. Situaciones en las que se utilizan servicios externos",
         "content": [
-          "Todos los proyectos, tareas, cronogramas de Gantt, tableros Kanban, matrices de prioridad, notas, ToDos y plantillas (.ploto-pack) se guardan **localmente en su ordenador** o en una **ubicación de red compartida** que usted elija, en formato `.ploto` (base de datos SQLite).",
-          "Sus archivos nunca salen de su entorno a menos que usted los mueva o comparta. El desarrollador no posee servidores para recibir, almacenar o procesar sus datos de proyecto."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. Uso de red y servicios externos",
-        "content": [
-          "Ploto está diseñado para operar completamente fuera de línea. Sin embargo, existen interacciones con servicios externos para funciones específicas:"
+          "La creación, edición y el guardado normal de proyectos pueden realizarse sin conexión. Cuando el usuario elige una de las siguientes operaciones, el servicio externo correspondiente trata la información necesaria."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Diagnósticos de la plataforma Microsoft Store y Windows",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store y Windows",
             "content": [
-              "La distribución, actualización y compras de complementos se gestionan a través de Microsoft Store. Como parte de estas operaciones, el sistema operativo Windows y Microsoft Store recopilan automáticamente datos de diagnóstico estándar (mediante Windows Error Reporting y la telemetría de la tienda):",
-              "• Eventos de distribución como instalaciones, actualizaciones y desinstalaciones",
-              "• Registros de fallos e informes de errores si la aplicación se cierra de forma inesperada",
-              "• Métricas agregadas como versión del sistema operativo, arquitectura del hardware y región general",
-              "Estos diagnósticos son recopilados por Microsoft a nivel del sistema operativo, no mediante código de seguimiento propio en Ploto. El desarrollador solo puede consultar estadísticas anónimas y agregadas (como tasas de error e instalaciones activas) en Microsoft Partner Center para resolver fallos. El contenido de sus proyectos nunca se transmite a Microsoft ni al desarrollador. Aplica la [Declaración de privacidad de Microsoft](https://privacy.microsoft.com/es-es/privacystatement)."
+              "Microsoft Store gestiona la distribución, las actualizaciones, las compras en la Store y las reseñas. Según la configuración del dispositivo y de la organización, Windows y Microsoft Store pueden tratar información sobre la instalación, los fallos y datos de diagnóstico del sistema operativo y del dispositivo. El proveedor de Ploto puede utilizar información agregada que no identifique directamente a una persona para mejorar la calidad. Se aplica la [Declaración de privacidad de Microsoft](https://www.microsoft.com/es-es/privacy/privacystatement)."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Licencias Pro y pagos (Stripe)",
+            "id": "purchase",
+            "title": "3.2. Compra de una licencia Pro a través de la Web",
             "content": [
-              "Al adquirir una licencia Pro en la web oficial, los pagos se procesan de forma segura a través de Stripe. El desarrollador no almacena datos bancarios ni de tarjetas de crédito.",
-              "La validación de la licencia se realiza **completamente fuera de línea mediante verificación de firma criptográfica Ed25519**. No se envían datos del equipo ni registros a nuestros servidores, permitiendo su uso en redes corporativas cerradas."
+              "En las compras por Internet, Stripe trata la dirección de correo electrónico del comprador, el método de pago, el producto, el importe, la moneda, la fecha y hora y la información de conexión. Stripe trata directamente los datos de pago confidenciales, como los números de tarjeta; los servidores del proveedor de Ploto no los obtienen ni almacenan.",
+              "Para emitir una licencia vinculada al dispositivo, al iniciar la compra se genera localmente un hash unidireccional exclusivo de Ploto a partir de un identificador de dispositivo que Windows pone a disposición del editor, y se envía a Stripe. El identificador original no se envía. Un proceso alojado en Vercel emite la clave de licencia y Resend la envía a la dirección de correo electrónico del comprador. Después de la compra, la licencia se verifica en el dispositivo.",
+              "Se aplican, respectivamente, la [Política de privacidad de Stripe](https://stripe.com/privacy), el [Aviso de privacidad de Vercel](https://vercel.com/legal/privacy-notice) y la [Política de privacidad de Resend](https://resend.com/legal/privacy-policy)."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. Comentarios y sugerencias opcionales (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. Contacto y formularios opcionales",
             "content": [
-              "Al seleccionar \"Comentarios y errores\" desde el menú de Ayuda o la pantalla de inicio, se abrirá un formulario de Google Forms en su navegador web predeterminado.",
-              "La participación es enteramente voluntaria. Solo la información que introduzca explícitamente se enviará al desarrollador mediante los servidores de Google, bajo la [Política de privacidad de Google](https://policies.google.com/privacy?hl=es)."
+              "Si el usuario envía un correo de contacto o un formulario de Google Forms, el contenido introducido y la dirección de correo opcional se utilizan para responder, prestar asistencia, investigar problemas y mejorar la calidad. La aplicación no adjunta ni envía automáticamente el contenido de los proyectos. No envíe información confidencial, datos personales, archivos de proyecto ni capturas de pantalla sin la autorización de su organización. Se aplica la [Política de Privacidad de Google](https://policies.google.com/privacy?hl=es)."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. Consulta del sitio oficial y de esta política",
+            "content": [
+              "El sitio oficial `ploto-app.com` se distribuye mediante GitHub Pages y utiliza Google Analytics 4. Al abrir el sitio oficial con `?ga=off`, se guarda una preferencia en ese navegador para no cargar la etiqueta de medición.",
+              "Esta política se distribuye mediante GitHub Pages en `hiroking-ocean.github.io`. Esta página no incorpora análisis de acceso propios de Ploto ni carga fuentes web externas. GitHub puede tratar información de acceso estándar. Esta página solo guarda en el navegador las preferencias de tema e idioma de visualización. Se aplica la [Declaración general de privacidad de GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. Comunicación de datos a terceros",
+        "id": "use-and-sharing",
+        "title": "4. Finalidades de uso y tratamiento por terceros",
         "content": [
-          "Dado que no recopilamos ni guardamos información de sus proyectos o datos personales, nunca los vendemos, compartimos ni cedemos a terceros."
+          "La información que el proveedor de Ploto recibe mediante compras, consultas y formularios opcionales se utiliza únicamente en la medida necesaria para emitir, reenviar y vincular licencias al dispositivo, prevenir usos indebidos, gestionar pagos y asistencia, investigar fallos, mejorar la calidad, llevar la contabilidad, cumplir obligaciones fiscales, resolver disputas y cumplir otras obligaciones legales.",
+          "Los datos de proyectos, la información de compradores y la información de contacto no se utilizan para su venta, alquiler, publicidad ni suministro a intermediarios de datos. Microsoft, Stripe, Vercel, Resend, Google y GitHub tratan información en la medida necesaria para la distribución, compra, emisión de licencias, envío de correos, envío de formularios y navegación web. Conforme a las políticas de cada empresa, el tratamiento o almacenamiento puede realizarse en otros países o regiones.",
+          "La información podrá comunicarse a las autoridades competentes dentro de los límites de la legislación aplicable cuando lo exija la ley, cuando sea necesario para proteger la vida, la integridad física o los bienes de una persona, o para proteger derechos y prevenir fraudes."
         ]
       },
       {
-        "id": "children",
-        "title": "6. Privacidad de menores",
+        "id": "retention",
+        "title": "5. Conservación, eliminación y solicitudes de acceso",
         "content": [
-          "Ploto no recopila deliberadamente información de menores de edad. Su uso es seguro para usuarios de cualquier edad."
+          "La información de compra y licencia se conserva durante el periodo necesario para volver a mostrar o reenviar licencias, prestar asistencia sobre compras, prevenir fraudes y cumplir obligaciones contables, fiscales y otras obligaciones legales. Las consultas y respuestas de formularios se conservan durante el periodo necesario para responder, investigar, mejorar la calidad y cumplir la ley. El periodo de conservación de la información que los proveedores externos mantengan para sus propios fines se rige por las políticas de cada empresa.",
+          "Los proyectos y demás archivos guardados por el usuario permanecen hasta que este los elimina. La desinstalación de la aplicación no elimina los archivos de las ubicaciones elegidas por el usuario ni algunos archivos auxiliares locales. Consulte la [información técnica para departamentos de TI](./it/#removal) para conocer el procedimiento de eliminación completa.",
+          "Para solicitar el acceso, la corrección, la limitación del uso o la eliminación de información de compradores, consultas u otros datos conservados por el proveedor de Ploto, utilice el contacto indicado más abajo. Tras verificar la identidad, el proveedor responderá dentro de límites razonables, salvo respecto a la información que deba conservarse por ley o por requisitos de transacciones y licencias. Como el proveedor no conserva el contenido de los proyectos, no puede facilitarlo, restaurarlo ni eliminarlo."
         ]
       },
       {
         "id": "changes",
-        "title": "7. Cambios en esta política",
+        "title": "6. Cambios y contacto",
         "content": [
-          "Cualquier modificación será publicada en esta misma página web con su fecha de actualización correspondiente."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. Contacto",
-        "content": [
-          "Si tiene dudas o consultas sobre esta política de privacidad o sobre la aplicación, puede escribirnos a:"
+          "Cuando se modifique esta política, la versión revisada y la nueva fecha de actualización se publicarán en esta página. Los cambios importantes en los tipos de información, las finalidades de uso o los destinos externos también podrán comunicarse en las notas de la versión de la aplicación cuando sea necesario.",
+          "Para cualquier pregunta sobre esta política, el tratamiento de la información de los usuarios, la implantación en una empresa u organización o las licencias, utilice el contacto indicado más abajo."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
           "meta": [
             {
               "label": "Proveedor",
-              "value": "Hiroki Tanaka (desarrollador individual, nombre comercial hiroki.lab)"
+              "value": "Hiroki Tanaka (desarrollador individual, nombre comercial: hiroki.lab)"
             },
             {
               "label": "Ubicación",
               "value": "Chiba, Japón"
             },
             {
-              "label": "Tiempo de respuesta",
-              "value": "Normalmente en un plazo de 3 días hábiles (días hábiles de Japón)"
+              "label": "Plazo de respuesta",
+              "value": "Normalmente, en un máximo de 3 días laborables (días laborables en Japón)"
             },
             {
               "label": "Idiomas",
@@ -869,7 +761,7 @@
     "ogLocale": "ko_KR",
     "lpUrl": "https://ploto-app.com/",
     "title": "개인정보 처리방침 - Ploto",
-    "description": "Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙.",
+    "description": "Ploto 개인정보 처리방침. 프로젝트 저장 위치, 외부 서비스 사용, 구매 및 문의 시 정보 처리 방법을 설명합니다.",
     "nav": {
       "privacy": "개인정보 처리방침",
       "lpLink": "공식 웹사이트",
@@ -885,126 +777,99 @@
       "name": "Ploto",
       "tagline": "Windows용 오프라인 중심 프로젝트 관리 소프트웨어",
       "lastUpdatedLabel": "최종 수정일",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "문의",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "개인정보 보호 약속",
-      "title": "데이터의 주인은 사용자입니다. 철저한 로컬 우선 아키텍처.",
-      "description": "Ploto는 사용자의 PC 내에서 모든 작업이 완결되는 데스크톱 앱입니다. 개인정보를 수집, 전송, 판매하지 않으며 프로젝트 데이터는 안전하게 사용자의 기기에 보관됩니다.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "앱 자체 데이터 수집 제로",
-          "desc": "계정 불필요. Ploto 자체에는 분석 툴, 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않습니다(OS/Store 기본 진단 정보 제외)."
-        },
-        {
-          "icon": "database",
-          "title": "100% 로컬 저장",
-          "desc": "모든 프로젝트, 간트 차트, 칸반, 메모 및 설정은 PC 내부(.ploto SQLite) 또는 직접 지정한 사내 네트워크 드라이브에만 저장됩니다."
-        },
-        {
-          "icon": "key",
-          "title": "오프라인 서명 인증",
-          "desc": "Pro 라이선스는 Ed25519 암호화 서명 검증을 통해 기기 내에서 인증됩니다. 외부 서버와의 통신이 필요 없어 폐쇄망에서도 동작합니다."
-        },
-        {
-          "icon": "globe",
-          "title": "투명한 외부 연계",
-          "desc": "Microsoft Store 및 Windows 플랫폼 진단, Stripe 결제 및 선택적 Google Forms 피드백과의 연동 방식을 투명하게 공개합니다."
-        }
-      ]
+      "badge": "개인정보 처리방침",
+      "title": "Ploto 개인정보 처리방침",
+      "description": "Ploto는 사용자가 지정한 위치에 프로젝트를 저장하는 Windows 앱입니다. 일반적인 사용에는 계정이나 인터넷 연결이 필요하지 않으며 프로젝트 내용을 Ploto 제공자의 서버로 자동 전송하지 않습니다.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. 개요",
+        "id": "principles",
+        "title": "1. 기본 방침",
         "content": [
-          "Ploto(\"본 애플리케이션\")는 Windows 환경에서 작동하는 프로젝트 관리 프로그램입니다. 간트 차트, 칸반 보드, 우선순위 매트릭스, 멤버별 업무, 노트, 화이트보드 등 다양한 기능을 제공하며, 사용자가 자신의 데이터를 완전히 통제할 수 있도록 설계되었습니다.",
-          "본 개인정보 처리방침은 데이터 처리에 대해 설명합니다. 요약하자면, Ploto는 개인정보를 수집하거나 프로젝트 데이터를 외부 서버로 전송하지 않습니다."
+          "Ploto(이하 「본 앱」)는 Windows용 프로젝트 관리 앱입니다. 본 앱을 사용하는 데 계정 생성이나 로그인이 필요하지 않습니다.",
+          "프로젝트는 사용자가 지정한 단말 또는 공유 위치에 저장됩니다. Ploto 자체 클라우드 동기화 기능은 없으며, 사용자가 입력한 작업, 담당자, 일정, 노트, 화이트보드 등의 프로젝트 내용을 Ploto 제공자의 서버로 자동 전송하는 기능도 없습니다.",
+          "앱 자체에는 Ploto 고유의 분석, 텔레메트리, 광고 SDK, 행동 추적 또는 외부 자동 오류 보고 기능을 포함하지 않습니다."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. 수집하는 정보",
+        "id": "local-data",
+        "title": "2. 단말에 저장되는 정보",
         "content": [
-          "**애플리케이션 자체에 의한 개인정보 수집은 일절 없습니다.**",
-          "Ploto는 사용자 이름, 이메일, IP 주소, 위치, 기기 식별자, 작업 내용 등 어떠한 개인 데이터도 수집, 저장, 전송, 판매하지 않습니다.",
-          "앱 내에는 분석 도구(Google Analytics 등), 텔레메트리, 자동 크래시 리포터, 광고 트래커가 전혀 포함되어 있지 않으며, 회원가입이나 로그인 없이 즉시 사용할 수 있습니다.",
-          "*참고: Windows OS 및 Microsoft Store 플랫폼이 기본 기능으로 자동 수집하는 진단 데이터(오류 로그, 설치 집계 등)에 대한 자세한 내용은 제4.1항을 참조하시기 바랍니다."
+          "프로젝트는 사용자가 선택한 위치에 `.ploto` 파일로 저장됩니다. 화면 설정, 라이선스 키, 최근에 연 파일, 안내 표시 상태 등은 단말에 저장됩니다. 프로젝트가 열려 있는 동안에는 안정적인 편집과 저장을 위해 단말에 작업 사본을 만들며 정상적으로 닫으면 삭제합니다.",
+          "공유 위치에서 여러 사용자가 같은 프로젝트를 동시에 편집하는 것을 방지하기 위해 프로젝트와 같은 위치에 임시 잠금 파일을 만듭니다. 이 파일에는 Windows 사용자 이름, 컴퓨터 이름, 프로세스 ID 및 시각이 포함되며 정상 종료 시 삭제됩니다.",
+          "`.ploto` 파일에는 Ploto 자체 암호화가 적용되지 않습니다. 업무상 기밀 정보를 저장하는 경우 조직의 규정에 따라 단말 암호화, 저장 위치 접근 권한, 공유 권한 및 백업을 설정하십시오. 저장 위치, 파일 이름 및 삭제 방법 등에 대한 자세한 내용은 [정보시스템 부서용 기술 정보](./it/)에서 확인할 수 있습니다."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. 데이터의 저장 및 관리",
+        "id": "external-services",
+        "title": "3. 외부 서비스를 사용하는 경우",
         "content": [
-          "생성된 모든 프로젝트, 작업, 간트 일정, 칸반 보드, 메모, ToDo, 템플릿(.ploto-pack) 등은 **사용자의 기기 내부** 또는 **직접 지정한 공유 경로**(사내 파일 서버, 네트워크 드라이브 등)에 `.ploto`(SQLite 형식)로 저장됩니다.",
-          "사용자가 직접 파일을 이동하거나 공유하지 않는 한 파일이 기기 외부로 나가지 않습니다. 개발자는 사용자 데이터를 수신, 보관, 처리하는 서버를 운영하지 않습니다."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. 네트워크 이용 및 외부 서비스",
-        "content": [
-          "Ploto는 완전한 오프라인 환경에서 동작하도록 설계되어 있으며 프로젝트 데이터를 네트워크로 전송하지 않습니다. 단, 플랫폼 기능 및 사용자가 직접 선택한 기능에서 다음 외부 서비스가 사용될 수 있습니다:"
+          "일반적인 프로젝트 생성, 편집 및 저장은 오프라인으로 할 수 있습니다. 사용자가 다음 작업 중 하나를 선택하면 외부 서비스가 필요한 정보를 처리합니다."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Microsoft Store 및 Windows 플랫폼 진단 데이터",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store 및 Windows",
             "content": [
-              "본 애플리케이션의 배포, 자동 업데이트 및 추가 기능 구매는 Microsoft Store를 통해 이루어집니다. 이와 관련하여 Windows OS 및 Microsoft Store는 OS 기본 시스템 기능(Windows Error Reporting 등)을 통해 다음과 같은 표준 진단 데이터 및 통계를 자동으로 수집할 수 있습니다:",
-              "• 설치, 업데이트, 삭제 등의 앱 배포 이벤트",
-              "• 앱이 예기치 않게 종료(비정상 종료)되거나 응답이 중단될 때 생성되는 오류 로그 및 스택 추적",
-              "• OS 버전, 기기 아키텍처, 대략적인 지역 정보 등 집계된 시스템 통계",
-              "이러한 진단 데이터는 Ploto 자체의 추적 코드가 아닌 Windows 플랫폼에 의해 시스템 수준에서 수집·관리됩니다. 개발자는 앱의 안정성 개선과 버그 수정을 위해 Microsoft Partner Center를 통해 개인을 식별할 수 없는 '익명화된 집계 통계(오류 발생률, 총 활성 기기 수 등)'로만 이를 열람합니다. 사용자의 프로젝트 데이터나 업무 내용이 Microsoft 또는 개발자에게 전송되는 일은 전혀 없습니다. 이와 관련해서는 [Microsoft 개인정보 처리방침](https://privacy.microsoft.com/ko-kr/privacystatement)이 적용됩니다."
+              "앱 배포, 업데이트, Store 내 구매 및 리뷰는 Microsoft Store에서 처리합니다. Windows와 Microsoft Store는 단말 및 조직의 설정에 따라 설치 정보, 오류 정보, OS 및 단말 진단 정보 등을 처리할 수 있습니다. Ploto 제공자는 개인을 직접 식별하지 않는 집계 정보를 품질 개선에 사용할 수 있습니다. [Microsoft 개인정보처리방침](https://www.microsoft.com/ko-kr/privacy/privacystatement)이 적용됩니다."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Pro 라이선스 및 결제 (Stripe)",
+            "id": "purchase",
+            "title": "3.2. 웹을 통한 Pro 라이선스 구매",
             "content": [
-              "공식 웹사이트를 통한 라이선스 구매는 Stripe의 보안 결제 시스템을 통해 처리됩니다. 개발자는 신용카드 정보를 직접 수집하거나 보관하지 않습니다.",
-              "발급된 라이선스 키는 **앱 내 Ed25519 암호화 서명 검증을 통해 완전 오프라인으로 인증**됩니다. 인증을 위해 기기 정보나 통신 로그를 서버로 전송하지 않으므로 인터넷이 연결되지 않은 폐쇄망에서도 안전하게 작동합니다."
+              "웹 구매 시 Stripe는 구매자의 이메일 주소, 결제 수단, 구매 상품, 금액, 통화, 일시 및 연결 정보를 처리합니다. 카드 번호 등의 민감한 결제 정보는 Stripe가 직접 처리하며 Ploto 제공자의 서버에서는 취득하거나 저장하지 않습니다.",
+              "단말 연동 라이선스를 발급하기 위해 구매 시작 시 Windows가 게시자에게 제공하는 단말 식별 값에서 Ploto 전용 단방향 해시를 단말 내에서 생성하여 Stripe로 전송합니다. 원래 단말 식별 값은 전송하지 않습니다. Vercel에서 실행되는 처리가 라이선스 키를 발급하고 Resend가 구매자의 이메일 주소로 전송합니다. 구매 후 라이선스 확인은 단말 내에서 이루어집니다.",
+              "[Stripe 개인정보 보호정책](https://stripe.com/privacy), [Vercel Privacy Notice](https://vercel.com/legal/privacy-notice), [Resend Privacy Policy](https://resend.com/legal/privacy-policy)가 각각 적용됩니다."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. 피드백 및 설문조사 (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. 문의 및 선택적 양식",
             "content": [
-              "도움말 메뉴나 시작 화면에서 '의견 및 오류 신고'를 선택하면 기본 웹 브라우저에서 Google Forms 페이지가 열립니다.",
-              "참여 및 정보 입력은 전적으로 자율적이며, 사용자가 직접 입력한 내용만 Google 서버를 거쳐 개발자에게 전달됩니다([Google 개인정보처리방침](https://policies.google.com/privacy?hl=ko) 적용). 앱이 백그라운드에서 임의로 데이터를 전송하지 않습니다."
+              "사용자가 문의 이메일 또는 Google Forms를 제출한 경우 입력한 내용과 선택적으로 제공한 이메일 주소를 답변, 지원, 오류 조사 및 품질 개선에 사용합니다. 본 앱은 프로젝트 내용을 자동으로 첨부하거나 전송하지 않습니다. 조직의 허가 없이 기밀 정보, 개인정보, 프로젝트 파일 또는 화면 캡처를 전송하지 마십시오. [Google 개인정보처리방침](https://policies.google.com/privacy?hl=ko)이 적용됩니다."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. 공식 사이트 및 본 방침 열람",
+            "content": [
+              "공식 사이트 `ploto-app.com`은 GitHub Pages를 통해 제공되며 Google Analytics 4를 사용합니다. 공식 사이트를 `?ga=off`와 함께 열면 해당 브라우저에서 측정 태그를 불러오지 않도록 설정이 저장됩니다.",
+              "본 방침은 `hiroking-ocean.github.io`의 GitHub Pages를 통해 제공됩니다. 이 페이지에는 Ploto 자체 접근 분석을 설치하지 않으며 외부 웹 글꼴을 불러오지 않습니다. GitHub가 일반적인 접근 정보를 처리할 수 있습니다. 이 페이지가 브라우저에 저장하는 정보는 테마와 표시 언어 선택뿐입니다. [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)가 적용됩니다."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. 제3자 제공",
+        "id": "use-and-sharing",
+        "title": "4. 이용 목적 및 제3자에 의한 처리",
         "content": [
-          "개발자는 프로젝트 데이터나 개인정보를 수집하거나 보유하지 않으므로, 어떠한 정보도 제3자에게 판매, 공유, 제공하지 않습니다."
+          "Ploto 제공자가 구매, 문의, 선택적 양식 등을 통해 받은 정보는 라이선스 발급, 재전송 및 단말 연동, 부정 이용 방지, 결제와 지원 대응, 오류 조사, 품질 개선, 회계, 세무, 분쟁 대응 및 기타 법령 준수에 필요한 범위에서 사용합니다.",
+          "프로젝트 데이터, 구매자 정보 또는 문의 정보를 판매, 대여, 광고 제공 또는 데이터 브로커 제공에 사용하지 않습니다. 배포, 구매, 라이선스 발급, 이메일 발송, 양식 제출 및 웹 열람을 위해 필요한 범위에서 Microsoft, Stripe, Vercel, Resend, Google 및 GitHub가 정보를 처리합니다. 각 회사의 방침에 따라 대한민국 및 일본 외 국가나 지역을 포함하여 처리 또는 저장될 수 있습니다.",
+          "법령에 따른 경우, 사람의 생명·신체·재산 보호에 필요한 경우 또는 권리 보호와 부정 방지에 필요한 경우에는 적용 법령의 범위에서 관계 기관 등에 정보를 공개할 수 있습니다."
         ]
       },
       {
-        "id": "children",
-        "title": "6. 아동의 개인정보 보호",
+        "id": "retention",
+        "title": "5. 보유 기간, 삭제 및 확인 등의 요청",
         "content": [
-          "Ploto는 아동을 포함하여 누구로부터도 의도적으로 개인정보를 수집하지 않으며, 모든 연령층에서 안전하게 사용할 수 있습니다."
+          "구매 및 라이선스 정보는 라이선스 재표시와 재전송, 구매 지원, 부정 방지, 회계, 세무 및 기타 법령 준수에 필요한 기간 동안 보유합니다. 문의 및 양식 응답은 답변, 조사, 품질 개선 및 법령 준수에 필요한 기간 동안 보유합니다. 외부 사업자가 자체 목적을 위해 보유하는 정보의 기간은 각 회사의 방침에 따릅니다.",
+          "사용자가 저장한 프로젝트 등은 사용자가 삭제할 때까지 남습니다. 앱을 제거해도 사용자가 선택한 저장 위치의 파일과 일부 단말 내 보조 파일은 남습니다. 완전한 삭제 방법은 [정보시스템 부서용 기술 정보](./it/#removal)를 확인하십시오.",
+          "Ploto 제공자가 보유하는 구매자 정보, 문의 정보 등의 확인, 정정, 이용 중지 또는 삭제를 원하는 경우 아래 연락처로 요청하십시오. 본인 확인 후 법령 또는 거래·라이선스 기록상 보유가 필요한 정보를 제외하고 합리적인 범위에서 대응합니다. 프로젝트 내용은 제공자가 보유하지 않으므로 제공자 측에서 공개, 복원 또는 삭제할 수 없습니다."
         ]
       },
       {
         "id": "changes",
-        "title": "7. 처리방침의 변경",
+        "title": "6. 변경 및 문의",
         "content": [
-          "본 방침이 변경되는 경우, 새로운 최종 수정일과 함께 본 웹페이지에 개정판을 게시합니다."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. 문의처",
-        "content": [
-          "본 개인정보 처리방침 또는 앱에 관한 질문이 있으신 경우 아래로 문의해 주시기 바랍니다:"
+          "본 방침을 변경하는 경우 이 페이지에 개정된 내용과 최종 수정일을 게시합니다. 정보의 종류, 이용 목적, 외부 전송 대상 등에 중요한 변경이 있는 경우 필요에 따라 앱 내 릴리스 노트 등으로도 안내합니다.",
+          "본 방침, 사용자 정보 처리, 법인·단체 도입 또는 라이선스에 관한 질문은 아래로 문의하십시오."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
@@ -1018,8 +883,8 @@
               "value": "일본 지바현"
             },
             {
-              "label": "회신 목표",
-              "value": "통상 3영업일 이내(일본 기준 영업일)"
+              "label": "답변 기준",
+              "value": "일반적으로 3영업일 이내(일본 영업일)"
             },
             {
               "label": "지원 언어",
@@ -1047,7 +912,7 @@
     "ogLocale": "pt_BR",
     "lpUrl": "https://ploto-app.com/",
     "title": "Política de Privacidade - Ploto",
-    "description": "Política de Privacidade do Ploto. Funcionamento offline, arquitetura local-first, zero coleta de dados pessoais.",
+    "description": "Política de Privacidade do Ploto. Explica onde os projetos são salvos, o uso de serviços externos e o tratamento de informações durante compras e contatos.",
     "nav": {
       "privacy": "Privacidade",
       "lpLink": "Site Oficial",
@@ -1063,133 +928,106 @@
       "name": "Ploto",
       "tagline": "Gerenciamento de projetos local e offline para Windows",
       "lastUpdatedLabel": "Última atualização",
-      "lastUpdatedValue": "2026-09-01",
+      "lastUpdatedValue": "2026-09-03",
       "contactLabel": "Contato",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "Nosso Compromisso",
-      "title": "Seus dados sob seu controle. Projetado Local-First.",
-      "description": "O Ploto é um aplicativo desktop executado integralmente no seu próprio dispositivo. Não coletamos, transmitimos nem vendemos dados pessoais. Suas informações permanecem com você.",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "Zero Coleta pelo Aplicativo",
-          "desc": "Sem necessidade de conta. O Ploto não inclui analítica, telemetria, relatórios de falhas ou rastreadores de anúncios (exceto diagnósticos padrão do SO/Store)."
-        },
-        {
-          "icon": "database",
-          "title": "Armazenamento 100% Local",
-          "desc": "Todos os projetos, tarefas, notas e configurações são salvos localmente (.ploto em SQLite) ou em sua rede compartilhada."
-        },
-        {
-          "icon": "key",
-          "title": "Assinatura Criptográfica Offline",
-          "desc": "Licenças Pro são validadas localmente por assinaturas Ed25519. Sem conexão a servidores para ativação."
-        },
-        {
-          "icon": "globe",
-          "title": "Serviços Externos Transparentes",
-          "desc": "Total clareza sobre diagnósticos da plataforma Microsoft Store e Windows, checkout do Stripe e pesquisas opcionais via Google Forms."
-        }
-      ]
+      "badge": "Política de Privacidade",
+      "title": "Política de Privacidade do Ploto",
+      "description": "O Ploto é um aplicativo para Windows que salva os projetos no local escolhido pelo usuário. O uso normal não exige conta nem conexão com a internet, e o conteúdo dos projetos não é enviado automaticamente aos servidores do fornecedor do Ploto.",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. Introdução",
+        "id": "principles",
+        "title": "1. Princípios básicos",
         "content": [
-          "O Ploto (\"o Aplicativo\") é um software de gerenciamento de projetos para Windows. Ele inclui gráficos de Gantt, quadros Kanban, matrizes de prioridade, visualizações por membro, notas e quadros brancos, todos projetados para manter o controle absoluto dos dados nas mãos do usuário.",
-          "Esta Política de Privacidade descreve como os dados são tratados. Em resumo: o Ploto não coleta dados pessoais e não envia seus projetos para servidores remotos."
+          "O Ploto (a seguir, «o aplicativo») é um aplicativo de gerenciamento de projetos para Windows. Não é necessário criar uma conta nem fazer login para usá-lo.",
+          "Os projetos são salvos no dispositivo ou em um local compartilhado escolhido pelo usuário. O Ploto não oferece sincronização própria em nuvem nem envia automaticamente aos servidores do fornecedor o conteúdo inserido pelo usuário, como tarefas, responsáveis, cronogramas, notas e quadros brancos.",
+          "O aplicativo não incorpora análises ou telemetria próprias do Ploto, SDKs de publicidade, rastreamento comportamental nem envio automático de relatórios de falha para serviços externos."
         ]
       },
       {
-        "id": "collection",
-        "title": "2. Informações Coletadas",
+        "id": "local-data",
+        "title": "2. Informações salvas no dispositivo",
         "content": [
-          "**Zero coleta por parte do próprio aplicativo.**",
-          "O Ploto não coleta, armazena, transmite ou vende dados pessoais como nomes, e-mails, endereços IP, localizações, identificadores de dispositivo ou conteúdos de projetos.",
-          "O Aplicativo não contém bibliotecas de análise (ex: Google Analytics), telemetria, relatórios automáticos de falhas ou rastreamento publicitário. Não é necessário criar uma conta para utilizá-lo.",
-          "*Observação: Para obter detalhes sobre os dados de diagnóstico padrão da plataforma (como relatórios de falhas e estatísticas agregadas de instalação) coletados automaticamente pelo Windows e pela Microsoft Store, consulte a Seção 4.1."
+          "Os projetos são salvos como arquivos `.ploto` no local escolhido pelo usuário. Configurações da interface, chave de licença, arquivos abertos recentemente, estado de exibição de avisos e informações semelhantes são salvos no dispositivo. Enquanto um projeto está aberto, o aplicativo cria uma cópia de trabalho local para permitir edição e salvamento estáveis e a exclui quando o projeto é fechado normalmente.",
+          "Para evitar que várias pessoas editem simultaneamente o mesmo projeto em um local compartilhado, um arquivo de bloqueio temporário é criado no mesmo local do projeto. Ele contém o nome de usuário do Windows, o nome do computador, o ID do processo e horários, e é excluído no encerramento normal.",
+          "Os arquivos `.ploto` não recebem criptografia própria do Ploto. Ao armazenar informações comerciais confidenciais, configure a criptografia do dispositivo, as permissões do local de armazenamento e do compartilhamento e os backups conforme as normas da sua organização. Consulte as [informações técnicas para departamentos de TI](./it/) para detalhes sobre locais, nomes de arquivos e remoção."
         ]
       },
       {
-        "id": "storage",
-        "title": "3. Armazenamento e Gestão de Dados",
+        "id": "external-services",
+        "title": "3. Situações em que serviços externos são usados",
         "content": [
-          "Todos os projetos, tarefas, cronogramas, quadros Kanban, matrizes, notas, ToDos e modelos (.ploto-pack) são armazenados **localmente no seu dispositivo** ou em um **local de rede compartilhado** que você definir, no formato de banco de dados SQLite `.ploto`.",
-          "Seus arquivos nunca saem do seu ambiente, a menos que você decida movê-los ou compartilhá-los. O desenvolvedor não possui servidores para receber ou processar seus dados."
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. Uso de Rede e Serviços Externos",
-        "content": [
-          "O Ploto opera completamente offline e não transmite dados de projetos pela rede. As seguintes integrações com serviços externos existem apenas para finalidades específicas:"
+          "A criação, edição e gravação normal de projetos pode ser feita offline. Quando o usuário escolhe uma das operações abaixo, o serviço externo correspondente processa as informações necessárias."
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Diagnósticos da Plataforma Microsoft Store e Windows",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store e Windows",
             "content": [
-              "A distribuição, atualização e compra de complementos ocorrem por meio da Microsoft Store. Em decorrência disso, o sistema operacional Windows e a Microsoft Store podem coletar automaticamente métricas e diagnósticos padrão (via Windows Error Reporting e telemetria da loja):",
-              "• Eventos de distribuição, como instalações, atualizações e desinstalações",
-              "• Registros de falhas e relatórios de travamento caso o aplicativo seja encerrado inesperadamente",
-              "• Métricas agregadas como versão do sistema operacional, arquitetura do dispositivo e região aproximada",
-              "Esses diagnósticos são gerenciados no nível do sistema pela Microsoft, e não por código de rastreamento no Ploto. O desenvolvedor tem acesso apenas a estatísticas agregadas e anônimas (como taxas de falhas e volume de instalações ativas) pelo Microsoft Partner Center para corrigir bugs e aprimorar a estabilidade. Seus arquivos e dados de projeto nunca são transmitidos à Microsoft ou ao desenvolvedor. Aplica-se a [Declaração de Privacidade da Microsoft](https://privacy.microsoft.com/pt-br/privacystatement)."
+              "A Microsoft Store processa a distribuição, as atualizações, as compras na Store e as avaliações. Conforme as configurações do dispositivo e da organização, o Windows e a Microsoft Store podem processar informações de instalação, falhas e dados de diagnóstico do sistema operacional e do dispositivo. O fornecedor do Ploto pode usar informações agregadas que não identifiquem diretamente uma pessoa para melhorar a qualidade. Aplica-se a [Declaração de Privacidade da Microsoft](https://www.microsoft.com/pt-br/privacy/privacystatement)."
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. Licenças Pro e Pagamentos (Stripe)",
+            "id": "purchase",
+            "title": "3.2. Compra da licença Pro pela Web",
             "content": [
-              "Ao adquirir uma licença no site oficial, o pagamento é processado com segurança pela Stripe. O desenvolvedor não recebe nem armazena números de cartão de crédito.",
-              "A verificação da licença ocorre **inteiramente offline por meio de assinaturas criptográficas Ed25519**. Nenhum dado de telemetria ou dispositivo é enviado a servidores. O aplicativo funciona normalmente em redes corporativas isoladas."
+              "Nas compras pela Web, a Stripe processa o endereço de e-mail do comprador, a forma de pagamento, o produto, o valor, a moeda, a data e hora e as informações de conexão. Dados confidenciais de pagamento, como números de cartão, são processados diretamente pela Stripe e não são obtidos nem armazenados nos servidores do fornecedor do Ploto.",
+              "Para emitir uma licença vinculada ao dispositivo, no início da compra o aplicativo gera localmente um hash unidirecional exclusivo do Ploto a partir de um identificador de dispositivo disponibilizado ao publicador pelo Windows e o envia à Stripe. O identificador original não é enviado. Um processo hospedado na Vercel emite a chave de licença, e a Resend a envia ao endereço de e-mail do comprador. Após a compra, a licença é verificada no dispositivo.",
+              "Aplicam-se, respectivamente, a [Política de Privacidade da Stripe](https://stripe.com/privacy), o [Aviso de Privacidade da Vercel](https://vercel.com/legal/privacy-notice) e a [Política de Privacidade da Resend](https://resend.com/legal/privacy-policy)."
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. Feedback e Pesquisas Opcionais (Google Forms)",
+            "id": "feedback",
+            "title": "3.3. Contato e formulários opcionais",
             "content": [
-              "Ao clicar em \"Comentários e erros\" no menu Ajuda ou na Tela Inicial, o navegador web padrão abrirá uma página do Google Forms.",
-              "A participação é totalmente voluntária. Apenas os dados que você preencher serão enviados ao desenvolvedor via Google, conforme a [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR)."
+              "Se o usuário enviar um e-mail de contato ou um Google Forms, o conteúdo informado e o endereço de e-mail opcional serão usados para respostas, suporte, investigação de problemas e melhoria da qualidade. O aplicativo não anexa nem envia automaticamente o conteúdo dos projetos. Não envie informações confidenciais, dados pessoais, arquivos de projeto ou capturas de tela sem autorização da sua organização. Aplica-se a [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR)."
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. Visualização do site oficial e desta política",
+            "content": [
+              "O site oficial `ploto-app.com` é distribuído pelo GitHub Pages e usa o Google Analytics 4. Ao abrir o site oficial com `?ga=off`, uma preferência é salva nesse navegador para que a tag de medição não seja carregada.",
+              "Esta política é distribuída pelo GitHub Pages em `hiroking-ocean.github.io`. Esta página não contém análise de acesso própria do Ploto nem carrega fontes externas da Web. O GitHub pode processar informações normais de acesso. Esta página salva no navegador apenas as escolhas de tema e idioma. Aplica-se a [Declaração Geral de Privacidade do GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)."
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. Compartilhamento com Terceiros",
+        "id": "use-and-sharing",
+        "title": "4. Finalidades de uso e tratamento por terceiros",
         "content": [
-          "Como não coletamos nem mantemos informações pessoais ou de projetos, nenhum dado é vendido, compartilhado ou alugado para terceiros."
+          "As informações recebidas pelo fornecedor do Ploto por meio de compras, contatos e formulários opcionais são usadas somente na medida necessária para emissão, reenvio e vinculação da licença ao dispositivo, prevenção de uso indevido, pagamentos, suporte, investigação de falhas, melhoria da qualidade, contabilidade, obrigações fiscais, resolução de disputas e demais exigências legais.",
+          "O conteúdo dos projetos, as informações de compradores e as informações de contato não são usados para venda, aluguel, publicidade nem fornecimento a corretores de dados. Microsoft, Stripe, Vercel, Resend, Google e GitHub processam informações na medida necessária para distribuição, compra, emissão de licenças, envio de e-mails, envio de formulários e navegação na Web. Conforme as políticas de cada empresa, o processamento ou armazenamento pode ocorrer em outros países ou regiões.",
+          "As informações podem ser divulgadas às autoridades competentes dentro dos limites da legislação aplicável quando exigido por lei, quando necessário para proteger a vida, a integridade física ou o patrimônio de uma pessoa, ou para proteger direitos e prevenir fraudes."
         ]
       },
       {
-        "id": "children",
-        "title": "6. Privacidade de Menores",
+        "id": "retention",
+        "title": "5. Retenção, exclusão e solicitações de acesso",
         "content": [
-          "O Ploto não coleta intencionalmente dados pessoais de menores. O aplicativo é seguro para usuários de todas as idades."
+          "As informações de compra e licença são mantidas pelo período necessário para reexibir ou reenviar licenças, prestar suporte à compra, prevenir fraudes e cumprir obrigações contábeis, fiscais e outras exigências legais. Contatos e respostas de formulários são mantidos pelo período necessário para resposta, investigação, melhoria da qualidade e conformidade legal. O prazo de retenção de informações mantidas por fornecedores externos para fins próprios segue as políticas de cada empresa.",
+          "Os projetos e outros arquivos salvos pelo usuário permanecem até que o próprio usuário os exclua. A desinstalação do aplicativo não remove os arquivos dos locais escolhidos pelo usuário nem alguns arquivos auxiliares locais. Consulte as [informações técnicas para departamentos de TI](./it/#removal) para saber como remover tudo.",
+          "Para solicitar acesso, correção, restrição de uso ou exclusão de informações de compradores, contatos ou outros dados mantidos pelo fornecedor do Ploto, use o contato abaixo. Após confirmar a identidade do solicitante, o fornecedor responderá dentro de limites razoáveis, exceto quanto às informações que devam ser mantidas por lei ou por exigências de transação e licença. Como o fornecedor não mantém o conteúdo dos projetos, não pode divulgá-lo, restaurá-lo nem excluí-lo."
         ]
       },
       {
         "id": "changes",
-        "title": "7. Alterações nesta Política",
+        "title": "6. Alterações e contato",
         "content": [
-          "Quaisquer alterações serão publicadas nesta página com uma data de atualização revisada."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. Contato",
-        "content": [
-          "Se você tiver dúvidas sobre esta Política de Privacidade ou sobre o aplicativo, entre em contato conosco:"
+          "Quando esta política for alterada, a versão revisada e a nova data de atualização serão publicadas nesta página. Alterações relevantes nos tipos de informação, finalidades de uso ou destinos externos também poderão ser comunicadas nas notas de versão do aplicativo, quando necessário.",
+          "Para dúvidas sobre esta política, o tratamento de informações do usuário, a adoção por empresas ou organizações ou licenças, use o contato abaixo."
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
           "meta": [
             {
               "label": "Fornecedor",
-              "value": "Hiroki Tanaka (desenvolvedor individual, nome comercial hiroki.lab)"
+              "value": "Hiroki Tanaka (desenvolvedor individual, nome comercial: hiroki.lab)"
             },
             {
               "label": "Localização",
