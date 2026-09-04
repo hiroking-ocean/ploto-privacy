@@ -49,6 +49,7 @@
       </a>
 
       <div class="header-actions">
+        <a href="./it/" class="secondary-link-btn">Informações técnicas</a>
         <!-- Language Selector -->
         <div class="lang-selector">
           <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma">
@@ -130,6 +131,15 @@
           </svg>
           <span>Contato: <strong>hiroki.lab@outlook.com</strong></span>
         </div>
+      </div>
+      <div class="hero-notice">
+        <svg class="hero-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <p class="hero-notice-text">Informações técnicas para departamentos de TI são publicadas separadamente, cobrindo privilégios de execução, locais de armazenamento, destinos de rede e criptografia.</p>
+        <a href="./it/" class="hero-notice-link">Ver informações técnicas</a>
       </div>
     </div>
   </section>
@@ -265,23 +275,23 @@
             
             <div class="subsection-card" id="network-store">
               <h3 class="subsection-title">4.1. Diagnósticos da Plataforma Microsoft Store e Windows</h3>
-              <p>A distribuição, atualização e compra de complementos ocorrem por meio da Microsoft Store. Em decorrência disso, o sistema operacional Windows e a Microsoft Store podem coletar automaticamente métricas e diagnósticos padrão (via Windows Error Reporting e telemetria da loja):</p>
-<p>• Eventos de distribuição, como instalações, atualizações e desinstalações</p>
-<p>• Registros de falhas e relatórios de travamento caso o aplicativo seja encerrado inesperadamente</p>
-<p>• Métricas agregadas como versão do sistema operacional, arquitetura do dispositivo e região aproximada</p>
-<p>Esses diagnósticos são gerenciados no nível do sistema pela Microsoft, e não por código de rastreamento no Ploto. O desenvolvedor tem acesso apenas a estatísticas agregadas e anônimas (como taxas de falhas e volume de instalações ativas) pelo Microsoft Partner Center para corrigir bugs e aprimorar a estabilidade. Seus arquivos e dados de projeto nunca são transmitidos à Microsoft ou ao desenvolvedor. Aplica-se a <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener noreferrer">Declaração de Privacidade da Microsoft</a>.</p>
+                            <p>A distribuição, atualização e compra de complementos ocorrem por meio da Microsoft Store. Em decorrência disso, o sistema operacional Windows e a Microsoft Store podem coletar automaticamente métricas e diagnósticos padrão (via Windows Error Reporting e telemetria da loja):</p>
+              <p>• Eventos de distribuição, como instalações, atualizações e desinstalações</p>
+              <p>• Registros de falhas e relatórios de travamento caso o aplicativo seja encerrado inesperadamente</p>
+              <p>• Métricas agregadas como versão do sistema operacional, arquitetura do dispositivo e região aproximada</p>
+              <p>Esses diagnósticos são gerenciados no nível do sistema pela Microsoft, e não por código de rastreamento no Ploto. O desenvolvedor tem acesso apenas a estatísticas agregadas e anônimas (como taxas de falhas e volume de instalações ativas) pelo Microsoft Partner Center para corrigir bugs e aprimorar a estabilidade. Seus arquivos e dados de projeto nunca são transmitidos à Microsoft ou ao desenvolvedor. Aplica-se a <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener noreferrer">Declaração de Privacidade da Microsoft</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">
               <h3 class="subsection-title">4.2. Licenças Pro e Pagamentos (Stripe)</h3>
-              <p>Ao adquirir uma licença no site oficial, o pagamento é processado com segurança pela Stripe. O desenvolvedor não recebe nem armazena números de cartão de crédito.</p>
-<p>A verificação da licença ocorre <strong>inteiramente offline por meio de assinaturas criptográficas Ed25519</strong>. Nenhum dado de telemetria ou dispositivo é enviado a servidores. O aplicativo funciona normalmente em redes corporativas isoladas.</p>
+                            <p>Ao adquirir uma licença no site oficial, o pagamento é processado com segurança pela Stripe. O desenvolvedor não recebe nem armazena números de cartão de crédito.</p>
+              <p>A verificação da licença ocorre <strong>inteiramente offline por meio de assinaturas criptográficas Ed25519</strong>. Nenhum dado de telemetria ou dispositivo é enviado a servidores. O aplicativo funciona normalmente em redes corporativas isoladas.</p>
             </div>
 
             <div class="subsection-card" id="network-survey">
               <h3 class="subsection-title">4.3. Feedback e Pesquisas Opcionais (Google Forms)</h3>
-              <p>Ao clicar em "Comentários e erros" no menu Ajuda ou na Tela Inicial, o navegador web padrão abrirá uma página do Google Forms.</p>
-<p>A participação é totalmente voluntária. Apenas os dados que você preencher serão enviados ao desenvolvedor via Google, conforme a <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>.</p>
+                            <p>Ao clicar em "Comentários e erros" no menu Ajuda ou na Tela Inicial, o navegador web padrão abrirá uma página do Google Forms.</p>
+              <p>A participação é totalmente voluntária. Apenas os dados que você preencher serão enviados ao desenvolvedor via Google, conforme a <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>.</p>
             </div>
           </div>
             
@@ -336,7 +346,27 @@
               </svg>
               <span>Copiar</span>
             </button>
-            <div class="contact-note">Recebido diretamente pelo desenvolvedor.</div>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>Fornecedor</dt>
+                <dd>Hiroki Tanaka (desenvolvedor individual, nome comercial hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Localização</dt>
+                <dd>Chiba, Japão</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Prazo de resposta</dt>
+                <dd>Normalmente em até 3 dias úteis (dias úteis no Japão)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Idiomas</dt>
+                <dd>Japonês e inglês</dd>
+              </div>
+            </dl>
           </div>
           </div>
         </article>

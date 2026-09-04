@@ -1,0 +1,191 @@
+{
+  "code": "es",
+  "title": "Información técnica para departamentos de TI - Ploto",
+  "description": "Información técnica sobre privilegios de ejecución, acceso a archivos, ubicaciones de almacenamiento, comunicaciones de red, servicios externos, cifrado y desinstalación, necesaria para evaluar la implantación de Ploto.",
+  "badge": "Para departamentos de TI",
+  "heading": "Información técnica de Ploto para la evaluación de implantación",
+  "lead": "Resumen de los privilegios de ejecución, los datos almacenados, las comunicaciones externas, el cifrado y el comportamiento de Ploto al desinstalarlo.",
+  "lastUpdated": "2026-09-03",
+  "contactEmail": "hiroki.lab@outlook.com",
+  "tocTitle": "Contenido",
+  "reviewFactsTitle": "Resumen para la evaluación",
+  "reviewFacts": [
+    {
+      "label": "Distribución",
+      "value": "Microsoft Store (ID de producto: `9N4NJNMT2B77`)"
+    },
+    {
+      "label": "Cuenta",
+      "value": "No necesaria. Sin función de inicio de sesión"
+    },
+    {
+      "label": "Privilegios",
+      "value": "Se ejecuta con los permisos del usuario que ha iniciado sesión. Sin solicitud de elevación"
+    },
+    {
+      "label": "Uso habitual",
+      "value": "No requiere conexión. Crear, editar y guardar funcionan sin conexión"
+    },
+    {
+      "label": "Almacenamiento de proyectos",
+      "value": "Archivo `.ploto` (SQLite) en la ubicación que elija el usuario"
+    },
+    {
+      "label": "Sincronización en la nube",
+      "value": "Sin sincronización ni subida gestionada por Ploto"
+    },
+    {
+      "label": "Medición de uso",
+      "value": "Sin telemetría propia de la aplicación, publicidad ni seguimiento del comportamiento"
+    },
+    {
+      "label": "Cifrado en reposo",
+      "value": "Sin cifrado propio de la aplicación. Protección a cargo del sistema operativo y de la ubicación de almacenamiento"
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "1. Información del producto y del documento",
+      "content": [
+        "Este documento recoge la información técnica de Ploto (en adelante, «la aplicación»), una aplicación de gestión de proyectos para Windows, dirigida a los departamentos de TI. La URL de esta página, o una copia impresa o guardada en PDF, puede utilizarse en el proceso de evaluación de aplicaciones de su organización.",
+        [
+          "Nombre del producto: Ploto",
+          "Sistemas compatibles: Windows 10 y Windows 11",
+          "Distribución: Microsoft Store",
+          "ID de producto de Microsoft Store: `9N4NJNMT2B77`",
+          "Editor mostrado en la Store: hiroki.lab (desarrollador individual)",
+          "Sitio oficial: [https://ploto-app.com/](https://ploto-app.com/)",
+          "Contacto: hiroki.lab@outlook.com"
+        ],
+        "La decisión final sobre si la aplicación puede utilizarse con datos corporativos corresponde a su organización, teniendo en cuenta la clasificación de confidencialidad de los datos, los controles de acceso de los equipos y las ubicaciones de almacenamiento, sus copias de seguridad y sus normas internas de uso de aplicaciones."
+      ]
+    },
+    {
+      "id": "runtime",
+      "title": "2. Distribución, ejecución y privilegios",
+      "content": [
+        "La aplicación es una aplicación de escritorio creada con Rust, Tauri y Windows WebView2, distribuida y actualizada como paquete MSIX a través de Microsoft Store. En su funcionamiento normal no solicita elevación a permisos de administrador.",
+        "El manifiesto MSIX declara `runFullTrust` para que la aplicación pueda funcionar como aplicación de escritorio. Esto significa que se ejecuta con los mismos permisos que el usuario que ha iniciado sesión; no concede permisos de administrador de forma automática. La aplicación no crea servicios de Windows, entradas de inicio ni tareas programadas."
+      ]
+    },
+    {
+      "id": "defender",
+      "title": "3. Microsoft Defender y control de aplicaciones",
+      "content": [
+        "Aunque una aplicación esté certificada y distribuida a través de Microsoft Store, Microsoft Defender o la configuración de control de aplicaciones de los equipos de su organización pueden impedir la instalación, el inicio o el guardado de archivos. Esta aplicación incluye ejecutables nativos creados con Rust y Tauri. Las aplicaciones de este tipo tienen más probabilidades de verse afectadas por la detección heurística o por bloqueos basados en la difusión mientras una versión es nueva y tiene poco historial de ejecución (prevalencia). La certificación de la Store no exime a una aplicación de los controles que configure su organización.",
+        "**Situaciones previsibles:**",
+        [
+          "**Falsos positivos heurísticos del antivirus:** los veredictos de aprendizaje automático entregados desde la nube pueden poner en cuarentena un ejecutable nuevo con un nombre de detección genérico como `Wacatac` o `Wacapew`. Suele resolverse tras una actualización de inteligencia de seguridad.",
+          "**Reglas de reducción de la superficie de ataque (ASR):** si está habilitada la regla «Bloquear la ejecución de archivos ejecutables a menos que cumplan un criterio de prevalencia, antigüedad o lista de confianza», una versión recién publicada puede quedar bloqueada.",
+          "**Acceso controlado a carpetas:** la escritura en carpetas protegidas como Documentos o Escritorio puede denegarse, lo que aparece como un error al guardar un archivo `.ploto`.",
+          "**WDAC y AppLocker:** si el firmante o el paquete no están permitidos, el paquete MSIX no llega a iniciarse.",
+          "**SmartScreen:** normalmente no se activa en instalaciones realizadas desde Microsoft Store, pero puede mostrarse una advertencia según la configuración de sus directivas."
+        ],
+        "**Identidad del paquete (use estos valores en sus reglas de permiso):**",
+        [
+          "Nombre del paquete (Package/Identity/Name): `hiroki.lab.Ploto`",
+          "Nombre de familia del paquete (PFN): `hiroki.lab.Ploto_va563q7jg714e`",
+          "Editor (Package/Identity/Publisher): `CN=AB453F36-8F71-4C99-BB89-582301D0AE38`",
+          "SID del paquete (para reglas de firewall): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
+        ],
+        "Estos valores también pueden consultarse en un equipo con la aplicación instalada, ejecutando `Get-AppxPackage` en PowerShell.",
+        "`PackageFullName` (con el formato `hiroki.lab.Ploto_<versión>_x64__va563q7jg714e`) y la ruta de instalación cambian con cada versión. Si los usa en reglas de firewall o exclusiones por ruta, **sustituya la parte de la versión por un comodín** (por ejemplo: `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). Una regla fijada a una versión deja de coincidir en la siguiente actualización, y la comunicación o el inicio quedan bloqueados sin aviso.",
+        "**Cómo permitir la aplicación (se requieren permisos de administrador):**",
+        [
+          "**WDAC y AppLocker:** añada el firmante de Microsoft Store, o el nombre de familia del paquete, a sus reglas de permiso.",
+          "**Reglas ASR:** cambie la regla correspondiente a modo de auditoría o añada una exclusión. La prevalencia se acumula tras la publicación, por lo que el bloqueo puede resolverse por sí solo con el tiempo.",
+          "**Acceso controlado a carpetas:** añada la aplicación en «Permitir una aplicación a través del acceso controlado a carpetas».",
+          "**Exclusiones de Defender:** como último recurso, cuando nada más resuelva el problema, considere exclusiones limitadas a la ubicación de instalación y a la ubicación de almacenamiento de los proyectos. Las exclusiones debilitan la protección: mantenga su alcance al mínimo y evite dejarlas de forma permanente.",
+          "**Notificar un falso positivo:** si concluye que una detección es incorrecta, puede notificarla mediante el [formulario de envío de muestras de Microsoft](https://www.microsoft.com/en-us/wdsi/filesubmission). Si envía el nombre de la detección, la versión de Defender y la versión de la aplicación al contacto indicado más abajo, el proveedor también lo notificará."
+        ],
+        "Esta aplicación no crea servicios de Windows, entradas de inicio ni tareas programadas (véase el apartado 2). Por tanto, es probable que una detección sea un falso positivo heurístico, pero la forma de tratarlo debe ajustarse a las normas de operación de seguridad de su organización."
+      ]
+    },
+    {
+      "id": "files",
+      "title": "4. Acceso a archivos",
+      "content": [
+        "Técnicamente, la aplicación puede leer y escribir los archivos a los que tenga acceso el usuario que la ejecuta. Como comportamiento del producto, trabaja con los archivos que el usuario selecciona para abrir, guardar, importar o exportar, con los archivos locales de configuración y de trabajo de la aplicación, y con los archivos de bloqueo que evitan la edición simultánea.",
+        "No existe ninguna función que analice de forma exhaustiva los archivos del equipo, que supervise de forma continua una carpeta arbitraria ni que suba automáticamente archivos de proyecto al exterior. Los permisos de lectura y escritura en las ubicaciones de almacenamiento se rigen por los controles de acceso de Windows y de sus servidores de archivos."
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "5. Archivos e información que se almacenan",
+      "content": [
+        "**Proyectos:** se guardan como archivo `.ploto` en la ubicación que elija el usuario. El formato es una base de datos SQLite estándar que contiene tareas, nombres de responsables, fechas, listas de tareas, notas, pizarras, ajustes y datos similares. Las plantillas, los orígenes de importación y los archivos de salida, como los de Excel, también se leen y escriben en las ubicaciones que el usuario seleccione.",
+        "**Copia de trabajo:** mientras un proyecto está abierto, se crea una copia de trabajo del proyecto completo en el área de datos local de la aplicación gestionada por Windows. Se elimina al cerrar correctamente y, si queda una copia tras un cierre anómalo, se intenta eliminarla en el siguiente inicio.",
+        "**Archivo de bloqueo:** durante la edición se crea un archivo `<nombre del archivo .ploto>.lock` en la misma ubicación que el proyecto. Registra el nombre de usuario de Windows, el nombre del equipo, el identificador de proceso y las horas de inicio y de actualización, y se elimina al cerrar correctamente. En una carpeta compartida puede consultarlo cualquier usuario o administrador con acceso a esa ubicación.",
+        "**Ajustes locales:** las preferencias de interfaz, la clave de licencia, el estado de los avisos, los ajustes de editor, los contadores de uso de funciones y valores similares se guardan en el área de datos local de la aplicación gestionada por Windows. Los archivos abiertos recientemente se guardan en `%USERPROFILE%\\.ploto\\recent-files.json`, con un máximo de 10 rutas y su fecha de último acceso, y una copia de los contadores de uso se guarda en `%USERPROFILE%\\.ploto\\meta.json`. Puede almacenarse un valor identificador aleatorio para determinar qué instalación creó un proyecto. Ese valor no contiene identificadores de dispositivo del sistema operativo ni información personal, y no se envía al exterior."
+      ]
+    },
+    {
+      "id": "network",
+      "title": "6. Comunicaciones de red y dominios que conviene permitir",
+      "content": [
+        "No se necesita conexión a Internet para crear, editar o guardar proyectos, ni para verificar una licencia adquirida. El WebView integrado en la aplicación tiene configurada una Content Security Policy que impide la conexión a sitios externos. Las páginas externas se abren en el navegador predeterminado o en Microsoft Store, y solo cuando el usuario lo solicita.",
+        "Si su organización restringe el tráfico saliente, los destinos principales que conviene considerar son `apps.microsoft.com` (ficha de producto y reseñas), `buy.stripe.com` y `checkout.stripe.com` (compra web), `ploto-v2-license-webhook.vercel.app` (finalización de la compra y comprobación de conexión), `docs.google.com` (formularios opcionales), `ploto-app.com` (sitio oficial) y `hiroking-ocean.github.io` (manual y este documento). Los dominios auxiliares de CDN, autenticación y fuentes que utiliza cada servicio dependen de dichos proveedores.",
+        "Las comunicaciones de plataforma de Windows Update, Microsoft Store, el informe de errores de Windows y componentes similares se rigen por la configuración de los productos de Microsoft aplicada al equipo y a su organización."
+      ]
+    },
+    {
+      "id": "services",
+      "title": "7. Servicios externos e información transmitida",
+      "content": [
+        "**Microsoft:** gestiona la distribución, las actualizaciones, las compras en la Store, las reseñas y el diagnóstico del sistema operativo. El proveedor de Ploto puede consultar en Partner Center información agregada de distribución y calidad.",
+        "**Stripe:** cuando un usuario inicia una compra web, Stripe trata los datos de pago, la dirección de correo del comprador, el producto, el importe, la moneda y la fecha, la información de conexión y el hash de dispositivo descrito en el apartado 3.2 de la política de privacidad. Los números de tarjeta y datos similares los trata directamente Stripe.",
+        "**Vercel:** recibe de Stripe la información de compra completada y genera una clave de licencia firmada. No se mantiene una base de datos propia de compradores, aunque pueden tratarse registros de operación.",
+        "**Resend:** envía la clave de licencia a la dirección de correo del comprador y trata el destinatario, el contenido del mensaje y la información de entrega.",
+        "**Google:** trata las respuestas cuando un usuario envía un formulario opcional. El sitio web oficial utiliza Google Analytics 4. Google Analytics no está integrado en la propia aplicación.",
+        "**GitHub:** distribuye mediante GitHub Pages el sitio oficial, el manual y este documento, y puede tratar información de acceso estándar."
+      ]
+    },
+    {
+      "id": "security",
+      "title": "8. Cifrado, autenticación y medidas de seguridad",
+      "content": [
+        "Los archivos `.ploto`, las copias de trabajo y los archivos de bloqueo no incorporan un cifrado en reposo propio de Ploto. Si trata información confidencial, configure la protección por su parte: funciones del sistema operativo como BitLocker o EFS, ACL en la ubicación de almacenamiento, permisos de recurso compartido, copias de seguridad y control de la extracción de datos.",
+        "Las licencias Pro se verifican en el propio equipo mediante una firma electrónica Ed25519. Esto confirma la autenticidad de la clave de licencia; no es una función que cifre los proyectos. Los datos de pago de las compras web se introducen en páginas alojadas por Stripe, y el webhook de emisión de licencias verifica la firma de Stripe antes de procesar la información. Las claves privadas y las claves de API de los servicios externos no se incluyen en la aplicación.",
+        "Su organización debería aplicar cuentas de Windows con privilegios mínimos, cifrado de los equipos, control de acceso a las ubicaciones de almacenamiento, copias de seguridad, protección antimalware, actualizaciones del sistema operativo y de las aplicaciones de la Store, y restricciones sobre la introducción de información confidencial en formularios externos."
+      ]
+    },
+    {
+      "id": "removal",
+      "title": "9. Desinstalación y datos residuales",
+      "content": [
+        "Al desinstalar la versión de Microsoft Store, el área de datos local de la aplicación gestionada por Windows se elimina normalmente. En cambio, los proyectos, plantillas, orígenes de importación y archivos de salida situados en las ubicaciones elegidas por el usuario, así como `%USERPROFILE%\\.ploto`, no se eliminan. Para borrarlo todo, el usuario o el administrador del equipo debe eliminarlos tras comprobar que existen las copias de seguridad necesarias.",
+        "Tras un cierre anómalo o por problemas de permisos pueden quedar una copia de trabajo o un archivo de bloqueo. Elimine un archivo de bloqueo solo después de confirmar que nadie está editando el proyecto correspondiente."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "10. Contacto y consultas para la implantación corporativa",
+      "content": [
+        "Para consultas sobre este documento, el tratamiento de la información, las especificaciones de seguridad, la evaluación para su implantación en empresas u organizaciones, los registros de compra o las licencias, utilice el contacto que figura a continuación. Si su organización dispone de un cuestionario de evaluación propio, envíe las preguntas en el cuerpo de un correo electrónico o como documento habitual.",
+        "Si detecta una vulnerabilidad o un problema en el tratamiento de la información, póngase en contacto con la dirección de correo indicada a continuación en lugar de publicarlo."
+      ],
+      "contactBox": {
+        "email": "hiroki.lab@outlook.com",
+        "meta": [
+          {
+            "label": "Proveedor",
+            "value": "Hiroki Tanaka (desarrollador individual, nombre comercial hiroki.lab)"
+          },
+          {
+            "label": "Ubicación",
+            "value": "Chiba, Japón"
+          },
+          {
+            "label": "Tiempo de respuesta",
+            "value": "Normalmente en un plazo de 3 días hábiles (días hábiles de Japón)"
+          },
+          {
+            "label": "Idiomas",
+            "value": "Japonés e inglés"
+          }
+        ]
+      }
+    }
+  ]
+}

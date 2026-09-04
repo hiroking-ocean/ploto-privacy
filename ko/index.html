@@ -49,6 +49,7 @@
       </a>
 
       <div class="header-actions">
+        <a href="./it/" class="secondary-link-btn">기술 정보</a>
         <!-- Language Selector -->
         <div class="lang-selector">
           <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="언어">
@@ -130,6 +131,15 @@
           </svg>
           <span>문의: <strong>hiroki.lab@outlook.com</strong></span>
         </div>
+      </div>
+      <div class="hero-notice">
+        <svg class="hero-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <p class="hero-notice-text">정보시스템 부서의 도입 심사를 위해 실행 권한, 저장 위치, 통신 대상, 암호화 등을 정리한 기술 정보를 공개하고 있습니다.</p>
+        <a href="./it/" class="hero-notice-link">기술 정보 보기</a>
       </div>
     </div>
   </section>
@@ -265,23 +275,23 @@
             
             <div class="subsection-card" id="network-store">
               <h3 class="subsection-title">4.1. Microsoft Store 및 Windows 플랫폼 진단 데이터</h3>
-              <p>본 애플리케이션의 배포, 자동 업데이트 및 추가 기능 구매는 Microsoft Store를 통해 이루어집니다. 이와 관련하여 Windows OS 및 Microsoft Store는 OS 기본 시스템 기능(Windows Error Reporting 등)을 통해 다음과 같은 표준 진단 데이터 및 통계를 자동으로 수집할 수 있습니다:</p>
-<p>• 설치, 업데이트, 삭제 등의 앱 배포 이벤트</p>
-<p>• 앱이 예기치 않게 종료(비정상 종료)되거나 응답이 중단될 때 생성되는 오류 로그 및 스택 추적</p>
-<p>• OS 버전, 기기 아키텍처, 대략적인 지역 정보 등 집계된 시스템 통계</p>
-<p>이러한 진단 데이터는 Ploto 자체의 추적 코드가 아닌 Windows 플랫폼에 의해 시스템 수준에서 수집·관리됩니다. 개발자는 앱의 안정성 개선과 버그 수정을 위해 Microsoft Partner Center를 통해 개인을 식별할 수 없는 '익명화된 집계 통계(오류 발생률, 총 활성 기기 수 등)'로만 이를 열람합니다. 사용자의 프로젝트 데이터나 업무 내용이 Microsoft 또는 개발자에게 전송되는 일은 전혀 없습니다. 이와 관련해서는 <a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 개인정보 처리방침</a>이 적용됩니다.</p>
+                            <p>본 애플리케이션의 배포, 자동 업데이트 및 추가 기능 구매는 Microsoft Store를 통해 이루어집니다. 이와 관련하여 Windows OS 및 Microsoft Store는 OS 기본 시스템 기능(Windows Error Reporting 등)을 통해 다음과 같은 표준 진단 데이터 및 통계를 자동으로 수집할 수 있습니다:</p>
+              <p>• 설치, 업데이트, 삭제 등의 앱 배포 이벤트</p>
+              <p>• 앱이 예기치 않게 종료(비정상 종료)되거나 응답이 중단될 때 생성되는 오류 로그 및 스택 추적</p>
+              <p>• OS 버전, 기기 아키텍처, 대략적인 지역 정보 등 집계된 시스템 통계</p>
+              <p>이러한 진단 데이터는 Ploto 자체의 추적 코드가 아닌 Windows 플랫폼에 의해 시스템 수준에서 수집·관리됩니다. 개발자는 앱의 안정성 개선과 버그 수정을 위해 Microsoft Partner Center를 통해 개인을 식별할 수 없는 '익명화된 집계 통계(오류 발생률, 총 활성 기기 수 등)'로만 이를 열람합니다. 사용자의 프로젝트 데이터나 업무 내용이 Microsoft 또는 개발자에게 전송되는 일은 전혀 없습니다. 이와 관련해서는 <a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 개인정보 처리방침</a>이 적용됩니다.</p>
             </div>
 
             <div class="subsection-card" id="network-license">
               <h3 class="subsection-title">4.2. Pro 라이선스 및 결제 (Stripe)</h3>
-              <p>공식 웹사이트를 통한 라이선스 구매는 Stripe의 보안 결제 시스템을 통해 처리됩니다. 개발자는 신용카드 정보를 직접 수집하거나 보관하지 않습니다.</p>
-<p>발급된 라이선스 키는 <strong>앱 내 Ed25519 암호화 서명 검증을 통해 완전 오프라인으로 인증</strong>됩니다. 인증을 위해 기기 정보나 통신 로그를 서버로 전송하지 않으므로 인터넷이 연결되지 않은 폐쇄망에서도 안전하게 작동합니다.</p>
+                            <p>공식 웹사이트를 통한 라이선스 구매는 Stripe의 보안 결제 시스템을 통해 처리됩니다. 개발자는 신용카드 정보를 직접 수집하거나 보관하지 않습니다.</p>
+              <p>발급된 라이선스 키는 <strong>앱 내 Ed25519 암호화 서명 검증을 통해 완전 오프라인으로 인증</strong>됩니다. 인증을 위해 기기 정보나 통신 로그를 서버로 전송하지 않으므로 인터넷이 연결되지 않은 폐쇄망에서도 안전하게 작동합니다.</p>
             </div>
 
             <div class="subsection-card" id="network-survey">
               <h3 class="subsection-title">4.3. 피드백 및 설문조사 (Google Forms)</h3>
-              <p>도움말 메뉴나 시작 화면에서 '의견 및 오류 신고'를 선택하면 기본 웹 브라우저에서 Google Forms 페이지가 열립니다.</p>
-<p>참여 및 정보 입력은 전적으로 자율적이며, 사용자가 직접 입력한 내용만 Google 서버를 거쳐 개발자에게 전달됩니다(<a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a> 적용). 앱이 백그라운드에서 임의로 데이터를 전송하지 않습니다.</p>
+                            <p>도움말 메뉴나 시작 화면에서 '의견 및 오류 신고'를 선택하면 기본 웹 브라우저에서 Google Forms 페이지가 열립니다.</p>
+              <p>참여 및 정보 입력은 전적으로 자율적이며, 사용자가 직접 입력한 내용만 Google 서버를 거쳐 개발자에게 전달됩니다(<a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a> 적용). 앱이 백그라운드에서 임의로 데이터를 전송하지 않습니다.</p>
             </div>
           </div>
             
@@ -336,7 +346,27 @@
               </svg>
               <span>복사</span>
             </button>
-            <div class="contact-note">개발자에게 직접 전달됩니다.</div>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>제공자</dt>
+                <dd>Hiroki Tanaka(개인 개발자, 상호: hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>소재지</dt>
+                <dd>일본 지바현</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>회신 목표</dt>
+                <dd>통상 3영업일 이내(일본 기준 영업일)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>지원 언어</dt>
+                <dd>일본어 및 영어</dd>
+              </div>
+            </dl>
           </div>
           </div>
         </article>

@@ -4,8 +4,9 @@
     "name": "日本語",
     "slug": "",
     "ogLocale": "ja_JP",
+    "lpUrl": "https://ploto-app.com/",
     "title": "プライバシーポリシー - Ploto",
-    "description": "Ploto のプライバシーポリシー。完全オフライン動作、ローカルファースト設計、個人データの収集ゼロをお約束します。",
+    "description": "Ploto のプライバシーポリシー。プロジェクトの保存場所、外部サービス、購入・問い合わせ時の情報の取扱いを説明します。",
     "nav": {
       "privacy": "プライバシーポリシー",
       "lpLink": "製品サイトへ",
@@ -13,137 +14,128 @@
       "themeDark": "ダークモード",
       "language": "言語",
       "copy": "コピー",
-      "copied": "コピーしました"
+      "copied": "コピーしました",
+      "technical": "導入審査向け技術情報"
     },
     "tocTitle": "目次",
     "app": {
       "name": "Ploto",
       "tagline": "Windows 向けオフラインファースト・プロジェクト管理アプリ",
       "lastUpdatedLabel": "最終更新日",
-      "lastUpdatedValue": "2026-09-01",
-      "contactLabel": "お問い合わせ",
+      "lastUpdatedValue": "2026-09-03",
+      "contactLabel": "問い合わせ先",
       "contactEmail": "hiroki.lab@outlook.com"
     },
     "summary": {
-      "badge": "プライバシーへの誓約",
-      "title": "データ主権はお手元に。徹底したローカルファースト設計",
-      "description": "Ploto は、すべての処理をユーザーご自身の端末内で行うデスクトップアプリです。個人データの収集・送信・販売は行わず、プロジェクト情報は完全にユーザーの管理下に留まります。",
-      "cards": [
-        {
-          "icon": "shield",
-          "title": "データ収集ゼロ（アプリ本体）",
-          "desc": "アカウント登録不要。アプリ本体にはアナリティクス、テレメトリ、クラッシュリポーター、広告トラッキング等は一切含まれていません（※OS/Store標準の診断情報を除く）。"
-        },
-        {
-          "icon": "database",
-          "title": "完全ローカル保存",
-          "desc": "すべてのプロジェクト・タスク・ToDo・設定は、端末内のローカルファイル（SQLite）またはご自身が指定した社内共有先にのみ保存されます。"
-        },
-        {
-          "icon": "key",
-          "title": "オフライン署名認証",
-          "desc": "Pro版ライセンス認証は端末内の Ed25519 暗号署名検証で完結。外部サーバーへの通信不要で閉域網でも動作します。"
-        },
-        {
-          "icon": "globe",
-          "title": "透明な外部連携",
-          "desc": "Microsoft Store / Windows プラットフォーム診断、Stripe 決済、Google Forms アンケート等の外部サービスとの関わりを明確に開示しています。"
-        }
-      ]
+      "badge": "プライバシーポリシー",
+      "title": "Ploto プライバシーポリシー",
+      "description": "Ploto は、プロジェクトを利用者が指定した場所に保存するWindowsアプリです。通常利用にアカウントやインターネット接続は必要なく、プロジェクト内容を Ploto 提供者のサーバーへ自動送信しません。",
+      "cards": []
     },
     "sections": [
       {
-        "id": "intro",
-        "title": "1. はじめに",
+        "id": "principles",
+        "title": "1. 基本方針",
         "content": [
-          "Ploto（以下「本アプリ」）は、Windows デスクトップ環境で動作するプロジェクト管理アプリケーションです。ガントチャート、カンバン、優先度マトリクス、メンバー別タスク、ノート、ホワイトボードなどの多彩なビューを提供しながら、すべてのデータをユーザー自身の手元で安全に管理できるように設計されています。",
-          "本プライバシーポリシーでは、本アプリにおけるデータのお取り扱いについて詳しく説明します。結論として、本アプリがユーザーの個人データやプロジェクト情報を秘密裏に収集したり、外部サーバーへ送信したりすることは一切ありません。"
+          "Ploto（以下「本アプリ」）は、Windows 向けのプロジェクト管理アプリです。本アプリの利用にアカウント作成やログインは必要ありません。",
+          "プロジェクトは利用者が指定した端末内または共有場所に保存されます。Ploto 独自のクラウド同期機能はなく、利用者が入力したタスク、担当者、日程、ノート、ホワイトボード等のプロジェクト内容を、Ploto 提供者のサーバーへ自動送信する機能はありません。",
+          "アプリ本体には、Ploto 独自のアナリティクス、テレメトリ、広告SDK、行動トラッキングまたは外部の自動クラッシュ送信機能を組み込んでいません。"
         ]
       },
       {
-        "id": "collection",
-        "title": "2. 収集する情報",
+        "id": "local-data",
+        "title": "2. 端末内に保存する情報",
         "content": [
-          "**アプリ本体による個人データの収集は一切ありません。**",
-          "本アプリは、ユーザーの氏名、メールアドレス、IPアドレス、位置情報、デバイス識別子、タスクの内容などの個人データを一切収集、記録、送信、販売しません。",
-          "本アプリには、アクセス解析ツール（Google Analytics等）、利用動向のテレメトリ収集、自動クラッシュリポーター、広告SDK、行動トラッキング等の追跡プログラムは一切組み込まれていません。また、アプリの利用開始にあたってアカウントの作成やログインを求められることもありません。",
-          "※なお、Windows OS および Microsoft Store プラットフォームが標準機能として自動収集する診断データ（クラッシュログやインストール集計など）については、第4.1項をご確認ください。"
+          "プロジェクトは `.ploto` ファイルとして、利用者が選んだ場所に保存します。画面設定、ライセンスキー、最近開いたファイル、案内の表示状態等は端末内に保存します。プロジェクトを開いている間は、安定して編集・保存するため端末内に作業コピーを作成し、正常に閉じたときに削除します。",
+          "共有場所で同じプロジェクトを複数人が同時編集することを防ぐため、プロジェクトと同じ場所に一時的なロックファイルを作成します。このファイルには Windows のユーザー名、コンピューター名、プロセスIDおよび時刻が含まれ、正常終了時に削除されます。",
+          "`.ploto` ファイルには Ploto 独自の暗号化を施していません。業務上の機密情報を保存する場合は、端末暗号化、保存先のアクセス権、共有権限およびバックアップを利用組織の規程に従って設定してください。保存場所・ファイル名・削除方法等の詳細は、[情報システム部門向け技術情報](./it/)で確認できます。"
         ]
       },
       {
-        "id": "storage",
-        "title": "3. データの保存と管理",
+        "id": "external-services",
+        "title": "3. 外部サービスを利用する場面",
         "content": [
-          "作成されたプロジェクト、タスク、ガントチャート、カンバン、優先度マトリクス、メンバー別タスク、ノート、ホワイトボード、ToDo、設定、およびカスタムテンプレート（.ploto-pack）などの全データは、**すべてお使いの端末内**、または**ユーザーご自身が明示的に保存先に指定した共有場所**（社内ファイルサーバーやネットワークドライブ等）に `.ploto` 形式（SQLite データベース）で保存されます。",
-          "これらのファイルは、ユーザー自身が移動や共有の操作を行わない限り、端末の外に出ることはありません。開発者（当方）は、ユーザーのデータを受信、保存、閲覧、または処理するサーバーを一切保有・運用していません。"
-        ]
-      },
-      {
-        "id": "network",
-        "title": "4. ネットワーク利用と外部サービス",
-        "content": [
-          "Ploto は完全オフライン環境で動作するよう設計されており、プロジェクトデータをネットワーク経由で送信することはありません。ただし、プラットフォーム機能やユーザーが自発的に選択する機能において、以下の外部サービスと関わりがあります。"
+          "通常のプロジェクト作成・編集・保存はオフラインで行えます。次の操作を利用者が選んだ場合、外部サービスが必要な情報を処理します。"
         ],
         "subsections": [
           {
-            "id": "network-store",
-            "title": "4.1. Microsoft Store および Windows によるプラットフォーム診断データ",
+            "id": "microsoft",
+            "title": "3.1. Microsoft Store・Windows",
             "content": [
-              "本アプリの配布、自動更新、および Microsoft Store 経由のアプリ内アドオン購入は、Microsoft Store プラットフォームを通じて行われます。これらに伴い、Windows OS および Microsoft Store は、OS レベルの標準機能（Windows Error Reporting 等）として以下の診断データや利用統計を自動的に収集する場合があります：",
-              "・アプリのインストール、更新、アンインストールなどの配信イベント",
-              "・アプリが異常終了（クラッシュ）または応答停止（ハング）した際のエラーログやスタックトレース",
-              "・集計されたOSバージョン、デバイスアーキテクチャ、大まかな地域情報",
-              "これらは Ploto アプリ独自の実装によって収集されるものではなく、Windows プラットフォームによって収集・管理されます。開発者は、Microsoft Partner Center の管理画面を通じて、個人を特定できない「集計された統計情報（クラッシュ発生率や総利用デバイス数など）」としてのみこれらを閲覧し、アプリの品質向上や不具合修正のために利用します。ユーザーのプロジェクトデータやタスクの内容が Microsoft や開発者に送信されることはありません。これらには [Microsoft のプライバシーに関する声明](https://privacy.microsoft.com/ja-jp/privacystatement) が適用されます。"
+              "アプリの配布、更新、Store内購入およびレビューは Microsoft Store が処理します。Windows や Microsoft Store は、端末・組織の設定に応じて、インストール情報、クラッシュ情報、OS・端末に関する診断情報等を処理する場合があります。Ploto 提供者は、個人を直接特定しない集計情報を品質改善に利用する場合があります。[Microsoft のプライバシーに関する声明](https://www.microsoft.com/ja-jp/privacy/privacystatement) が適用されます。"
             ]
           },
           {
-            "id": "network-license",
-            "title": "4.2. 有料ライセンス（Pro版）と決済（Stripe）",
+            "id": "purchase",
+            "title": "3.2. Web経由の Pro ライセンス購入",
             "content": [
-              "公式Webサイト経由で Pro 版ライセンスをご購入いただく場合、決済処理は米 Stripe 社のセキュアな決済基盤を通じて行われます。開発者がユーザーのクレジットカード番号等の機密決済情報を直接取得・保持することはありません。",
-              "ご購入後に発行されるライセンスキーの認証は、**アプリ内のオフライン暗号署名検証（Ed25519）** により端末内で完結します。ライセンス認証のために端末の識別情報や通信ログを開発者のサーバーへ送信することはありません。インターネットに接続されていない閉域環境でも問題なくご利用いただけます。"
+              "Web購入では Stripe が、購入者のメールアドレス、決済手段、購入商品、金額、通貨、日時および接続情報を処理します。カード番号等の機密な決済情報は Stripe が直接処理し、Ploto 提供者のサーバーでは取得・保存しません。",
+              "端末紐付けライセンスを発行するため、購入開始時に Windows の発行者向け端末識別値から Ploto 専用の一方向ハッシュを端末内で生成し、Stripe へ送信します。元の端末識別値は送信しません。Vercel 上の処理がライセンスキーを発行し、Resend が購入者のメールアドレスへ送信します。購入後のライセンス確認は端末内で行われます。",
+              "[Stripe プライバシーポリシー](https://stripe.com/jp/privacy)、[Vercel Privacy Notice](https://vercel.com/legal/privacy-notice)、[Resend Privacy Policy](https://resend.com/legal/privacy-policy) がそれぞれ適用されます。"
             ]
           },
           {
-            "id": "network-survey",
-            "title": "4.3. 任意のフィードバック・アンケート（Google Forms）",
+            "id": "feedback",
+            "title": "3.3. 問い合わせ・任意のフォーム",
             "content": [
-              "本アプリのヘルプメニューや起動画面から「ご意見・不具合報告」を選択した場合、お使いのシステムの既定Webブラウザが起動し、Google Forms のアンケートページが開きます。",
-              "回答の送信や連絡先メールアドレスの入力は完全に任意であり、ユーザーがフォーム上で直接入力した内容のみが Google 社のサーバーを経由して開発者に届きます。これには [Google プライバシー ポリシー](https://policies.google.com/privacy) が適用されます。アプリがバックグラウンドで無断送信することはありません。"
+              "利用者が問い合わせメールまたは Google Forms を送信した場合、入力した内容と任意のメールアドレスを、回答、サポート、不具合調査および品質改善のために利用します。本アプリがプロジェクト内容を自動添付・送信することはありません。組織の許可なく秘密情報、個人情報、プロジェクトファイルまたは画面キャプチャを送信しないでください。[Google プライバシー ポリシー](https://policies.google.com/privacy?hl=ja) が適用されます。"
+            ]
+          },
+          {
+            "id": "websites",
+            "title": "3.4. 公式サイト・本ポリシーの閲覧",
+            "content": [
+              "公式サイト `ploto-app.com` は GitHub Pages で配信し、Google Analytics 4 を利用します。公式サイトを `?ga=off` 付きで開くと、そのブラウザでは計測タグを読み込まない設定を保存します。",
+              "本ポリシーは `hiroking-ocean.github.io` の GitHub Pages で配信します。本ページには Ploto 独自のアクセス解析を設置せず、外部Webフォントを読み込みません。GitHub が通常のアクセス情報を処理する場合があります。本ページがブラウザに保存するのはテーマと表示言語の選択です。[GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) が適用されます。"
             ]
           }
         ]
       },
       {
-        "id": "third-party",
-        "title": "5. 第三者への情報提供",
+        "id": "use-and-sharing",
+        "title": "4. 利用目的・第三者による処理",
         "content": [
-          "当方はユーザーのプロジェクトデータや個人情報を収集・保有しないため、第三者へ販売、共有、貸与、提供することはあり得ません。"
+          "Ploto 提供者が購入、問い合わせ、任意フォーム等を通じて受け取る情報は、ライセンスの発行・再送・端末紐付け、不正利用防止、決済・サポート対応、不具合調査、品質改善、会計・税務・紛争対応その他の法令遵守に必要な範囲で利用します。",
+          "プロジェクトデータ、購入者情報または問い合わせ情報を販売、貸与、広告配信またはデータブローカーへの提供に利用しません。配布、購入、ライセンス発行、メール送信、フォーム送信およびWeb閲覧のため、必要な範囲で Microsoft、Stripe、Vercel、Resend、Google および GitHub が情報を処理します。各社の方針に従い、日本国外を含む国・地域で処理または保存される場合があります。",
+          "法令に基づく場合、人の生命・身体・財産の保護に必要な場合、または権利保護・不正防止に必要な場合は、適用法令の範囲で関係機関等へ情報を開示することがあります。"
         ]
       },
       {
-        "id": "children",
-        "title": "6. 子どものプライバシー",
+        "id": "retention",
+        "title": "5. 保存期間・削除・確認等の請求",
         "content": [
-          "Ploto は、子どもを含むいかなる方からも意図的に個人情報を収集することはありません。すべての機能は年齢を問わず安全にご利用いただけます。"
+          "購入・ライセンス情報は、ライセンスの再表示・再送、購入サポート、不正防止、会計・税務その他の法令遵守に必要な期間保持します。問い合わせ・フォーム回答は、回答、調査、品質改善および法令遵守に必要な期間保持します。外部事業者が独自目的で保持する情報の期間は各社の方針に従います。",
+          "利用者が保存したプロジェクト等は、利用者が削除するまで残ります。アプリをアンインストールしても、利用者が選択した保存先のファイルと一部の端末内補助ファイルは残ります。完全な削除方法は、[情報システム部門向け技術情報](./it/#removal)を確認してください。",
+          "Ploto 提供者が保有する購入者情報、問い合わせ情報等の確認、訂正、利用停止または削除を希望する場合は、下記の連絡先へ請求してください。本人確認のうえ、法令上または取引・ライセンス記録上保持が必要な情報を除き、合理的な範囲で対応します。プロジェクト内容は提供者が保有しないため、提供者側での開示・復元・削除はできません。"
         ]
       },
       {
         "id": "changes",
-        "title": "7. 本ポリシーの変更",
+        "title": "6. 変更・問い合わせ",
         "content": [
-          "本プライバシーポリシーを変更する場合は、本Webページ上に新しい「最終更新日」とともに改訂版を掲載します。重要な変更がある場合には、アプリ内のリリースノート等でも告知します。"
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "8. お問い合わせ",
-        "content": [
-          "本プライバシーポリシーまたはアプリに関するご質問やご相談は、下記のお問い合わせ先までお気軽にご連絡ください。"
+          "本ポリシーを変更する場合は、本ページに改訂後の内容と最終更新日を掲載します。情報の種類、利用目的、外部送信先等に重要な変更がある場合は、必要に応じてアプリ内のリリースノート等でも案内します。",
+          "本ポリシー、利用者情報の取扱い、法人・団体での導入またはライセンスに関する質問は、下記へご連絡ください。"
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "開発者宛てに直接届きます。"
+          "meta": [
+            {
+              "label": "事業者",
+              "value": "田中大希（個人開発者、屋号: hiroki.lab）"
+            },
+            {
+              "label": "所在地",
+              "value": "日本・千葉県"
+            },
+            {
+              "label": "返答の目安",
+              "value": "通常 3 営業日以内（日本の営業日）"
+            },
+            {
+              "label": "対応言語",
+              "value": "日本語・英語"
+            }
+          ]
         }
       }
     ],
@@ -152,6 +144,10 @@
       "githubLink": "GitHub リポジトリ",
       "lpLink": "Ploto 公式サイト",
       "backToTop": "ページ上部へ戻る"
+    },
+    "notice": {
+      "text": "情報システム部門の導入審査向けに、実行権限・保存場所・通信先・暗号化などをまとめた技術情報を公開しています。",
+      "link": "技術情報を見る"
     }
   },
   "en": {
@@ -168,7 +164,8 @@
       "themeDark": "Dark Mode",
       "language": "Language",
       "copy": "Copy",
-      "copied": "Copied!"
+      "copied": "Copied!",
+      "technical": "Technical Information"
     },
     "tocTitle": "Table of Contents",
     "app": {
@@ -298,7 +295,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "Delivered directly to the developer."
+          "meta": [
+            {
+              "label": "Provider",
+              "value": "Hiroki Tanaka (individual developer, trading as hiroki.lab)"
+            },
+            {
+              "label": "Location",
+              "value": "Chiba, Japan"
+            },
+            {
+              "label": "Response time",
+              "value": "Usually within 3 business days (Japan business days)"
+            },
+            {
+              "label": "Languages",
+              "value": "Japanese and English"
+            }
+          ]
         }
       }
     ],
@@ -307,6 +321,10 @@
       "githubLink": "GitHub Repository",
       "lpLink": "Official Website",
       "backToTop": "Back to Top"
+    },
+    "notice": {
+      "text": "Technical information for IT departments is published separately, covering execution privileges, storage locations, network destinations and encryption.",
+      "link": "View technical information"
     }
   },
   "de": {
@@ -323,7 +341,8 @@
       "themeDark": "Dunkler Modus",
       "language": "Sprache",
       "copy": "Kopieren",
-      "copied": "Kopiert!"
+      "copied": "Kopiert!",
+      "technical": "Technische Informationen"
     },
     "tocTitle": "Inhaltsverzeichnis",
     "app": {
@@ -453,7 +472,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "Geht direkt beim Entwickler ein."
+          "meta": [
+            {
+              "label": "Anbieter",
+              "value": "Hiroki Tanaka (Einzelentwickler, Firmierung: hiroki.lab)"
+            },
+            {
+              "label": "Standort",
+              "value": "Chiba, Japan"
+            },
+            {
+              "label": "Antwortzeit",
+              "value": "In der Regel innerhalb von 3 Werktagen (Werktage in Japan)"
+            },
+            {
+              "label": "Sprachen",
+              "value": "Japanisch und Englisch"
+            }
+          ]
         }
       }
     ],
@@ -462,6 +498,10 @@
       "githubLink": "GitHub Repository",
       "lpLink": "Offizielle Website",
       "backToTop": "Nach oben"
+    },
+    "notice": {
+      "text": "Für IT-Abteilungen sind technische Informationen zu Ausführungsrechten, Speicherorten, Verbindungszielen und Verschlüsselung separat veröffentlicht.",
+      "link": "Technische Informationen ansehen"
     }
   },
   "fr": {
@@ -478,7 +518,8 @@
       "themeDark": "Mode sombre",
       "language": "Langue",
       "copy": "Copier",
-      "copied": "Copié !"
+      "copied": "Copié !",
+      "technical": "Informations techniques"
     },
     "tocTitle": "Table des matières",
     "app": {
@@ -608,7 +649,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "Reçu directement par le développeur."
+          "meta": [
+            {
+              "label": "Fournisseur",
+              "value": "Hiroki Tanaka (développeur indépendant, sous le nom hiroki.lab)"
+            },
+            {
+              "label": "Localisation",
+              "value": "Chiba, Japon"
+            },
+            {
+              "label": "Délai de réponse",
+              "value": "Généralement sous 3 jours ouvrés (jours ouvrés au Japon)"
+            },
+            {
+              "label": "Langues",
+              "value": "Japonais et anglais"
+            }
+          ]
         }
       }
     ],
@@ -617,6 +675,10 @@
       "githubLink": "Dépôt GitHub",
       "lpLink": "Site officiel de Ploto",
       "backToTop": "Haut de page"
+    },
+    "notice": {
+      "text": "Des informations techniques destinées aux services informatiques sont publiées séparément : privilèges d’exécution, emplacements de stockage, destinations réseau et chiffrement.",
+      "link": "Voir les informations techniques"
     }
   },
   "es": {
@@ -633,7 +695,8 @@
       "themeDark": "Modo oscuro",
       "language": "Idioma",
       "copy": "Copiar",
-      "copied": "¡Copiado!"
+      "copied": "¡Copiado!",
+      "technical": "Información técnica"
     },
     "tocTitle": "Índice",
     "app": {
@@ -763,7 +826,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "Llega directamente al desarrollador."
+          "meta": [
+            {
+              "label": "Proveedor",
+              "value": "Hiroki Tanaka (desarrollador individual, nombre comercial hiroki.lab)"
+            },
+            {
+              "label": "Ubicación",
+              "value": "Chiba, Japón"
+            },
+            {
+              "label": "Tiempo de respuesta",
+              "value": "Normalmente en un plazo de 3 días hábiles (días hábiles de Japón)"
+            },
+            {
+              "label": "Idiomas",
+              "value": "Japonés e inglés"
+            }
+          ]
         }
       }
     ],
@@ -772,6 +852,10 @@
       "githubLink": "Repositorio GitHub",
       "lpLink": "Sitio web de Ploto",
       "backToTop": "Volver arriba"
+    },
+    "notice": {
+      "text": "Se publica por separado información técnica para departamentos de TI sobre privilegios de ejecución, ubicaciones de almacenamiento, destinos de red y cifrado.",
+      "link": "Ver la información técnica"
     }
   },
   "ko": {
@@ -788,7 +872,8 @@
       "themeDark": "다크 모드",
       "language": "언어",
       "copy": "복사",
-      "copied": "복사되었습니다"
+      "copied": "복사되었습니다",
+      "technical": "기술 정보"
     },
     "tocTitle": "목차",
     "app": {
@@ -918,7 +1003,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "개발자에게 직접 전달됩니다."
+          "meta": [
+            {
+              "label": "제공자",
+              "value": "Hiroki Tanaka(개인 개발자, 상호: hiroki.lab)"
+            },
+            {
+              "label": "소재지",
+              "value": "일본 지바현"
+            },
+            {
+              "label": "회신 목표",
+              "value": "통상 3영업일 이내(일본 기준 영업일)"
+            },
+            {
+              "label": "지원 언어",
+              "value": "일본어 및 영어"
+            }
+          ]
         }
       }
     ],
@@ -927,6 +1029,10 @@
       "githubLink": "GitHub 저장소",
       "lpLink": "Ploto 공식 사이트",
       "backToTop": "맨 위로 이동"
+    },
+    "notice": {
+      "text": "정보시스템 부서의 도입 심사를 위해 실행 권한, 저장 위치, 통신 대상, 암호화 등을 정리한 기술 정보를 공개하고 있습니다.",
+      "link": "기술 정보 보기"
     }
   },
   "pt-BR": {
@@ -943,7 +1049,8 @@
       "themeDark": "Modo Escuro",
       "language": "Idioma",
       "copy": "Copiar",
-      "copied": "Copiado!"
+      "copied": "Copiado!",
+      "technical": "Informações técnicas"
     },
     "tocTitle": "Índice",
     "app": {
@@ -1073,7 +1180,24 @@
         ],
         "contactBox": {
           "email": "hiroki.lab@outlook.com",
-          "note": "Recebido diretamente pelo desenvolvedor."
+          "meta": [
+            {
+              "label": "Fornecedor",
+              "value": "Hiroki Tanaka (desenvolvedor individual, nome comercial hiroki.lab)"
+            },
+            {
+              "label": "Localização",
+              "value": "Chiba, Japão"
+            },
+            {
+              "label": "Prazo de resposta",
+              "value": "Normalmente em até 3 dias úteis (dias úteis no Japão)"
+            },
+            {
+              "label": "Idiomas",
+              "value": "Japonês e inglês"
+            }
+          ]
         }
       }
     ],
@@ -1082,6 +1206,10 @@
       "githubLink": "Repositório GitHub",
       "lpLink": "Site Oficial do Ploto",
       "backToTop": "Voltar ao topo"
+    },
+    "notice": {
+      "text": "Informações técnicas para departamentos de TI são publicadas separadamente, cobrindo privilégios de execução, locais de armazenamento, destinos de rede e criptografia.",
+      "link": "Ver informações técnicas"
     }
   }
 }

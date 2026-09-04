@@ -49,6 +49,7 @@
       </a>
 
       <div class="header-actions">
+        <a href="./it/" class="secondary-link-btn">Información técnica</a>
         <!-- Language Selector -->
         <div class="lang-selector">
           <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma">
@@ -130,6 +131,15 @@
           </svg>
           <span>Contacto: <strong>hiroki.lab@outlook.com</strong></span>
         </div>
+      </div>
+      <div class="hero-notice">
+        <svg class="hero-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <p class="hero-notice-text">Se publica por separado información técnica para departamentos de TI sobre privilegios de ejecución, ubicaciones de almacenamiento, destinos de red y cifrado.</p>
+        <a href="./it/" class="hero-notice-link">Ver la información técnica</a>
       </div>
     </div>
   </section>
@@ -265,23 +275,23 @@
             
             <div class="subsection-card" id="network-store">
               <h3 class="subsection-title">4.1. Diagnósticos de la plataforma Microsoft Store y Windows</h3>
-              <p>La distribución, actualización y compras de complementos se gestionan a través de Microsoft Store. Como parte de estas operaciones, el sistema operativo Windows y Microsoft Store recopilan automáticamente datos de diagnóstico estándar (mediante Windows Error Reporting y la telemetría de la tienda):</p>
-<p>• Eventos de distribución como instalaciones, actualizaciones y desinstalaciones</p>
-<p>• Registros de fallos e informes de errores si la aplicación se cierra de forma inesperada</p>
-<p>• Métricas agregadas como versión del sistema operativo, arquitectura del hardware y región general</p>
-<p>Estos diagnósticos son recopilados por Microsoft a nivel del sistema operativo, no mediante código de seguimiento propio en Ploto. El desarrollador solo puede consultar estadísticas anónimas y agregadas (como tasas de error e instalaciones activas) en Microsoft Partner Center para resolver fallos. El contenido de sus proyectos nunca se transmite a Microsoft ni al desarrollador. Aplica la <a href="https://privacy.microsoft.com/es-es/privacystatement" target="_blank" rel="noopener noreferrer">Declaración de privacidad de Microsoft</a>.</p>
+                            <p>La distribución, actualización y compras de complementos se gestionan a través de Microsoft Store. Como parte de estas operaciones, el sistema operativo Windows y Microsoft Store recopilan automáticamente datos de diagnóstico estándar (mediante Windows Error Reporting y la telemetría de la tienda):</p>
+              <p>• Eventos de distribución como instalaciones, actualizaciones y desinstalaciones</p>
+              <p>• Registros de fallos e informes de errores si la aplicación se cierra de forma inesperada</p>
+              <p>• Métricas agregadas como versión del sistema operativo, arquitectura del hardware y región general</p>
+              <p>Estos diagnósticos son recopilados por Microsoft a nivel del sistema operativo, no mediante código de seguimiento propio en Ploto. El desarrollador solo puede consultar estadísticas anónimas y agregadas (como tasas de error e instalaciones activas) en Microsoft Partner Center para resolver fallos. El contenido de sus proyectos nunca se transmite a Microsoft ni al desarrollador. Aplica la <a href="https://privacy.microsoft.com/es-es/privacystatement" target="_blank" rel="noopener noreferrer">Declaración de privacidad de Microsoft</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">
               <h3 class="subsection-title">4.2. Licencias Pro y pagos (Stripe)</h3>
-              <p>Al adquirir una licencia Pro en la web oficial, los pagos se procesan de forma segura a través de Stripe. El desarrollador no almacena datos bancarios ni de tarjetas de crédito.</p>
-<p>La validación de la licencia se realiza <strong>completamente fuera de línea mediante verificación de firma criptográfica Ed25519</strong>. No se envían datos del equipo ni registros a nuestros servidores, permitiendo su uso en redes corporativas cerradas.</p>
+                            <p>Al adquirir una licencia Pro en la web oficial, los pagos se procesan de forma segura a través de Stripe. El desarrollador no almacena datos bancarios ni de tarjetas de crédito.</p>
+              <p>La validación de la licencia se realiza <strong>completamente fuera de línea mediante verificación de firma criptográfica Ed25519</strong>. No se envían datos del equipo ni registros a nuestros servidores, permitiendo su uso en redes corporativas cerradas.</p>
             </div>
 
             <div class="subsection-card" id="network-survey">
               <h3 class="subsection-title">4.3. Comentarios y sugerencias opcionales (Google Forms)</h3>
-              <p>Al seleccionar "Comentarios y errores" desde el menú de Ayuda o la pantalla de inicio, se abrirá un formulario de Google Forms en su navegador web predeterminado.</p>
-<p>La participación es enteramente voluntaria. Solo la información que introduzca explícitamente se enviará al desarrollador mediante los servidores de Google, bajo la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</p>
+                            <p>Al seleccionar "Comentarios y errores" desde el menú de Ayuda o la pantalla de inicio, se abrirá un formulario de Google Forms en su navegador web predeterminado.</p>
+              <p>La participación es enteramente voluntaria. Solo la información que introduzca explícitamente se enviará al desarrollador mediante los servidores de Google, bajo la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</p>
             </div>
           </div>
             
@@ -336,7 +346,27 @@
               </svg>
               <span>Copiar</span>
             </button>
-            <div class="contact-note">Llega directamente al desarrollador.</div>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>Proveedor</dt>
+                <dd>Hiroki Tanaka (desarrollador individual, nombre comercial hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Ubicación</dt>
+                <dd>Chiba, Japón</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Tiempo de respuesta</dt>
+                <dd>Normalmente en un plazo de 3 días hábiles (días hábiles de Japón)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Idiomas</dt>
+                <dd>Japonés e inglés</dd>
+              </div>
+            </dl>
           </div>
           </div>
         </article>

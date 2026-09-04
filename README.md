@@ -29,6 +29,22 @@ The interactive, localized web version is available in **7 languages** with dark
 | **한국어 (Korean)** | [https://hiroking-ocean.github.io/ploto-privacy/ko/](https://hiroking-ocean.github.io/ploto-privacy/ko/) |
 | **Português - Brasil (Portuguese)** | [https://hiroking-ocean.github.io/ploto-privacy/pt-br/](https://hiroking-ocean.github.io/ploto-privacy/pt-br/) |
 
+### Technical Information for IT Departments / 導入審査向け技術情報
+
+A companion document covering execution privileges, file access, storage locations, network destinations, external services, encryption and uninstall behavior — for organizations reviewing Ploto before deployment. Available in the same 7 languages.
+
+導入審査向けに、実行権限、ファイルアクセス、保存場所、通信先、外部サービス、暗号化、アンインストール時の挙動をまとめた文書です。同じ7言語で公開しています。
+
+| Language | Page URL |
+|---|---|
+| **日本語 (Japanese)** | [https://hiroking-ocean.github.io/ploto-privacy/it/](https://hiroking-ocean.github.io/ploto-privacy/it/) |
+| **English** | [https://hiroking-ocean.github.io/ploto-privacy/en/it/](https://hiroking-ocean.github.io/ploto-privacy/en/it/) |
+| **Deutsch (German)** | [https://hiroking-ocean.github.io/ploto-privacy/de/it/](https://hiroking-ocean.github.io/ploto-privacy/de/it/) |
+| **Français (French)** | [https://hiroking-ocean.github.io/ploto-privacy/fr/it/](https://hiroking-ocean.github.io/ploto-privacy/fr/it/) |
+| **Español (Spanish)** | [https://hiroking-ocean.github.io/ploto-privacy/es/it/](https://hiroking-ocean.github.io/ploto-privacy/es/it/) |
+| **한국어 (Korean)** | [https://hiroking-ocean.github.io/ploto-privacy/ko/it/](https://hiroking-ocean.github.io/ploto-privacy/ko/it/) |
+| **Português - Brasil (Portuguese)** | [https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/](https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/) |
+
 ---
 
 ## 📄 Privacy Policy Summary (Core Principles)

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Información técnica para departamentos de TI - Ploto</title>
+  <meta name="description" content="Información técnica sobre privilegios de ejecución, acceso a archivos, ubicaciones de almacenamiento, comunicaciones de red, servicios externos, cifrado y desinstalación, necesaria para evaluar la implantación de Ploto." />
+  <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+  <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+  <link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+  <link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+  <link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+  <link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+  <link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+  <link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+  <meta property="og:title" content="Información técnica para departamentos de TI - Ploto" />
+  <meta property="og:description" content="Información técnica sobre privilegios de ejecución, acceso a archivos, ubicaciones de almacenamiento, comunicaciones de red, servicios externos, cifrado y desinstalación, necesaria para evaluar la implantación de Ploto." />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Ploto" />
+  <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/app-icon.svg" />
+  <!-- Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body class="document-layout technical-document">
+  <header class="header">
+    <div class="container header-container">
+      <a href="../" class="brand-link" aria-label="Ploto">
+        <img src="../../assets/logo.svg" alt="Ploto Logo" class="brand-logo" />
+        <span class="brand-title">Ploto</span>
+      </a>
+      <div class="header-actions">
+        <a href="../" class="secondary-link-btn">Privacidad</a>
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Español</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="lang-dropdown">
+            <li class="lang-item"><a href="../../it/" data-lang="ja">日本語</a></li>
+            <li class="lang-item"><a href="../../en/it/" data-lang="en">English</a></li>
+            <li class="lang-item"><a href="../../de/it/" data-lang="de">Deutsch</a></li>
+            <li class="lang-item"><a href="../../fr/it/" data-lang="fr">Français</a></li>
+            <li class="lang-item active"><a href="../../es/it/" data-lang="es">Español</a></li>
+            <li class="lang-item"><a href="../../ko/it/" data-lang="ko">한국어</a></li>
+            <li class="lang-item"><a href="../../pt-br/it/" data-lang="pt-BR">Português (Brasil)</a></li>
+          </ul>
+        </div>
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="Modo claro">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          </svg>
+        </button>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Para departamentos de TI</span>
+      </div>
+      <h1 class="hero-title">Información técnica de Ploto para la evaluación de implantación</h1>
+      <p class="hero-desc">Resumen de los privilegios de ejecución, los datos almacenados, las comunicaciones externas, el cifrado y el comportamiento de Ploto al desinstalarlo.</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Última actualización: <strong>2026-09-03</strong></span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Contacto: <strong>hiroki.lab@outlook.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container review-overview" aria-labelledby="review-facts-title">
+    <h2 id="review-facts-title">Resumen para la evaluación</h2>
+    <div class="review-summary-table-wrap">
+      <table class="review-summary-table">
+        <tbody>
+
+          <tr>
+            <th scope="row">Distribución</th>
+            <td>Microsoft Store (ID de producto: <code>9N4NJNMT2B77</code>)</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Cuenta</th>
+            <td>No necesaria. Sin función de inicio de sesión</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Privilegios</th>
+            <td>Se ejecuta con los permisos del usuario que ha iniciado sesión. Sin solicitud de elevación</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Uso habitual</th>
+            <td>No requiere conexión. Crear, editar y guardar funcionan sin conexión</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Almacenamiento de proyectos</th>
+            <td>Archivo <code>.ploto</code> (SQLite) en la ubicación que elija el usuario</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Sincronización en la nube</th>
+            <td>Sin sincronización ni subida gestionada por Ploto</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Medición de uso</th>
+            <td>Sin telemetría propia de la aplicación, publicidad ni seguimiento del comportamiento</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Cifrado en reposo</th>
+            <td>Sin cifrado propio de la aplicación. Protección a cargo del sistema operativo y de la ubicación de almacenamiento</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <main class="container policy-layout">
+    <aside class="toc-sidebar">
+      <div class="toc-header"><span>Contenido</span></div>
+      <ul class="toc-list">
+
+              <li class="toc-item"><a href="#overview">1. Información del producto y del documento</a></li>
+
+              <li class="toc-item"><a href="#runtime">2. Distribución, ejecución y privilegios</a></li>
+
+              <li class="toc-item"><a href="#defender">3. Microsoft Defender y control de aplicaciones</a></li>
+
+              <li class="toc-item"><a href="#files">4. Acceso a archivos</a></li>
+
+              <li class="toc-item"><a href="#storage">5. Archivos e información que se almacenan</a></li>
+
+              <li class="toc-item"><a href="#network">6. Comunicaciones de red y dominios que conviene permitir</a></li>
+
+              <li class="toc-item"><a href="#services">7. Servicios externos e información transmitida</a></li>
+
+              <li class="toc-item"><a href="#security">8. Cifrado, autenticación y medidas de seguridad</a></li>
+
+              <li class="toc-item"><a href="#removal">9. Desinstalación y datos residuales</a></li>
+
+              <li class="toc-item"><a href="#contact">10. Contacto y consultas para la implantación corporativa</a></li>
+      </ul>
+    </aside>
+    <div class="policy-content">
+
+        <article class="section-card" id="overview">
+          <h2 class="section-title">1. Información del producto y del documento</h2>
+          <div class="section-body">
+            <p>Este documento recoge la información técnica de Ploto (en adelante, «la aplicación»), una aplicación de gestión de proyectos para Windows, dirigida a los departamentos de TI. La URL de esta página, o una copia impresa o guardada en PDF, puede utilizarse en el proceso de evaluación de aplicaciones de su organización.</p>
+            <ul class="content-list">
+              <li>Nombre del producto: Ploto</li>
+              <li>Sistemas compatibles: Windows 10 y Windows 11</li>
+              <li>Distribución: Microsoft Store</li>
+              <li>ID de producto de Microsoft Store: <code>9N4NJNMT2B77</code></li>
+              <li>Editor mostrado en la Store: hiroki.lab (desarrollador individual)</li>
+              <li>Sitio oficial: <a href="https://ploto-app.com/" target="_blank" rel="noopener noreferrer">https://ploto-app.com/</a></li>
+              <li>Contacto: hiroki.lab@outlook.com</li>
+            </ul>
+            <p>La decisión final sobre si la aplicación puede utilizarse con datos corporativos corresponde a su organización, teniendo en cuenta la clasificación de confidencialidad de los datos, los controles de acceso de los equipos y las ubicaciones de almacenamiento, sus copias de seguridad y sus normas internas de uso de aplicaciones.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="runtime">
+          <h2 class="section-title">2. Distribución, ejecución y privilegios</h2>
+          <div class="section-body">
+            <p>La aplicación es una aplicación de escritorio creada con Rust, Tauri y Windows WebView2, distribuida y actualizada como paquete MSIX a través de Microsoft Store. En su funcionamiento normal no solicita elevación a permisos de administrador.</p>
+            <p>El manifiesto MSIX declara <code>runFullTrust</code> para que la aplicación pueda funcionar como aplicación de escritorio. Esto significa que se ejecuta con los mismos permisos que el usuario que ha iniciado sesión; no concede permisos de administrador de forma automática. La aplicación no crea servicios de Windows, entradas de inicio ni tareas programadas.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="defender">
+          <h2 class="section-title">3. Microsoft Defender y control de aplicaciones</h2>
+          <div class="section-body">
+            <p>Aunque una aplicación esté certificada y distribuida a través de Microsoft Store, Microsoft Defender o la configuración de control de aplicaciones de los equipos de su organización pueden impedir la instalación, el inicio o el guardado de archivos. Esta aplicación incluye ejecutables nativos creados con Rust y Tauri. Las aplicaciones de este tipo tienen más probabilidades de verse afectadas por la detección heurística o por bloqueos basados en la difusión mientras una versión es nueva y tiene poco historial de ejecución (prevalencia). La certificación de la Store no exime a una aplicación de los controles que configure su organización.</p>
+            <p><strong>Situaciones previsibles:</strong></p>
+            <ul class="content-list">
+              <li><strong>Falsos positivos heurísticos del antivirus:</strong> los veredictos de aprendizaje automático entregados desde la nube pueden poner en cuarentena un ejecutable nuevo con un nombre de detección genérico como <code>Wacatac</code> o <code>Wacapew</code>. Suele resolverse tras una actualización de inteligencia de seguridad.</li>
+              <li><strong>Reglas de reducción de la superficie de ataque (ASR):</strong> si está habilitada la regla «Bloquear la ejecución de archivos ejecutables a menos que cumplan un criterio de prevalencia, antigüedad o lista de confianza», una versión recién publicada puede quedar bloqueada.</li>
+              <li><strong>Acceso controlado a carpetas:</strong> la escritura en carpetas protegidas como Documentos o Escritorio puede denegarse, lo que aparece como un error al guardar un archivo <code>.ploto</code>.</li>
+              <li><strong>WDAC y AppLocker:</strong> si el firmante o el paquete no están permitidos, el paquete MSIX no llega a iniciarse.</li>
+              <li><strong>SmartScreen:</strong> normalmente no se activa en instalaciones realizadas desde Microsoft Store, pero puede mostrarse una advertencia según la configuración de sus directivas.</li>
+            </ul>
+            <p><strong>Identidad del paquete (use estos valores en sus reglas de permiso):</strong></p>
+            <ul class="content-list">
+              <li>Nombre del paquete (Package/Identity/Name): <code>hiroki.lab.Ploto</code></li>
+              <li>Nombre de familia del paquete (PFN): <code>hiroki.lab.Ploto_va563q7jg714e</code></li>
+              <li>Editor (Package/Identity/Publisher): <code>CN=AB453F36-8F71-4C99-BB89-582301D0AE38</code></li>
+              <li>SID del paquete (para reglas de firewall): <code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
+            </ul>
+            <p>Estos valores también pueden consultarse en un equipo con la aplicación instalada, ejecutando <code>Get-AppxPackage</code> en PowerShell.</p>
+            <p><code>PackageFullName</code> (con el formato <code>hiroki.lab.Ploto_&lt;versión&gt;_x64__va563q7jg714e</code>) y la ruta de instalación cambian con cada versión. Si los usa en reglas de firewall o exclusiones por ruta, <strong>sustituya la parte de la versión por un comodín</strong> (por ejemplo: <code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>). Una regla fijada a una versión deja de coincidir en la siguiente actualización, y la comunicación o el inicio quedan bloqueados sin aviso.</p>
+            <p><strong>Cómo permitir la aplicación (se requieren permisos de administrador):</strong></p>
+            <ul class="content-list">
+              <li><strong>WDAC y AppLocker:</strong> añada el firmante de Microsoft Store, o el nombre de familia del paquete, a sus reglas de permiso.</li>
+              <li><strong>Reglas ASR:</strong> cambie la regla correspondiente a modo de auditoría o añada una exclusión. La prevalencia se acumula tras la publicación, por lo que el bloqueo puede resolverse por sí solo con el tiempo.</li>
+              <li><strong>Acceso controlado a carpetas:</strong> añada la aplicación en «Permitir una aplicación a través del acceso controlado a carpetas».</li>
+              <li><strong>Exclusiones de Defender:</strong> como último recurso, cuando nada más resuelva el problema, considere exclusiones limitadas a la ubicación de instalación y a la ubicación de almacenamiento de los proyectos. Las exclusiones debilitan la protección: mantenga su alcance al mínimo y evite dejarlas de forma permanente.</li>
+              <li><strong>Notificar un falso positivo:</strong> si concluye que una detección es incorrecta, puede notificarla mediante el <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">formulario de envío de muestras de Microsoft</a>. Si envía el nombre de la detección, la versión de Defender y la versión de la aplicación al contacto indicado más abajo, el proveedor también lo notificará.</li>
+            </ul>
+            <p>Esta aplicación no crea servicios de Windows, entradas de inicio ni tareas programadas (véase el apartado 2). Por tanto, es probable que una detección sea un falso positivo heurístico, pero la forma de tratarlo debe ajustarse a las normas de operación de seguridad de su organización.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="files">
+          <h2 class="section-title">4. Acceso a archivos</h2>
+          <div class="section-body">
+            <p>Técnicamente, la aplicación puede leer y escribir los archivos a los que tenga acceso el usuario que la ejecuta. Como comportamiento del producto, trabaja con los archivos que el usuario selecciona para abrir, guardar, importar o exportar, con los archivos locales de configuración y de trabajo de la aplicación, y con los archivos de bloqueo que evitan la edición simultánea.</p>
+            <p>No existe ninguna función que analice de forma exhaustiva los archivos del equipo, que supervise de forma continua una carpeta arbitraria ni que suba automáticamente archivos de proyecto al exterior. Los permisos de lectura y escritura en las ubicaciones de almacenamiento se rigen por los controles de acceso de Windows y de sus servidores de archivos.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="storage">
+          <h2 class="section-title">5. Archivos e información que se almacenan</h2>
+          <div class="section-body">
+            <p><strong>Proyectos:</strong> se guardan como archivo <code>.ploto</code> en la ubicación que elija el usuario. El formato es una base de datos SQLite estándar que contiene tareas, nombres de responsables, fechas, listas de tareas, notas, pizarras, ajustes y datos similares. Las plantillas, los orígenes de importación y los archivos de salida, como los de Excel, también se leen y escriben en las ubicaciones que el usuario seleccione.</p>
+            <p><strong>Copia de trabajo:</strong> mientras un proyecto está abierto, se crea una copia de trabajo del proyecto completo en el área de datos local de la aplicación gestionada por Windows. Se elimina al cerrar correctamente y, si queda una copia tras un cierre anómalo, se intenta eliminarla en el siguiente inicio.</p>
+            <p><strong>Archivo de bloqueo:</strong> durante la edición se crea un archivo <code>&lt;nombre del archivo .ploto&gt;.lock</code> en la misma ubicación que el proyecto. Registra el nombre de usuario de Windows, el nombre del equipo, el identificador de proceso y las horas de inicio y de actualización, y se elimina al cerrar correctamente. En una carpeta compartida puede consultarlo cualquier usuario o administrador con acceso a esa ubicación.</p>
+            <p><strong>Ajustes locales:</strong> las preferencias de interfaz, la clave de licencia, el estado de los avisos, los ajustes de editor, los contadores de uso de funciones y valores similares se guardan en el área de datos local de la aplicación gestionada por Windows. Los archivos abiertos recientemente se guardan en <code>%USERPROFILE%\.ploto\recent-files.json</code>, con un máximo de 10 rutas y su fecha de último acceso, y una copia de los contadores de uso se guarda en <code>%USERPROFILE%\.ploto\meta.json</code>. Puede almacenarse un valor identificador aleatorio para determinar qué instalación creó un proyecto. Ese valor no contiene identificadores de dispositivo del sistema operativo ni información personal, y no se envía al exterior.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="network">
+          <h2 class="section-title">6. Comunicaciones de red y dominios que conviene permitir</h2>
+          <div class="section-body">
+            <p>No se necesita conexión a Internet para crear, editar o guardar proyectos, ni para verificar una licencia adquirida. El WebView integrado en la aplicación tiene configurada una Content Security Policy que impide la conexión a sitios externos. Las páginas externas se abren en el navegador predeterminado o en Microsoft Store, y solo cuando el usuario lo solicita.</p>
+            <p>Si su organización restringe el tráfico saliente, los destinos principales que conviene considerar son <code>apps.microsoft.com</code> (ficha de producto y reseñas), <code>buy.stripe.com</code> y <code>checkout.stripe.com</code> (compra web), <code>ploto-v2-license-webhook.vercel.app</code> (finalización de la compra y comprobación de conexión), <code>docs.google.com</code> (formularios opcionales), <code>ploto-app.com</code> (sitio oficial) y <code>hiroking-ocean.github.io</code> (manual y este documento). Los dominios auxiliares de CDN, autenticación y fuentes que utiliza cada servicio dependen de dichos proveedores.</p>
+            <p>Las comunicaciones de plataforma de Windows Update, Microsoft Store, el informe de errores de Windows y componentes similares se rigen por la configuración de los productos de Microsoft aplicada al equipo y a su organización.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="services">
+          <h2 class="section-title">7. Servicios externos e información transmitida</h2>
+          <div class="section-body">
+            <p><strong>Microsoft:</strong> gestiona la distribución, las actualizaciones, las compras en la Store, las reseñas y el diagnóstico del sistema operativo. El proveedor de Ploto puede consultar en Partner Center información agregada de distribución y calidad.</p>
+            <p><strong>Stripe:</strong> cuando un usuario inicia una compra web, Stripe trata los datos de pago, la dirección de correo del comprador, el producto, el importe, la moneda y la fecha, la información de conexión y el hash de dispositivo descrito en el apartado 3.2 de la política de privacidad. Los números de tarjeta y datos similares los trata directamente Stripe.</p>
+            <p><strong>Vercel:</strong> recibe de Stripe la información de compra completada y genera una clave de licencia firmada. No se mantiene una base de datos propia de compradores, aunque pueden tratarse registros de operación.</p>
+            <p><strong>Resend:</strong> envía la clave de licencia a la dirección de correo del comprador y trata el destinatario, el contenido del mensaje y la información de entrega.</p>
+            <p><strong>Google:</strong> trata las respuestas cuando un usuario envía un formulario opcional. El sitio web oficial utiliza Google Analytics 4. Google Analytics no está integrado en la propia aplicación.</p>
+            <p><strong>GitHub:</strong> distribuye mediante GitHub Pages el sitio oficial, el manual y este documento, y puede tratar información de acceso estándar.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="security">
+          <h2 class="section-title">8. Cifrado, autenticación y medidas de seguridad</h2>
+          <div class="section-body">
+            <p>Los archivos <code>.ploto</code>, las copias de trabajo y los archivos de bloqueo no incorporan un cifrado en reposo propio de Ploto. Si trata información confidencial, configure la protección por su parte: funciones del sistema operativo como BitLocker o EFS, ACL en la ubicación de almacenamiento, permisos de recurso compartido, copias de seguridad y control de la extracción de datos.</p>
+            <p>Las licencias Pro se verifican en el propio equipo mediante una firma electrónica Ed25519. Esto confirma la autenticidad de la clave de licencia; no es una función que cifre los proyectos. Los datos de pago de las compras web se introducen en páginas alojadas por Stripe, y el webhook de emisión de licencias verifica la firma de Stripe antes de procesar la información. Las claves privadas y las claves de API de los servicios externos no se incluyen en la aplicación.</p>
+            <p>Su organización debería aplicar cuentas de Windows con privilegios mínimos, cifrado de los equipos, control de acceso a las ubicaciones de almacenamiento, copias de seguridad, protección antimalware, actualizaciones del sistema operativo y de las aplicaciones de la Store, y restricciones sobre la introducción de información confidencial en formularios externos.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="removal">
+          <h2 class="section-title">9. Desinstalación y datos residuales</h2>
+          <div class="section-body">
+            <p>Al desinstalar la versión de Microsoft Store, el área de datos local de la aplicación gestionada por Windows se elimina normalmente. En cambio, los proyectos, plantillas, orígenes de importación y archivos de salida situados en las ubicaciones elegidas por el usuario, así como <code>%USERPROFILE%\.ploto</code>, no se eliminan. Para borrarlo todo, el usuario o el administrador del equipo debe eliminarlos tras comprobar que existen las copias de seguridad necesarias.</p>
+            <p>Tras un cierre anómalo o por problemas de permisos pueden quedar una copia de trabajo o un archivo de bloqueo. Elimine un archivo de bloqueo solo después de confirmar que nadie está editando el proyecto correspondiente.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="contact">
+          <h2 class="section-title">10. Contacto y consultas para la implantación corporativa</h2>
+          <div class="section-body">
+            <p>Para consultas sobre este documento, el tratamiento de la información, las especificaciones de seguridad, la evaluación para su implantación en empresas u organizaciones, los registros de compra o las licencias, utilice el contacto que figura a continuación. Si su organización dispone de un cuestionario de evaluación propio, envíe las preguntas en el cuerpo de un correo electrónico o como documento habitual.</p>
+            <p>Si detecta una vulnerabilidad o un problema en el tratamiento de la información, póngase en contacto con la dirección de correo indicada a continuación en lugar de publicarlo.</p>
+
+          <div class="contact-box">
+            <div class="contact-email-wrap">
+              <span class="contact-email">hiroki.lab@outlook.com</span>
+            </div>
+            <button class="copy-btn" data-copy="hiroki.lab@outlook.com" data-copied-label="¡Copiado!"><span>Copiar</span></button>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>Proveedor</dt>
+                <dd>Hiroki Tanaka (desarrollador individual, nombre comercial hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Ubicación</dt>
+                <dd>Chiba, Japón</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Tiempo de respuesta</dt>
+                <dd>Normalmente en un plazo de 3 días hábiles (días hábiles de Japón)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Idiomas</dt>
+                <dd>Japonés e inglés</dd>
+              </div>
+            </dl>
+          </div>
+          </div>
+        </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>© 2026 Ploto. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="../" class="footer-link">Privacidad</a>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Sitio web de Ploto</a>
+        <a href="#top" class="back-to-top-btn" id="back-to-top-btn">Volver arriba</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../app.js"></script>
+</body>
+</html>

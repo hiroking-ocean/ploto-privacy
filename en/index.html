@@ -49,6 +49,7 @@
       </a>
 
       <div class="header-actions">
+        <a href="./it/" class="secondary-link-btn">Technical Information</a>
         <!-- Language Selector -->
         <div class="lang-selector">
           <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Language">
@@ -130,6 +131,15 @@
           </svg>
           <span>Contact: <strong>hiroki.lab@outlook.com</strong></span>
         </div>
+      </div>
+      <div class="hero-notice">
+        <svg class="hero-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <p class="hero-notice-text">Technical information for IT departments is published separately, covering execution privileges, storage locations, network destinations and encryption.</p>
+        <a href="./it/" class="hero-notice-link">View technical information</a>
       </div>
     </div>
   </section>
@@ -265,23 +275,23 @@
             
             <div class="subsection-card" id="network-store">
               <h3 class="subsection-title">4.1. Microsoft Store & Windows Platform Diagnostics</h3>
-              <p>The Application is distributed, updated, and optionally licensed via the Microsoft Store. In connection with these operations, Windows OS and the Microsoft Store platform may automatically collect standard system diagnostics and usage metrics (via Windows Error Reporting and Store telemetry):</p>
-<p>• Distribution events such as installations, updates, and uninstalls</p>
-<p>• Crash logs, hang reports, and stack traces if the application terminates unexpectedly</p>
-<p>• Aggregate metrics such as OS version, device architecture, and general geographic region</p>
-<p>These diagnostics are collected and managed at the OS/platform level by Microsoft, not through any custom tracking code embedded in Ploto. The developer only has access to anonymized, aggregated statistics (e.g., total crash counts, active install volume) via Microsoft Partner Center to identify bugs and improve reliability. Your private project files, tasks, and notes are never transmitted to Microsoft or the developer. These practices are governed by <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft's Privacy Statement</a>.</p>
+                            <p>The Application is distributed, updated, and optionally licensed via the Microsoft Store. In connection with these operations, Windows OS and the Microsoft Store platform may automatically collect standard system diagnostics and usage metrics (via Windows Error Reporting and Store telemetry):</p>
+              <p>• Distribution events such as installations, updates, and uninstalls</p>
+              <p>• Crash logs, hang reports, and stack traces if the application terminates unexpectedly</p>
+              <p>• Aggregate metrics such as OS version, device architecture, and general geographic region</p>
+              <p>These diagnostics are collected and managed at the OS/platform level by Microsoft, not through any custom tracking code embedded in Ploto. The developer only has access to anonymized, aggregated statistics (e.g., total crash counts, active install volume) via Microsoft Partner Center to identify bugs and improve reliability. Your private project files, tasks, and notes are never transmitted to Microsoft or the developer. These practices are governed by <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft's Privacy Statement</a>.</p>
             </div>
 
             <div class="subsection-card" id="network-license">
               <h3 class="subsection-title">4.2. Paid Licenses (Pro) & Payments (Stripe)</h3>
-              <p>When purchasing a Pro license through the official website, payments are processed securely by Stripe, Inc. The developer does not receive or store payment details such as credit card numbers.</p>
-<p>License key verification is executed entirely <strong>offline within the app using Ed25519 cryptographic signatures</strong>. No device telemetry, IP logs, or activation calls are transmitted to our servers during verification. The app operates normally in air-gapped or restricted enterprise networks.</p>
+                            <p>When purchasing a Pro license through the official website, payments are processed securely by Stripe, Inc. The developer does not receive or store payment details such as credit card numbers.</p>
+              <p>License key verification is executed entirely <strong>offline within the app using Ed25519 cryptographic signatures</strong>. No device telemetry, IP logs, or activation calls are transmitted to our servers during verification. The app operates normally in air-gapped or restricted enterprise networks.</p>
             </div>
 
             <div class="subsection-card" id="network-survey">
               <h3 class="subsection-title">4.3. Optional Feedback & Surveys (Google Forms)</h3>
-              <p>If you select "Feedback & bug reports" from the Help menu or Startup Screen, the Application opens a Google Forms page in your system's default web browser.</p>
-<p>Participating and providing feedback or contact info is entirely voluntary. Only information you explicitly type into the form is submitted via Google servers to the developer, subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>. The desktop application does not silently transmit any data.</p>
+                            <p>If you select "Feedback & bug reports" from the Help menu or Startup Screen, the Application opens a Google Forms page in your system's default web browser.</p>
+              <p>Participating and providing feedback or contact info is entirely voluntary. Only information you explicitly type into the form is submitted via Google servers to the developer, subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>. The desktop application does not silently transmit any data.</p>
             </div>
           </div>
             
@@ -336,7 +346,27 @@
               </svg>
               <span>Copy</span>
             </button>
-            <div class="contact-note">Delivered directly to the developer.</div>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>Provider</dt>
+                <dd>Hiroki Tanaka (individual developer, trading as hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Location</dt>
+                <dd>Chiba, Japan</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Response time</dt>
+                <dd>Usually within 3 business days (Japan business days)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>Languages</dt>
+                <dd>Japanese and English</dd>
+              </div>
+            </dl>
           </div>
           </div>
         </article>

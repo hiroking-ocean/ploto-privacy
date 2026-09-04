@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hiroking-ocean.github.io/ploto-privacy/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/" />
@@ -98,5 +98,103 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/" />
     <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/en/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/de/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/fr/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/es/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/ko/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  </url>
+  <url>
+    <loc>https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
   </url>
 </urlset>

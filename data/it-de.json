@@ -1,0 +1,191 @@
+{
+  "code": "de",
+  "title": "Technische Informationen für IT-Abteilungen - Ploto",
+  "description": "Technische Informationen zu Ausführungsrechten, Dateizugriff, Speicherorten, Netzwerkkommunikation, externen Diensten, Verschlüsselung und Deinstallation, die für die Freigabeprüfung von Ploto benötigt werden.",
+  "badge": "Für IT-Abteilungen",
+  "heading": "Technische Informationen zu Ploto für die Freigabeprüfung",
+  "lead": "Eine Übersicht über Ausführungsrechte, gespeicherte Daten, externe Kommunikation, Verschlüsselung und das Verhalten bei der Deinstallation von Ploto.",
+  "lastUpdated": "2026-09-03",
+  "contactEmail": "hiroki.lab@outlook.com",
+  "tocTitle": "Inhalt",
+  "reviewFactsTitle": "Zusammenfassung für die Prüfung",
+  "reviewFacts": [
+    {
+      "label": "Vertrieb",
+      "value": "Microsoft Store (Produkt-ID: `9N4NJNMT2B77`)"
+    },
+    {
+      "label": "Konto",
+      "value": "Nicht erforderlich. Keine Anmeldefunktion"
+    },
+    {
+      "label": "Rechte",
+      "value": "Läuft mit den Rechten des angemeldeten Benutzers. Keine Rechteerhöhung"
+    },
+    {
+      "label": "Normale Nutzung",
+      "value": "Keine Verbindung nötig. Erstellen, Bearbeiten und Speichern offline"
+    },
+    {
+      "label": "Projektspeicherung",
+      "value": "`.ploto`-Datei (SQLite) an einem selbst gewählten Ort"
+    },
+    {
+      "label": "Cloud-Synchronisierung",
+      "value": "Keine von Ploto betriebene Synchronisierung oder Upload-Funktion"
+    },
+    {
+      "label": "Nutzungsmessung",
+      "value": "Keine app-eigene Telemetrie, Werbung oder Verhaltensverfolgung"
+    },
+    {
+      "label": "Verschlüsselung im Ruhezustand",
+      "value": "Keine app-eigene Verschlüsselung. Schutz durch Betriebssystem und Speicherort"
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "1. Produkt- und Dokumentinformationen",
+      "content": [
+        "Dieses Dokument enthält technische Informationen zu Ploto (nachfolgend „die App“), einer Projektmanagement-Anwendung für Windows, für die Prüfung durch IT-Abteilungen. Die URL dieser Seite oder ein Ausdruck bzw. eine PDF-Fassung kann für die Freigabeprüfung in Ihrem Unternehmen verwendet werden.",
+        [
+          "Produktname: Ploto",
+          "Unterstützte Betriebssysteme: Windows 10 und Windows 11",
+          "Vertrieb: Microsoft Store",
+          "Microsoft Store Produkt-ID: `9N4NJNMT2B77`",
+          "Im Store angezeigter Herausgeber: hiroki.lab (Einzelentwickler)",
+          "Offizielle Website: [https://ploto-app.com/](https://ploto-app.com/)",
+          "Kontakt: hiroki.lab@outlook.com"
+        ],
+        "Ob die App für Ihre Geschäftsdaten geeignet ist, entscheidet Ihre Organisation abschließend selbst – auf Grundlage der Vertraulichkeitseinstufung der Daten, der Zugriffskontrollen auf Geräten und Speicherorten, Ihrer Sicherungskonzepte und Ihrer internen Vorgaben zur Anwendungsnutzung."
+      ]
+    },
+    {
+      "id": "runtime",
+      "title": "2. Vertrieb, Ausführung und Rechte",
+      "content": [
+        "Die App ist eine Desktop-Anwendung auf Basis von Rust, Tauri und Windows WebView2 und wird als MSIX-Paket über den Microsoft Store verteilt und aktualisiert. Im normalen Betrieb fordert sie keine Erhöhung auf Administratorrechte an.",
+        "Im MSIX-Manifest wird `runFullTrust` deklariert, damit die App als Desktop-Anwendung arbeiten kann. Das bedeutet, dass sie mit denselben Rechten wie der angemeldete Benutzer läuft; Administratorrechte werden dadurch nicht automatisch erteilt. Die App erstellt keine Windows-Dienste, Autostart-Einträge oder geplanten Aufgaben."
+      ]
+    },
+    {
+      "id": "defender",
+      "title": "3. Microsoft Defender und Anwendungssteuerung",
+      "content": [
+        "Auch bei einer über den Microsoft Store zertifizierten und verteilten App können Microsoft Defender oder Einstellungen zur Anwendungssteuerung auf den Geräten Ihrer Organisation die Installation, den Start oder das Speichern von Dateien verhindern. Diese App enthält native ausführbare Dateien, die mit Rust und Tauri erstellt wurden. Apps dieser Art werden häufiger von heuristischer Erkennung oder von Sperren auf Basis der Verbreitung erfasst, solange eine Version neu ist und wenig Ausführungshistorie (Prevalence) besitzt. Die Store-Zertifizierung befreit eine App nicht von den Kontrollen, die Ihre Organisation konfiguriert.",
+        "**Mögliche Situationen:**",
+        [
+          "**Heuristische Fehlalarme des Virenschutzes:** Durch cloudbasierte Machine-Learning-Bewertungen kann eine neue ausführbare Datei unter einem generischen Erkennungsnamen wie `Wacatac` oder `Wacapew` in Quarantäne verschoben werden. Das löst sich häufig nach einem Update der Sicherheitsinformationen.",
+          "**Regeln zur Verringerung der Angriffsfläche (ASR):** Ist die Regel „Ausführung von ausführbaren Dateien blockieren, sofern sie nicht Kriterien für Verbreitung, Alter oder Aufnahme in eine Liste vertrauenswürdiger Dateien erfüllen“ aktiviert, kann eine gerade veröffentlichte Version blockiert werden.",
+          "**Überwachter Ordnerzugriff:** Schreibvorgänge in geschützte Ordner wie Dokumente oder Desktop können abgelehnt werden; das zeigt sich als Fehler beim Speichern einer `.ploto`-Datei.",
+          "**WDAC und AppLocker:** Ist der Signaturgeber oder das Paket nicht zugelassen, startet das MSIX-Paket gar nicht erst.",
+          "**SmartScreen:** Bei Installationen über den Microsoft Store normalerweise nicht relevant; je nach Richtlinienkonfiguration kann jedoch eine Warnung erscheinen."
+        ],
+        "**Paketidentität (verwenden Sie diese Werte in Ihren Zulassungsregeln):**",
+        [
+          "Paketname (Package/Identity/Name): `hiroki.lab.Ploto`",
+          "Paketfamilienname (PFN): `hiroki.lab.Ploto_va563q7jg714e`",
+          "Herausgeber (Package/Identity/Publisher): `CN=AB453F36-8F71-4C99-BB89-582301D0AE38`",
+          "Paket-SID (für Firewallregeln): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
+        ],
+        "Diese Werte lassen sich auch auf einem Gerät mit installierter App auslesen, indem Sie in PowerShell `Get-AppxPackage` ausführen.",
+        "`PackageFullName` (in der Form `hiroki.lab.Ploto_<Version>_x64__va563q7jg714e`) und der Installationspfad ändern sich mit jeder Version. Wenn Sie sie in Firewallregeln oder pfadbasierten Ausschlüssen verwenden, **ersetzen Sie den Versionsteil durch einen Platzhalter** (Beispiel: `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). Eine auf eine Version festgelegte Regel greift nach dem nächsten Update nicht mehr, und Kommunikation oder Start werden ohne Vorwarnung blockiert.",
+        "**Freigeben (Administratorrechte erforderlich):**",
+        [
+          "**WDAC und AppLocker:** Nehmen Sie den Signaturgeber des Microsoft Store oder den Paketfamiliennamen in Ihre Zulassungsregeln auf.",
+          "**ASR-Regeln:** Stellen Sie die betreffende Regel auf den Überwachungsmodus um oder fügen Sie eine Ausnahme hinzu. Die Verbreitung nimmt nach der Veröffentlichung zu, sodass sich die Sperre mit der Zeit von selbst auflösen kann.",
+          "**Überwachter Ordnerzugriff:** Fügen Sie die App unter „Eine App durch überwachten Ordnerzugriff zulassen“ hinzu.",
+          "**Defender-Ausschlüsse:** Als letztes Mittel, wenn sich das Problem anders nicht lösen lässt, kommen Ausschlüsse in Betracht, die auf den Installationsort und den Speicherort der Projekte begrenzt sind. Ausschlüsse schwächen den Schutz; halten Sie ihren Umfang daher minimal und richten Sie sie nicht dauerhaft ein.",
+          "**Fehlalarm melden:** Wenn Sie zu dem Schluss kommen, dass eine Erkennung falsch ist, können Sie sie über das [Formular von Microsoft zur Übermittlung von Beispielen](https://www.microsoft.com/en-us/wdsi/filesubmission) melden. Wenn Sie den Erkennungsnamen, die Defender-Version und die App-Version an den unten genannten Kontakt senden, meldet der Anbieter dies ebenfalls."
+        ],
+        "Diese App erstellt keine Windows-Dienste, Autostart-Einträge oder geplanten Aufgaben (siehe Abschnitt 2). Eine Erkennung dürfte daher ein heuristischer Fehlalarm sein; wie Sie damit umgehen, sollte sich jedoch nach den Sicherheitsvorgaben Ihrer Organisation richten."
+      ]
+    },
+    {
+      "id": "files",
+      "title": "4. Dateizugriff",
+      "content": [
+        "Technisch kann die App alle Dateien lesen und schreiben, für die der ausführende Benutzer Zugriffsrechte besitzt. Funktional verarbeitet sie die Dateien, die der Benutzer zum Öffnen, Speichern, Importieren oder Exportieren auswählt, die lokalen Einstellungs- und Arbeitsdateien der App sowie Sperrdateien zur Vermeidung gleichzeitiger Bearbeitung.",
+        "Es gibt keine Funktion, die den Datenbestand des Geräts vollständig durchsucht, einen beliebigen Ordner dauerhaft überwacht oder Projektdateien automatisch nach außen hochlädt. Lese- und Schreibzugriffe auf Speicherorte richten sich nach den Zugriffskontrollen von Windows und Ihrer Dateiserver."
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "5. Gespeicherte Dateien und Informationen",
+      "content": [
+        "**Projekte:** Werden als `.ploto`-Datei an einem vom Benutzer gewählten Ort gespeichert. Das Format ist eine standardmäßige SQLite-Datenbank und enthält Aufgaben, Namen von Zuständigen, Termine, To-dos, Notizen, Whiteboards, Einstellungen und Ähnliches. Vorlagen, Importquellen und Ausgabedateien wie Excel-Dateien werden ebenfalls an vom Benutzer gewählten Orten gelesen und geschrieben.",
+        "**Arbeitskopie:** Solange ein Projekt geöffnet ist, wird eine Arbeitskopie des gesamten Projekts im lokalen App-Datenbereich von Windows angelegt. Beim ordnungsgemäßen Schließen wird sie gelöscht; eine nach einem Programmabsturz verbliebene Kopie wird beim nächsten Start nach Möglichkeit entfernt.",
+        "**Sperrdatei:** Während der Bearbeitung wird am Speicherort des Projekts eine Datei `<Name der .ploto-Datei>.lock` erstellt. Sie enthält den Windows-Benutzernamen, den Computernamen, die Prozess-ID sowie Start- und Aktualisierungszeit und wird beim ordnungsgemäßen Beenden gelöscht. In einem freigegebenen Ordner ist sie für alle Benutzer und Administratoren mit Zugriff auf diesen Ort lesbar.",
+        "**Lokale Einstellungen:** Oberflächeneinstellungen, Lizenzschlüssel, Anzeigestatus von Hinweisen, Bearbeitereinstellungen, Nutzungszähler von Funktionen und Ähnliches werden im lokalen App-Datenbereich von Windows gespeichert. Zuletzt geöffnete Dateien werden in `%USERPROFILE%\\.ploto\\recent-files.json` mit bis zu 10 Pfaden und dem letzten Zugriffszeitpunkt abgelegt, eine Kopie der Nutzungszähler in `%USERPROFILE%\\.ploto\\meta.json`. Zur Erkennung, welche Installation ein Projekt erstellt hat, kann ein zufälliger Kennwert gespeichert werden. Dieser Wert enthält keine Gerätekennungen des Betriebssystems und keine personenbezogenen Daten und wird nicht nach außen übertragen."
+      ]
+    },
+    {
+      "id": "network",
+      "title": "6. Netzwerkkommunikation und mögliche Allowlist-Einträge",
+      "content": [
+        "Für das Erstellen, Bearbeiten und Speichern von Projekten sowie für die Prüfung einer gekauften Lizenz ist keine Internetverbindung erforderlich. Für die WebView in der App ist eine Content Security Policy gesetzt, die Verbindungen zu externen Seiten verhindert. Externe Seiten werden nur auf Aktion des Benutzers im Standardbrowser oder im Microsoft Store geöffnet.",
+        "Wenn Ihre Organisation ausgehenden Datenverkehr einschränkt, kommen vor allem folgende Ziele in Betracht: `apps.microsoft.com` (Produktseite und Rezensionen), `buy.stripe.com` und `checkout.stripe.com` (Web-Kauf), `ploto-v2-license-webhook.vercel.app` (Kaufabschluss und Verbindungsprüfung), `docs.google.com` (optionale Formulare), `ploto-app.com` (offizielle Website) und `hiroking-ocean.github.io` (Handbuch und dieses Dokument). Welche CDN-, Authentifizierungs- und Schriftarten-Domains die jeweiligen Dienste zusätzlich benötigen, bestimmen deren Anbieter.",
+        "Kommunikation der Plattform durch Windows Update, den Microsoft Store, Windows-Fehlerberichterstattung und vergleichbare Komponenten richtet sich nach den Microsoft-Produkteinstellungen des Geräts und Ihrer Organisation."
+      ]
+    },
+    {
+      "id": "services",
+      "title": "7. Externe Dienste und übermittelte Informationen",
+      "content": [
+        "**Microsoft:** Verarbeitet Verteilung, Updates, Käufe im Store, Rezensionen und Betriebssystemdiagnose. Der Anbieter von Ploto kann im Partner Center aggregierte Verteilungs- und Qualitätsinformationen einsehen.",
+        "**Stripe:** Wenn ein Benutzer einen Web-Kauf startet, verarbeitet Stripe Zahlungsdaten, die E-Mail-Adresse des Käufers, Produkt, Betrag, Währung und Datum, Verbindungsinformationen sowie den in Abschnitt 3.2 der Datenschutzerklärung beschriebenen Geräte-Hash. Kartennummern und Ähnliches werden direkt von Stripe verarbeitet.",
+        "**Vercel:** Empfängt die Kaufabschlussinformationen von Stripe und erzeugt einen signierten Lizenzschlüssel. Eine eigene Datenbank mit Käuferdaten wird nicht geführt; Betriebsprotokolle können jedoch verarbeitet werden.",
+        "**Resend:** Versendet den Lizenzschlüssel an die E-Mail-Adresse des Käufers und verarbeitet dabei Empfänger, Nachrichtentext und Zustellinformationen.",
+        "**Google:** Verarbeitet Antworten, wenn ein Benutzer ein optionales Formular absendet. Die offizielle Website nutzt Google Analytics 4. In der App selbst ist Google Analytics nicht eingebunden.",
+        "**GitHub:** Stellt über GitHub Pages die offizielle Website, das Handbuch und dieses Dokument bereit und kann dabei übliche Zugriffsinformationen verarbeiten."
+      ]
+    },
+    {
+      "id": "security",
+      "title": "8. Verschlüsselung, Authentifizierung und Sicherheitsmaßnahmen",
+      "content": [
+        "`.ploto`-Dateien, Arbeitskopien und Sperrdateien werden von Ploto nicht zusätzlich im Ruhezustand verschlüsselt. Wenn Sie vertrauliche Informationen verarbeiten, richten Sie den Schutz auf Ihrer Seite ein: Betriebssystemfunktionen wie BitLocker oder EFS, ACLs am Speicherort, Freigabeberechtigungen, Sicherungen und Kontrollen für die Mitnahme von Daten.",
+        "Pro-Lizenzen werden auf dem Gerät über eine digitale Ed25519-Signatur geprüft. Damit wird die Echtheit des Lizenzschlüssels bestätigt; eine Verschlüsselung von Projekten ist damit nicht verbunden. Zahlungsdaten für Web-Käufe werden auf von Stripe gehosteten Seiten eingegeben, und der Webhook zur Lizenzausstellung prüft die Signatur von Stripe, bevor er die Daten verarbeitet. Private Schlüssel und API-Schlüssel externer Dienste sind nicht in der Anwendung enthalten.",
+        "Ihre Organisation sollte Windows-Konten mit minimalen Rechten, Geräteverschlüsselung, Zugriffskontrollen für Speicherorte, Sicherungen, Schutz vor Schadsoftware, Updates für Betriebssystem und Store-Apps sowie Vorgaben zur Eingabe vertraulicher Informationen in externe Formulare umsetzen."
+      ]
+    },
+    {
+      "id": "removal",
+      "title": "9. Deinstallation und verbleibende Daten",
+      "content": [
+        "Bei der Deinstallation der Microsoft-Store-Version wird der von Windows verwaltete lokale App-Datenbereich in der Regel entfernt. Projekte, Vorlagen, Importquellen und Ausgabedateien an vom Benutzer gewählten Orten sowie `%USERPROFILE%\\.ploto` werden dagegen nicht gelöscht. Für eine vollständige Entfernung sollten der Benutzer oder die Geräteverwaltung diese Daten löschen, nachdem die erforderlichen Sicherungen geprüft wurden.",
+        "Nach einem Programmabsturz oder bei Berechtigungsproblemen können eine Arbeitskopie oder eine Sperrdatei zurückbleiben. Löschen Sie eine Sperrdatei erst, nachdem Sie sich vergewissert haben, dass niemand das zugehörige Projekt gerade bearbeitet."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "10. Kontakt und Fragen zur Einführung im Unternehmen",
+      "content": [
+        "Bei Fragen zu diesem Dokument, zum Umgang mit Informationen, zu Sicherheitsspezifikationen, zur Freigabeprüfung in Unternehmen und Organisationen, zu Kaufunterlagen oder zu Lizenzen wenden Sie sich bitte an die unten genannte Adresse. Wenn in Ihrer Organisation ein eigener Prüfbogen verwendet wird, senden Sie die Fragen bitte im Text einer E-Mail oder als übliches Dokument.",
+        "Wenn Sie eine Schwachstelle oder ein Problem beim Umgang mit Informationen feststellen, wenden Sie sich bitte an die unten genannte E-Mail-Adresse und nicht an die Öffentlichkeit."
+      ],
+      "contactBox": {
+        "email": "hiroki.lab@outlook.com",
+        "meta": [
+          {
+            "label": "Anbieter",
+            "value": "Hiroki Tanaka (Einzelentwickler, Firmierung: hiroki.lab)"
+          },
+          {
+            "label": "Standort",
+            "value": "Chiba, Japan"
+          },
+          {
+            "label": "Antwortzeit",
+            "value": "In der Regel innerhalb von 3 Werktagen (Werktage in Japan)"
+          },
+          {
+            "label": "Sprachen",
+            "value": "Japanisch und Englisch"
+          }
+        ]
+      }
+    }
+  ]
+}

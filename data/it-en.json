@@ -1,0 +1,191 @@
+{
+  "code": "en",
+  "title": "Technical Information for IT Departments - Ploto",
+  "description": "Technical information covering the execution privileges, file access, storage locations, network communication, external services, encryption and removal procedures needed to review Ploto for deployment.",
+  "badge": "For IT Departments",
+  "heading": "Ploto Technical Information for Deployment Review",
+  "lead": "A summary of Ploto's execution privileges, stored data, external communication, encryption and uninstall behavior.",
+  "lastUpdated": "2026-09-03",
+  "contactEmail": "hiroki.lab@outlook.com",
+  "tocTitle": "Contents",
+  "reviewFactsTitle": "Review Summary",
+  "reviewFacts": [
+    {
+      "label": "Distribution",
+      "value": "Microsoft Store (Product ID: `9N4NJNMT2B77`)"
+    },
+    {
+      "label": "Account",
+      "value": "Not required. No sign-in feature"
+    },
+    {
+      "label": "Privileges",
+      "value": "Runs as the signed-in user. No elevation prompt"
+    },
+    {
+      "label": "Normal use",
+      "value": "No connection required. Creating, editing and saving work offline"
+    },
+    {
+      "label": "Project storage",
+      "value": "A `.ploto` file (SQLite) in a location you choose"
+    },
+    {
+      "label": "Cloud sync",
+      "value": "No Ploto-operated sync or upload feature"
+    },
+    {
+      "label": "Usage tracking",
+      "value": "No in-app telemetry, ads or behavioral tracking"
+    },
+    {
+      "label": "Encryption at rest",
+      "value": "No app-level encryption. Protected by the OS and the storage location"
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "1. Product and Document Information",
+      "content": [
+        "This document provides technical information about Ploto (the app), a project management application for Windows, for review by IT departments. The URL of this page, or a printed or PDF copy of it, may be used in your organization's application review process.",
+        [
+          "Product name: Ploto",
+          "Supported OS: Windows 10 and Windows 11",
+          "Distribution: Microsoft Store",
+          "Microsoft Store Product ID: `9N4NJNMT2B77`",
+          "Publisher shown in the Store: hiroki.lab (individual developer)",
+          "Official site: [https://ploto-app.com/](https://ploto-app.com/)",
+          "Contact: hiroki.lab@outlook.com"
+        ],
+        "Whether the app is suitable for your business data is a decision for your organization, based on your data classification, the access controls on the devices and storage locations involved, your backup arrangements and your internal standards for application use."
+      ]
+    },
+    {
+      "id": "runtime",
+      "title": "2. Distribution, Execution and Privileges",
+      "content": [
+        "The app is a desktop application built with Rust, Tauri and Windows WebView2, distributed and updated as an MSIX package through the Microsoft Store. It does not request elevation to administrator privileges during normal operation.",
+        "The MSIX manifest declares `runFullTrust` so that the app can operate as a desktop application. This means it runs with the same privileges as the signed-in user; it does not grant administrator rights automatically. The app does not create Windows services, startup entries or scheduled tasks."
+      ]
+    },
+    {
+      "id": "defender",
+      "title": "3. Microsoft Defender and Application Control",
+      "content": [
+        "Even for an app certified and distributed through the Microsoft Store, Microsoft Defender or application control settings on your organization’s devices may prevent installation, startup or file saving. This app includes native executables built with Rust and Tauri. Apps of this kind are more likely to be caught by heuristic detection or prevalence-based blocking while a release is new and has little execution history (prevalence). Store certification does not exempt an app from controls your organization configures.",
+        "**Situations to expect:**",
+        [
+          "**Heuristic false positives from antivirus:** Cloud-delivered machine-learning verdicts may quarantine a new executable under a generic detection name such as `Wacatac` or `Wacapew`. This often resolves after a security intelligence update.",
+          "**Attack surface reduction (ASR) rules:** If \"Block executable files from running unless they meet a prevalence, age, or trusted list criterion\" is enabled, a newly released version may be blocked.",
+          "**Controlled folder access:** Writes to protected folders such as Documents or Desktop may be denied, which surfaces as an error when saving a `.ploto` file.",
+          "**WDAC and AppLocker:** If the signer or the package is not allowed, the MSIX package will not start at all.",
+          "**SmartScreen:** Normally not triggered for installs through the Microsoft Store, but a warning may appear depending on your policy configuration."
+        ],
+        "**Package identity (use these values in your allow rules):**",
+        [
+          "Package name (Package/Identity/Name): `hiroki.lab.Ploto`",
+          "Package family name (PFN): `hiroki.lab.Ploto_va563q7jg714e`",
+          "Publisher (Package/Identity/Publisher): `CN=AB453F36-8F71-4C99-BB89-582301D0AE38`",
+          "Package SID (for firewall rules): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
+        ],
+        "These values can also be read on a device where the app is installed, by running `Get-AppxPackage` in PowerShell.",
+        "`PackageFullName` (of the form `hiroki.lab.Ploto_<version>_x64__va563q7jg714e`) and the installation path change with every version. If you use them in firewall rules or path-based exclusions, **replace the version with a wildcard** (for example `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). A rule pinned to one version stops matching at the next update, and communication or startup is then blocked without warning.",
+        "**How to allow the app (administrator rights required):**",
+        [
+          "**WDAC and AppLocker:** Add the Microsoft Store signer, or the package family name, to your allow rules.",
+          "**ASR rules:** Switch the relevant rule to audit mode, or add an exclusion. Prevalence accumulates after release, so the block may resolve on its own over time.",
+          "**Controlled folder access:** Add the app under \"Allow an app through Controlled folder access\".",
+          "**Defender exclusions:** As a last resort when nothing else resolves the issue, consider exclusions limited to the installation location and the project storage location. Exclusions weaken protection, so keep their scope minimal and avoid making them permanent.",
+          "**Reporting a false positive:** If you conclude that a detection is incorrect, you can report it through [Microsoft’s sample submission form](https://www.microsoft.com/en-us/wdsi/filesubmission). If you send the detection name, the Defender version and the app version to the contact below, the provider will report it as well."
+        ],
+        "This app does not create Windows services, startup entries or scheduled tasks (see section 2). A detection is therefore likely to be a heuristic false positive, but how you handle it should follow your organization’s security operations standards."
+      ]
+    },
+    {
+      "id": "files",
+      "title": "4. File Access",
+      "content": [
+        "Technically, the app can read and write any file the running user has permission to access. As a matter of product behavior, it works with the files the user selects to open, save, import or export, the app's local settings and working files, and lock files used to prevent simultaneous editing.",
+        "There is no feature that scans the device's files exhaustively, that continuously monitors an arbitrary folder, or that automatically uploads project files anywhere. Read and write access to storage locations follows the access controls enforced by Windows and by your file servers."
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "5. Files and Information Stored",
+      "content": [
+        "**Projects:** Saved as a `.ploto` file in a location the user chooses. The format is a standard SQLite database containing tasks, assignee names, schedules, to-dos, notes, whiteboards, settings and similar data. Templates, import sources and exported files such as Excel workbooks are also read and written in locations the user selects.",
+        "**Working copy:** While a project is open, a working copy of the entire project is created in the app's local data area managed by Windows. It is deleted when the project is closed normally, and a copy left behind by an abnormal termination is removed on the next startup where possible.",
+        "**Lock file:** While a project is being edited, a `<name of the .ploto file>.lock` file is created in the same location as the project. It records the Windows user name, computer name, process ID, start time and update time, and is deleted on normal exit. On a shared folder it can be read by any user or administrator with access to that location.",
+        "**Local settings:** UI preferences, the license key, notice display state, editor settings, feature usage counts and similar values are stored in the app's local data area managed by Windows. Recently opened files are stored in `%USERPROFILE%\\.ploto\\recent-files.json` as up to 10 paths with their last access times, and a copy of the feature usage counts is stored in `%USERPROFILE%\\.ploto\\meta.json`. A random identifier may be stored so that the app can tell which installation created a project. This value contains no OS device identifiers or personal information and is not transmitted externally."
+      ]
+    },
+    {
+      "id": "network",
+      "title": "6. Network Communication and Allowlist Candidates",
+      "content": [
+        "No internet connection is required to create, edit or save projects, or to verify a purchased license. The in-app WebView is configured with a Content Security Policy that prevents it from connecting to external sites. External pages open in the default web browser or in the Microsoft Store, and only when the user chooses to open them.",
+        "If your organization restricts outbound traffic, the main destinations to consider are `apps.microsoft.com` (product page and reviews), `buy.stripe.com` and `checkout.stripe.com` (web purchase), `ploto-v2-license-webhook.vercel.app` (purchase completion and connectivity check), `docs.google.com` (optional forms), `ploto-app.com` (official site) and `hiroking-ocean.github.io` (manual and this document). The CDN, authentication and font domains that each service depends on are determined by those providers.",
+        "Platform traffic from Windows Update, the Microsoft Store, Windows Error Reporting and similar components follows the Microsoft product settings applied to the device and to your organization."
+      ]
+    },
+    {
+      "id": "services",
+      "title": "7. External Services and Transmitted Information",
+      "content": [
+        "**Microsoft:** Handles distribution, updates, in-Store purchases, reviews and OS diagnostics. The provider of Ploto may review aggregated distribution and quality information in Partner Center.",
+        "**Stripe:** When a user starts a web purchase, Stripe processes payment details, the purchaser's email address, the product, amount, currency and date, connection information, and the device hash described in section 3.2 of the Privacy Policy. Card numbers and similar details are handled directly by Stripe.",
+        "**Vercel:** Receives purchase completion information from Stripe and generates a signed license key. No dedicated purchaser database is maintained, although operational logs may be processed.",
+        "**Resend:** Sends the license key to the purchaser's email address, processing the recipient address, message body and delivery information.",
+        "**Google:** Processes form responses if a user chooses to submit an optional form. The official website uses Google Analytics 4. Google Analytics is not embedded in the app itself.",
+        "**GitHub:** Delivers the official site, the manual and this document via GitHub Pages, and may process standard access information."
+      ]
+    },
+    {
+      "id": "security",
+      "title": "8. Encryption, Authentication and Safety Management",
+      "content": [
+        "`.ploto` files, working copies and lock files are not encrypted at rest by Ploto itself. If you handle confidential information, configure protection on your side using OS features such as BitLocker or EFS, ACLs on the storage location, share permissions, backups and controls on taking data off site.",
+        "Pro licenses are verified on the device using an Ed25519 digital signature. This confirms that the license key is genuine; it is not a feature that encrypts projects. Payment details for web purchases are entered on Stripe-hosted pages, and the license issuing webhook verifies Stripe's signature before processing. Private keys and the API keys of external services are not bundled in the application.",
+        "Your organization should apply least-privilege Windows accounts, device encryption, access controls on storage locations, backups, anti-malware protection, updates for the OS and Store apps, and restrictions on entering confidential information into external forms."
+      ]
+    },
+    {
+      "id": "removal",
+      "title": "9. Uninstallation and Residual Data",
+      "content": [
+        "Uninstalling the Microsoft Store version normally removes the app's local data area managed by Windows. Projects, templates, import sources and exported files in locations chosen by the user, along with `%USERPROFILE%\\.ploto`, are not removed. To delete everything, the user or the device administrator should remove them after confirming that the necessary backups exist.",
+        "A working copy or lock file may remain after an abnormal termination or a permissions problem. Delete a lock file only after confirming that nobody is currently editing the project it refers to."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "10. Contact and Enterprise Deployment Questions",
+      "content": [
+        "For questions about this document, the handling of information, security specifications, review for deployment by a company or organization, purchase records or licenses, please use the contact below. If your organization uses a standard assessment questionnaire, please send the questions in the body of an email or as an ordinary document.",
+        "If you find a vulnerability or a concern about how information is handled, please contact the email address below rather than posting publicly."
+      ],
+      "contactBox": {
+        "email": "hiroki.lab@outlook.com",
+        "meta": [
+          {
+            "label": "Provider",
+            "value": "Hiroki Tanaka (individual developer, trading as hiroki.lab)"
+          },
+          {
+            "label": "Location",
+            "value": "Chiba, Japan"
+          },
+          {
+            "label": "Response time",
+            "value": "Usually within 3 business days (Japan business days)"
+          },
+          {
+            "label": "Languages",
+            "value": "Japanese and English"
+          }
+        ]
+      }
+    }
+  ]
+}

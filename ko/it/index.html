@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정보시스템 부서용 기술 정보 - Ploto</title>
+  <meta name="description" content="Ploto 도입 심사에 필요한 실행 권한, 파일 접근, 저장 위치, 네트워크 통신, 외부 서비스, 암호화 및 삭제 방법을 정리한 기술 정보입니다." />
+  <link rel="canonical" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+  <link rel="alternate" hreflang="ja" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  <link rel="alternate" hreflang="en" href="https://hiroking-ocean.github.io/ploto-privacy/en/it/" />
+  <link rel="alternate" hreflang="de" href="https://hiroking-ocean.github.io/ploto-privacy/de/it/" />
+  <link rel="alternate" hreflang="fr" href="https://hiroking-ocean.github.io/ploto-privacy/fr/it/" />
+  <link rel="alternate" hreflang="es" href="https://hiroking-ocean.github.io/ploto-privacy/es/it/" />
+  <link rel="alternate" hreflang="ko" href="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+  <link rel="alternate" hreflang="pt-br" href="https://hiroking-ocean.github.io/ploto-privacy/pt-br/it/" />
+  <link rel="alternate" hreflang="x-default" href="https://hiroking-ocean.github.io/ploto-privacy/it/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiroking-ocean.github.io/ploto-privacy/ko/it/" />
+  <meta property="og:title" content="정보시스템 부서용 기술 정보 - Ploto" />
+  <meta property="og:description" content="Ploto 도입 심사에 필요한 실행 권한, 파일 접근, 저장 위치, 네트워크 통신, 외부 서비스, 암호화 및 삭제 방법을 정리한 기술 정보입니다." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="Ploto" />
+  <meta property="og:image" content="https://hiroking-ocean.github.io/ploto-privacy/assets/app-icon.svg" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/app-icon.svg" />
+  <!-- Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body class="document-layout technical-document">
+  <header class="header">
+    <div class="container header-container">
+      <a href="../" class="brand-link" aria-label="Ploto">
+        <img src="../../assets/logo.svg" alt="Ploto Logo" class="brand-logo" />
+        <span class="brand-title">Ploto</span>
+      </a>
+      <div class="header-actions">
+        <a href="../" class="secondary-link-btn">개인정보 처리방침</a>
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="언어">
+            <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>한국어</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="lang-dropdown">
+            <li class="lang-item"><a href="../../it/" data-lang="ja">日本語</a></li>
+            <li class="lang-item"><a href="../../en/it/" data-lang="en">English</a></li>
+            <li class="lang-item"><a href="../../de/it/" data-lang="de">Deutsch</a></li>
+            <li class="lang-item"><a href="../../fr/it/" data-lang="fr">Français</a></li>
+            <li class="lang-item"><a href="../../es/it/" data-lang="es">Español</a></li>
+            <li class="lang-item active"><a href="../../ko/it/" data-lang="ko">한국어</a></li>
+            <li class="lang-item"><a href="../../pt-br/it/" data-lang="pt-BR">Português (Brasil)</a></li>
+          </ul>
+        </div>
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="라이트 모드">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          </svg>
+        </button>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">공식 웹사이트</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>정보시스템 부서용</span>
+      </div>
+      <h1 class="hero-title">도입 심사를 위한 Ploto 기술 정보</h1>
+      <p class="hero-desc">Ploto의 실행 권한, 저장 데이터, 외부 통신, 암호화, 제거 시 동작을 정리했습니다.</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>최종 수정일: <strong>2026-09-03</strong></span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>문의: <strong>hiroki.lab@outlook.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container review-overview" aria-labelledby="review-facts-title">
+    <h2 id="review-facts-title">심사용 요약</h2>
+    <div class="review-summary-table-wrap">
+      <table class="review-summary-table">
+        <tbody>
+
+          <tr>
+            <th scope="row">배포처</th>
+            <td>Microsoft Store(제품 ID: <code>9N4NJNMT2B77</code>)</td>
+          </tr>
+
+          <tr>
+            <th scope="row">계정</th>
+            <td>불필요. 로그인 기능 없음</td>
+          </tr>
+
+          <tr>
+            <th scope="row">실행 권한</th>
+            <td>로그인한 사용자 권한. 관리자 권한 상승 요청 없음</td>
+          </tr>
+
+          <tr>
+            <th scope="row">일반 사용 시 통신</th>
+            <td>불필요. 작성·편집·저장은 오프라인</td>
+          </tr>
+
+          <tr>
+            <th scope="row">프로젝트 저장</th>
+            <td>사용자가 지정한 위치의 <code>.ploto</code> 파일(SQLite)</td>
+          </tr>
+
+          <tr>
+            <th scope="row">클라우드 동기화</th>
+            <td>Ploto 자체 동기화·업로드 기능 없음</td>
+          </tr>
+
+          <tr>
+            <th scope="row">사용 계측</th>
+            <td>앱 자체 텔레메트리·광고·행동 추적 없음</td>
+          </tr>
+
+          <tr>
+            <th scope="row">저장 시 암호화</th>
+            <td>앱 자체 암호화 없음. OS와 저장 위치에서 보호</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <main class="container policy-layout">
+    <aside class="toc-sidebar">
+      <div class="toc-header"><span>목차</span></div>
+      <ul class="toc-list">
+
+              <li class="toc-item"><a href="#overview">1. 제품·문서 정보</a></li>
+
+              <li class="toc-item"><a href="#runtime">2. 배포·실행 방식·권한</a></li>
+
+              <li class="toc-item"><a href="#defender">3. Microsoft Defender·앱 제어 관련 주의사항</a></li>
+
+              <li class="toc-item"><a href="#files">4. 파일 접근</a></li>
+
+              <li class="toc-item"><a href="#storage">5. 저장되는 파일과 정보</a></li>
+
+              <li class="toc-item"><a href="#network">6. 네트워크 통신과 허용 목록 후보</a></li>
+
+              <li class="toc-item"><a href="#services">7. 외부 서비스와 전송 정보</a></li>
+
+              <li class="toc-item"><a href="#security">8. 암호화·인증·안전 관리</a></li>
+
+              <li class="toc-item"><a href="#removal">9. 제거와 잔존 데이터</a></li>
+
+              <li class="toc-item"><a href="#contact">10. 문의·법인 도입 시 확인</a></li>
+      </ul>
+    </aside>
+    <div class="policy-content">
+
+        <article class="section-card" id="overview">
+          <h2 class="section-title">1. 제품·문서 정보</h2>
+          <div class="section-body">
+            <p>본 문서는 Windows용 프로젝트 관리 애플리케이션 Ploto(이하 「본 앱」)에 대한 정보시스템 부서용 기술 정보입니다. 기업·단체의 앱 도입 심사에 이 페이지의 URL 또는 인쇄·PDF로 저장한 문서를 사용할 수 있습니다.</p>
+            <ul class="content-list">
+              <li>제품명: Ploto</li>
+              <li>지원 OS: Windows 10·Windows 11</li>
+              <li>배포처: Microsoft Store</li>
+              <li>Microsoft Store 제품 ID: <code>9N4NJNMT2B77</code></li>
+              <li>스토어 표시 게시자·제공자: hiroki.lab(개인 개발자)</li>
+              <li>공식 사이트: <a href="https://ploto-app.com/" target="_blank" rel="noopener noreferrer">https://ploto-app.com/</a></li>
+              <li>문의처: hiroki.lab@outlook.com</li>
+            </ul>
+            <p>본 앱을 업무 데이터에 사용할 수 있는지는 데이터의 기밀 등급, 단말·저장 위치의 접근 통제, 백업 및 조직의 앱 사용 기준을 고려하여 이용 조직이 최종적으로 판단해 주십시오.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="runtime">
+          <h2 class="section-title">2. 배포·실행 방식·권한</h2>
+          <div class="section-body">
+            <p>본 앱은 Rust, Tauri 및 Windows WebView2를 사용한 데스크톱 앱으로, Microsoft Store를 통해 MSIX로 배포·업데이트됩니다. 일반 실행 시 관리자 권한으로의 상승을 요구하지 않습니다.</p>
+            <p>MSIX 매니페스트에서는 데스크톱 앱으로 동작하기 위해 <code>runFullTrust</code>를 선언합니다. 이는 로그인한 사용자와 동일한 권한으로 동작한다는 의미이며, 관리자 권한을 자동으로 부여하는 것은 아닙니다. 본 앱은 Windows 서비스, 시작 프로그램 항목 또는 예약 작업을 만들지 않습니다.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="defender">
+          <h2 class="section-title">3. Microsoft Defender·앱 제어 관련 주의사항</h2>
+          <div class="section-body">
+            <p>Microsoft Store에서 인증·배포된 앱이라도 조직의 단말에서는 Microsoft Defender 또는 애플리케이션 제어 설정에 따라 설치, 실행 또는 파일 저장이 차단될 수 있습니다. 본 앱은 Rust와 Tauri로 구현한 네이티브 실행 파일을 포함합니다. 이러한 구성의 앱은 배포 직후처럼 실행 실적(prevalence)이 적은 시기에 휴리스틱 탐지나 실적 기반 차단의 대상이 되기 쉬운 경향이 있습니다. 스토어 인증이 조직에서 설정한 이러한 제어를 면제해 주지는 않습니다.</p>
+            <p><strong>예상되는 상황:</strong></p>
+            <ul class="content-list">
+              <li><strong>백신의 휴리스틱 오탐:</strong> 클라우드 기반 머신러닝 판정으로 새 실행 파일이 <code>Wacatac</code>, <code>Wacapew</code> 등 일반적인 탐지 이름으로 격리되는 경우가 있습니다. 보안 인텔리전스 업데이트 후 해소되기도 합니다.</li>
+              <li><strong>공격 표면 감소(ASR) 규칙:</strong> 「실적, 사용 기간 또는 신뢰할 수 있는 목록 조건을 충족하지 않는 한 실행 파일 실행 차단」을 사용하도록 설정한 경우, 갓 공개된 버전이 차단될 수 있습니다.</li>
+              <li><strong>제어된 폴더 액세스:</strong> 문서, 바탕 화면 등 보호된 폴더에 대한 쓰기가 거부되어 <code>.ploto</code> 파일 저장 오류로 나타날 수 있습니다.</li>
+              <li><strong>WDAC·AppLocker:</strong> 서명자 또는 패키지를 허용하지 않은 경우 MSIX 패키지가 아예 실행되지 않습니다.</li>
+              <li><strong>SmartScreen:</strong> Microsoft Store를 통한 설치에서는 일반적으로 발생하지 않지만, 조직의 정책 설정에 따라 경고가 표시될 수 있습니다.</li>
+            </ul>
+            <p><strong>패키지 식별 정보(허용 규칙에는 이 값을 사용하십시오):</strong></p>
+            <ul class="content-list">
+              <li>패키지 이름(Package/Identity/Name): <code>hiroki.lab.Ploto</code></li>
+              <li>패키지 패밀리 이름(PFN): <code>hiroki.lab.Ploto_va563q7jg714e</code></li>
+              <li>게시자(Package/Identity/Publisher): <code>CN=AB453F36-8F71-4C99-BB89-582301D0AE38</code></li>
+              <li>패키지 SID(방화벽 규칙용): <code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
+            </ul>
+            <p>이 값들은 앱이 설치된 단말에서 PowerShell로 <code>Get-AppxPackage</code>를 실행해도 확인할 수 있습니다.</p>
+            <p><code>PackageFullName</code>(형식: <code>hiroki.lab.Ploto_&lt;버전&gt;_x64__va563q7jg714e</code>)과 설치 경로는 버전마다 변경됩니다. 방화벽 규칙이나 경로 기반 제외에서 사용하는 경우 <strong>버전 부분을 와일드카드로 지정하십시오</strong>(예: <code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>). 버전을 고정하면 다음 업데이트에서 규칙이 일치하지 않게 되어 통신이나 실행이 예고 없이 차단됩니다.</p>
+            <p><strong>허용 방법(관리자 권한 필요):</strong></p>
+            <ul class="content-list">
+              <li><strong>WDAC·AppLocker:</strong> Microsoft Store 서명자 또는 패키지 패밀리 이름을 허용 규칙에 추가합니다.</li>
+              <li><strong>ASR 규칙:</strong> 해당 규칙을 감사 모드로 전환하거나 제외 항목에 추가합니다. 실행 실적은 배포 후 축적되므로 시간이 지나면 해소되는 경우가 있습니다.</li>
+              <li><strong>제어된 폴더 액세스:</strong> 「제어된 폴더 액세스를 통해 앱 허용」에 본 앱을 추가합니다.</li>
+              <li><strong>Defender 제외:</strong> 다른 방법으로 해결되지 않을 때의 최후 수단으로, 설치 위치와 프로젝트 저장 위치로 한정한 제외를 검토하십시오. 제외는 보호 수준을 낮추므로 범위를 최소화하고 영구 설정으로 두지 않기를 권장합니다.</li>
+              <li><strong>오탐 신고:</strong> 탐지가 잘못되었다고 판단되면 <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">Microsoft 샘플 제출 양식</a>으로 신고할 수 있습니다. 탐지 이름, Defender 버전 및 본 앱의 버전을 아래 문의처로 알려 주시면 제공자 측에서도 신고합니다.</li>
+            </ul>
+            <p>본 앱은 Windows 서비스, 시작 프로그램 항목 및 예약 작업을 만들지 않습니다(제2항 참조). 따라서 탐지가 발생한 경우 휴리스틱에 의한 오탐일 가능성이 높지만, 실제 처리는 조직의 보안 운영 기준에 따라 판단해 주십시오.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="files">
+          <h2 class="section-title">4. 파일 접근</h2>
+          <div class="section-body">
+            <p>기술적으로는 실행 사용자가 접근 권한을 가진 파일을 읽고 쓸 수 있습니다. 제품 기능으로 다루는 대상은 사용자가 열기·저장·가져오기·내보내기 대상으로 선택한 파일, 본 앱의 단말 내 설정·작업 파일, 그리고 동시 편집 방지를 위한 잠금 파일입니다.</p>
+            <p>단말 내 파일을 전수 조사하는 기능, 임의의 폴더를 지속적으로 감시하는 기능, 프로젝트 파일을 외부로 자동 업로드하는 기능은 없습니다. 저장 위치에 대한 읽기·쓰기 권한은 Windows 및 파일 서버의 접근 통제를 따릅니다.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="storage">
+          <h2 class="section-title">5. 저장되는 파일과 정보</h2>
+          <div class="section-body">
+            <p><strong>프로젝트:</strong> 사용자가 지정한 위치에 <code>.ploto</code> 파일로 저장합니다. 형식은 표준 SQLite 데이터베이스이며 작업, 담당자 이름, 일정, 할 일, 노트, 화이트보드, 설정 등이 포함됩니다. 템플릿, 가져오기 원본 및 Excel 등의 출력 파일도 사용자가 선택한 위치에서 읽고 씁니다.</p>
+            <p><strong>작업 사본:</strong> 프로젝트를 여는 동안 프로젝트 전체의 작업 사본을 Windows가 관리하는 앱 로컬 데이터 영역에 만듭니다. 정상적으로 닫으면 삭제하며, 비정상 종료로 남은 사본은 다음 실행 시 삭제를 시도합니다.</p>
+            <p><strong>잠금 파일:</strong> 편집 중에는 프로젝트와 같은 위치에 <code>대상 .ploto 파일 이름.lock</code> 파일을 만듭니다. Windows 사용자 이름, 컴퓨터 이름, 프로세스 ID, 시작 시각 및 갱신 시각을 저장하며 정상 종료 시 삭제합니다. 공유 폴더에서는 해당 위치에 접근할 수 있는 사용자 또는 관리자가 확인할 수 있습니다.</p>
+            <p><strong>단말 내 설정:</strong> UI 설정, 라이선스 키, 안내 표시 상태, 편집자 설정, 기능 사용 횟수 등을 Windows가 관리하는 본 앱의 로컬 데이터 영역에 저장합니다. 최근에 연 파일은 <code>%USERPROFILE%\.ploto\recent-files.json</code>에 최대 10건의 경로와 최종 접근 일시를, 기능 사용 횟수의 사본은 <code>%USERPROFILE%\.ploto\meta.json</code>에 저장합니다. 프로젝트를 만든 설치본을 판별하기 위한 무작위 식별 값을 저장하는 경우가 있습니다. 이 값에는 OS의 단말 식별 정보나 개인정보가 포함되지 않으며 외부로 전송하지 않습니다.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="network">
+          <h2 class="section-title">6. 네트워크 통신과 허용 목록 후보</h2>
+          <div class="section-body">
+            <p>프로젝트의 작성·편집·저장 및 구매한 라이선스의 검증에 인터넷 연결은 필요하지 않습니다. 앱 내 WebView에는 외부 사이트에 접속하지 않도록 Content Security Policy를 설정하고 있습니다. 외부 페이지는 사용자의 조작에 따라 기본 웹 브라우저 또는 Microsoft Store에서 열립니다.</p>
+            <p>조직에서 통신을 제한하는 경우 주요 연결 대상 후보는 <code>apps.microsoft.com</code>(제품·리뷰), <code>buy.stripe.com</code>·<code>checkout.stripe.com</code>(웹 구매), <code>ploto-v2-license-webhook.vercel.app</code>(구매 완료·연결 확인), <code>docs.google.com</code>(선택 양식), <code>ploto-app.com</code>(공식 사이트), <code>hiroking-ocean.github.io</code>(매뉴얼·본 문서)입니다. 각 서비스의 CDN, 인증, 글꼴 등 부수 도메인은 각 사업자의 사양에 따릅니다.</p>
+            <p>Windows Update, Microsoft Store, Windows 오류 보고 등에 의한 OS·플랫폼 통신은 단말 및 조직의 Microsoft 제품 설정을 따릅니다.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="services">
+          <h2 class="section-title">7. 외부 서비스와 전송 정보</h2>
+          <div class="section-body">
+            <p><strong>Microsoft:</strong> 앱의 배포, 업데이트, 스토어 내 구매, 리뷰 및 OS 진단을 처리합니다. Ploto 제공자는 Partner Center에서 집계된 배포·품질 정보를 확인하는 경우가 있습니다.</p>
+            <p><strong>Stripe:</strong> 사용자가 웹 구매를 시작한 경우 결제 정보, 구매자 이메일 주소, 상품·금액·통화·일시, 연결 정보 및 개인정보 처리방침 제3.2항의 단말 해시를 처리합니다. 카드 번호 등은 Stripe가 직접 처리합니다.</p>
+            <p><strong>Vercel:</strong> Stripe의 구매 완료 정보를 받아 서명된 라이선스 키를 생성합니다. 구매자용 자체 데이터베이스는 두고 있지 않으나 운영 로그가 처리되는 경우가 있습니다.</p>
+            <p><strong>Resend:</strong> 구매자의 이메일 주소로 라이선스 키를 발송하며 수신처, 본문 및 발송 정보를 처리합니다.</p>
+            <p><strong>Google:</strong> 사용자가 선택 양식을 제출한 경우 응답 내용 등을 처리합니다. 공식 사이트에서는 Google Analytics 4를 사용합니다. 본 앱 자체에는 Google Analytics를 포함하지 않습니다.</p>
+            <p><strong>GitHub:</strong> GitHub Pages로 공식 사이트, 매뉴얼 및 본 문서를 제공하며 표준적인 접근 정보를 처리하는 경우가 있습니다.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="security">
+          <h2 class="section-title">8. 암호화·인증·안전 관리</h2>
+          <div class="section-body">
+            <p><code>.ploto</code>, 작업 사본 및 잠금 파일에는 Ploto 자체의 저장 시 암호화를 적용하지 않습니다. 기밀 정보를 다루는 경우 BitLocker·EFS 등의 OS 기능, 저장 위치 ACL, 공유 권한, 백업, 반출 통제 등을 조직 측에서 설정해 주십시오.</p>
+            <p>Pro 라이선스는 Ed25519 전자 서명을 단말 내에서 검증합니다. 이는 라이선스 키의 정당성을 확인하는 것이며 프로젝트를 암호화하는 기능은 아닙니다. 웹 구매용 결제 정보는 Stripe가 호스팅하는 화면에서 입력하며, 라이선스 발급 Webhook은 Stripe의 서명을 검증한 후 처리합니다. 비밀 키 및 외부 서비스의 API 키는 앱 자체에 포함하지 않습니다.</p>
+            <p>이용 조직에서는 최소 권한의 Windows 계정, 단말 암호화, 저장 위치 접근 통제, 백업, 악성코드 대책, OS·스토어 앱 업데이트, 외부 양식에 대한 기밀 정보 입력 제한 등을 시행해 주십시오.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="removal">
+          <h2 class="section-title">9. 제거와 잔존 데이터</h2>
+          <div class="section-body">
+            <p>Microsoft Store 버전을 제거하면 Windows가 관리하는 본 앱의 로컬 데이터 영역은 일반적으로 삭제됩니다. 반면 사용자가 지정한 저장 위치의 프로젝트, 템플릿, 가져오기 원본, 출력 파일 및 <code>%USERPROFILE%\.ploto</code>는 삭제되지 않습니다. 완전히 삭제하려면 필요한 백업을 확인한 후 사용자 또는 단말 관리자가 삭제해 주십시오.</p>
+            <p>비정상 종료나 접근 권한 문제로 작업 사본 또는 잠금 파일이 남는 경우가 있습니다. 잠금 파일은 아무도 해당 프로젝트를 편집 중이 아님을 확인한 후 삭제해 주십시오.</p>
+
+          </div>
+        </article>
+
+        <article class="section-card" id="contact">
+          <h2 class="section-title">10. 문의·법인 도입 시 확인</h2>
+          <div class="section-body">
+            <p>본 문서, 정보의 취급, 보안 사양, 법인·단체의 도입 심사, 구매 기록 또는 라이선스에 관한 질문은 아래로 연락해 주십시오. 조직에서 정한 확인표가 있는 경우 질문 사항을 메일 본문 또는 일반적인 문서 형식으로 보내 주십시오.</p>
+            <p>취약점 또는 정보 취급상의 우려를 발견한 경우 공개 게시가 아니라 아래 이메일 주소로 연락해 주십시오.</p>
+
+          <div class="contact-box">
+            <div class="contact-email-wrap">
+              <span class="contact-email">hiroki.lab@outlook.com</span>
+            </div>
+            <button class="copy-btn" data-copy="hiroki.lab@outlook.com" data-copied-label="복사되었습니다"><span>복사</span></button>
+            <dl class="contact-meta">
+              <div class="contact-meta-row">
+                <dt>제공자</dt>
+                <dd>Hiroki Tanaka(개인 개발자, 상호: hiroki.lab)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>소재지</dt>
+                <dd>일본 지바현</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>회신 목표</dt>
+                <dd>통상 3영업일 이내(일본 기준 영업일)</dd>
+              </div>
+
+              <div class="contact-meta-row">
+                <dt>지원 언어</dt>
+                <dd>일본어 및 영어</dd>
+              </div>
+            </dl>
+          </div>
+          </div>
+        </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>© 2026 Ploto. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="../" class="footer-link">개인정보 처리방침</a>
+        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Ploto 공식 사이트</a>
+        <a href="#top" class="back-to-top-btn" id="back-to-top-btn">맨 위로 이동</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../app.js"></script>
+</body>
+</html>
