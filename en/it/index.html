@@ -71,7 +71,7 @@
             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
           </svg>
         </button>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Official Website</a>
+        <a href="https://ploto-app.com/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Official Website</a>
       </div>
     </div>
   </header>
@@ -94,7 +94,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Last updated: <strong>2026-09-03</strong></span>
+          <span>Last updated: <strong>2026-09-04</strong></span>
         </div>
         <div class="meta-item">
           <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -232,13 +232,12 @@
               <li>Package SID (for firewall rules): <code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
             </ul>
             <p>These values can also be read on a device where the app is installed, by running <code>Get-AppxPackage</code> in PowerShell.</p>
-            <p><code>PackageFullName</code> (of the form <code>hiroki.lab.Ploto_&lt;version&gt;_x64__va563q7jg714e</code>) and the installation path change with every version. If you use them in firewall rules or path-based exclusions, <strong>replace the version with a wildcard</strong> (for example <code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>). A rule pinned to one version stops matching at the next update, and communication or startup is then blocked without warning.</p>
-            <p><strong>How to allow the app (administrator rights required):</strong></p>
+            <p><code>PackageFullName</code> and the installation path change with every version. For application-control allow rules, use the package name, PFN and publisher information above rather than a path.</p>
+            <p><strong>When considering whether to allow the app in your organization:</strong></p>
             <ul class="content-list">
-              <li><strong>WDAC and AppLocker:</strong> Add the Microsoft Store signer, or the package family name, to your allow rules.</li>
-              <li><strong>ASR rules:</strong> Switch the relevant rule to audit mode, or add an exclusion. Prevalence accumulates after release, so the block may resolve on its own over time.</li>
-              <li><strong>Controlled folder access:</strong> Add the app under "Allow an app through Controlled folder access".</li>
-              <li><strong>Defender exclusions:</strong> As a last resort when nothing else resolves the issue, consider exclusions limited to the installation location and the project storage location. Exclusions weaken protection, so keep their scope minimal and avoid making them permanent.</li>
+              <li><strong>WDAC and AppLocker:</strong> Refer to the installed package or MSIX and, in accordance with your organization's application-control standards, create a package rule whose Publisher and Package name match this app. Configure the range of versions allowed for updates in accordance with your organization's change-management policy as well.</li>
+              <li><strong>Microsoft Defender and ASR:</strong> If a detection or block occurs, review the detection name, affected file, source, package signature and records in the management console, and respond according to your organization's procedures. If you determine that a protection setting must be changed or an exception is required, obtain approval from the security administrator and limit it to this app, the minimum scope and the necessary period.</li>
+              <li><strong>Controlled folder access:</strong> If saving is denied, first use a storage location approved by your organization. If the app must be added to the allow list, verify that the package was obtained from the Microsoft Store and confirm its signature, then follow your organization's approval procedure.</li>
               <li><strong>Reporting a false positive:</strong> If you conclude that a detection is incorrect, you can report it through <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">Microsoft’s sample submission form</a>. If you send the detection name, the Defender version and the app version to the contact below, the provider will report it as well.</li>
             </ul>
             <p>This app does not create Windows services, startup entries or scheduled tasks (see section 2). A detection is therefore likely to be a heuristic false positive, but how you handle it should follow your organization’s security operations standards.</p>
@@ -261,7 +260,7 @@
             <p><strong>Projects:</strong> Saved as a <code>.ploto</code> file in a location the user chooses. The format is a standard SQLite database containing tasks, assignee names, schedules, to-dos, notes, whiteboards, settings and similar data. Templates, import sources and exported files such as Excel workbooks are also read and written in locations the user selects.</p>
             <p><strong>Working copy:</strong> While a project is open, a working copy of the entire project is created in the app's local data area managed by Windows. It is deleted when the project is closed normally, and a copy left behind by an abnormal termination is removed on the next startup where possible.</p>
             <p><strong>Lock file:</strong> While a project is being edited, a <code>&lt;name of the .ploto file&gt;.lock</code> file is created in the same location as the project. It records the Windows user name, computer name, process ID, start time and update time, and is deleted on normal exit. On a shared folder it can be read by any user or administrator with access to that location.</p>
-            <p><strong>Local settings:</strong> UI preferences, the license key, notice display state, editor settings, feature usage counts and similar values are stored in the app's local data area managed by Windows. Recently opened files are stored in <code>%USERPROFILE%\.ploto\recent-files.json</code> as up to 10 paths with their last access times, and a copy of the feature usage counts is stored in <code>%USERPROFILE%\.ploto\meta.json</code>. A random identifier may be stored so that the app can tell which installation created a project. This value contains no OS device identifiers or personal information and is not transmitted externally.</p>
+            <p><strong>Local settings:</strong> UI preferences, the license key, notice display state, editor settings and similar values are stored in the app's local data area managed by Windows. Recently opened files are stored in <code>%USERPROFILE%\.ploto\recent-files.json</code> as up to 10 paths with their last access times. Some auxiliary settings files are stored in <code>%USERPROFILE%\.ploto</code>. A random identifier may be stored so that the app can tell which installation created a project. This value contains no OS device identifiers or personal information and is not transmitted externally.</p>
 
           </div>
         </article>
@@ -351,7 +350,7 @@
       <div>© 2026 Ploto. All rights reserved.</div>
       <div class="footer-links">
         <a href="../" class="footer-link">Privacy Policy</a>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+        <a href="https://ploto-app.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Official Website</a>
         <a href="#top" class="back-to-top-btn" id="back-to-top-btn">Back to Top</a>
       </div>
     </div>

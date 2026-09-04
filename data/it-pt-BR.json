@@ -5,7 +5,7 @@
   "badge": "Para departamentos de TI",
   "heading": "Informações técnicas do Ploto para avaliação de adoção",
   "lead": "Resumo dos privilégios de execução, dos dados armazenados, das comunicações externas, da criptografia e do comportamento do Ploto na desinstalação.",
-  "lastUpdated": "2026-09-03",
+  "lastUpdated": "2026-09-04",
   "contactEmail": "hiroki.lab@outlook.com",
   "tocTitle": "Sumário",
   "reviewFactsTitle": "Resumo para avaliação",
@@ -90,13 +90,12 @@
           "SID do pacote (para regras de firewall): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
         ],
         "Esses valores também podem ser lidos em um dispositivo com o aplicativo instalado, executando `Get-AppxPackage` no PowerShell.",
-        "O `PackageFullName` (no formato `hiroki.lab.Ploto_<versão>_x64__va563q7jg714e`) e o caminho de instalação mudam a cada versão. Se você os usar em regras de firewall ou exclusões por caminho, **substitua a parte da versão por um curinga** (por exemplo: `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). Uma regra fixada em uma versão deixa de corresponder na atualização seguinte, e a comunicação ou a inicialização são bloqueadas sem aviso.",
-        "**Como liberar o aplicativo (requer privilégios de administrador):**",
+        "O `PackageFullName` e o caminho de instalação mudam a cada versão. Nas regras de permissão do controle de aplicativos, use o nome do pacote, o PFN e as informações do publicador indicados acima, em vez de um caminho.",
+        "**Caso sua organização considere permitir o aplicativo:**",
         [
-          "**WDAC e AppLocker:** adicione o signatário da Microsoft Store, ou o nome de família do pacote, às suas regras de permissão.",
-          "**Regras ASR:** mude a regra correspondente para o modo de auditoria ou adicione uma exclusão. A prevalência se acumula após a publicação, portanto o bloqueio pode se resolver sozinho com o tempo.",
-          "**Acesso controlado a pastas:** adicione o aplicativo em «Permitir um aplicativo pelo acesso controlado a pastas».",
-          "**Exclusões do Defender:** como último recurso, quando nada mais resolver, considere exclusões limitadas ao local de instalação e ao local de armazenamento dos projetos. Exclusões enfraquecem a proteção: mantenha o escopo mínimo e evite deixá-las permanentes.",
+          "**WDAC e AppLocker:** consulte o pacote instalado ou o arquivo MSIX e, de acordo com as normas de controle de aplicativos da sua organização, crie uma regra de pacote cujo Publisher e Package name correspondam a este aplicativo. Defina também o intervalo de versões permitido para atualizações conforme a política de gestão de mudanças da sua organização.",
+          "**Microsoft Defender e ASR:** se ocorrer uma detecção ou um bloqueio, verifique o nome da detecção, o arquivo afetado, a origem, a assinatura do pacote e os registros do console de gerenciamento, e responda conforme os procedimentos da sua organização. Se for necessário alterar um recurso de proteção ou configurar uma exceção, obtenha a aprovação do administrador de segurança e limite-a a este aplicativo, ao menor escopo e ao período necessário.",
+          "**Acesso controlado a pastas:** se o salvamento for negado, primeiro use um local de armazenamento aprovado pela sua organização. Se for necessário permitir o aplicativo, confirme que o pacote foi obtido na Microsoft Store, verifique sua assinatura e siga o procedimento de aprovação da sua organização.",
           "**Relatar um falso positivo:** se você concluir que uma detecção está incorreta, pode relatá-la pelo [formulário de envio de amostras da Microsoft](https://www.microsoft.com/en-us/wdsi/filesubmission). Se enviar o nome da detecção, a versão do Defender e a versão do aplicativo ao contato abaixo, o fornecedor também fará o relato."
         ],
         "Este aplicativo não cria serviços do Windows, entradas de inicialização nem tarefas agendadas (consulte a seção 2). Portanto, uma detecção provavelmente é um falso positivo heurístico, mas o tratamento deve seguir as normas de operação de segurança da sua organização."
@@ -117,7 +116,7 @@
         "**Projetos:** salvos como arquivo `.ploto` no local escolhido pelo usuário. O formato é um banco de dados SQLite padrão contendo tarefas, nomes de responsáveis, prazos, listas de tarefas, notas, quadros brancos, configurações e informações semelhantes. Modelos, origens de importação e arquivos de saída, como planilhas do Excel, também são lidos e gravados nos locais escolhidos pelo usuário.",
         "**Cópia de trabalho:** enquanto um projeto está aberto, uma cópia de trabalho do projeto inteiro é criada na área de dados locais do aplicativo gerenciada pelo Windows. Ela é excluída ao fechar normalmente e, se restar uma cópia após um encerramento anormal, o aplicativo tenta excluí-la na inicialização seguinte.",
         "**Arquivo de bloqueio:** durante a edição, é criado um arquivo `<nome do arquivo .ploto>.lock` no mesmo local do projeto. Ele registra o nome de usuário do Windows, o nome do computador, o ID do processo e os horários de início e de atualização, e é excluído no encerramento normal. Em uma pasta compartilhada, pode ser consultado por qualquer usuário ou administrador com acesso àquele local.",
-        "**Configurações locais:** preferências de interface, chave de licença, estado de exibição de avisos, configurações de editor, contagens de uso de recursos e valores semelhantes são gravados na área de dados locais do aplicativo gerenciada pelo Windows. Os arquivos abertos recentemente são gravados em `%USERPROFILE%\\.ploto\\recent-files.json`, com até 10 caminhos e a data do último acesso, e uma cópia das contagens de uso é gravada em `%USERPROFILE%\\.ploto\\meta.json`. Pode ser armazenado um valor de identificação aleatório para determinar qual instalação criou um projeto. Esse valor não contém identificadores de dispositivo do sistema operacional nem dados pessoais e não é transmitido para fora."
+        "**Configurações locais:** preferências de interface, chave de licença, estado de exibição de avisos, configurações de editor e valores semelhantes são gravados na área de dados locais do aplicativo gerenciada pelo Windows. Os arquivos abertos recentemente são gravados em `%USERPROFILE%\\.ploto\\recent-files.json`, com até 10 caminhos e a data do último acesso. Alguns arquivos auxiliares de configuração são gravados em `%USERPROFILE%\\.ploto`. Pode ser armazenado um valor de identificação aleatório para determinar qual instalação criou um projeto. Esse valor não contém identificadores de dispositivo do sistema operacional nem dados pessoais e não é transmitido para fora."
       ]
     },
     {

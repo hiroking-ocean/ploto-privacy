@@ -89,7 +89,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>最終更新日: <strong>2026-09-03</strong></span>
+          <span>最終更新日: <strong>2026-09-04</strong></span>
         </div>
         <div class="meta-item">
           <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -227,13 +227,12 @@
               <li>パッケージ SID（ファイアウォール規則用）：<code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
             </ul>
             <p>これらの値は、インストール済みの端末で PowerShell から <code>Get-AppxPackage</code> を実行しても確認できます。</p>
-            <p><code>PackageFullName</code>（形式：<code>hiroki.lab.Ploto_&lt;バージョン&gt;_x64__va563q7jg714e</code>）とインストール先パスはバージョンごとに変わります。ファイアウォール規則やパス指定の除外でこれらを使う場合は、<strong>バージョン部分をワイルドカードにしてください</strong>（例：<code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>）。バージョンを固定すると次の更新で規則が一致しなくなり、通信や起動が予告なくブロックされます。</p>
-            <p><strong>許可の方法（管理者権限が必要です）：</strong></p>
+            <p><code>PackageFullName</code> とインストール先パスはバージョンごとに変わります。アプリケーション制御の許可規則には、パスではなく上記のパッケージ名、PFNおよび発行者情報を利用してください。</p>
+            <p><strong>組織側で許可を検討する場合：</strong></p>
             <ul class="content-list">
-              <li><strong>WDAC・AppLocker：</strong> Microsoft Store の署名者、またはパッケージ ファミリ名を許可規則に追加します。</li>
-              <li><strong>ASR ルール：</strong> 該当ルールを監査モードに切り替えるか、対象を除外に追加します。実行実績は配布後に蓄積されるため、時間の経過で解消する場合があります。</li>
-              <li><strong>制御されたフォルダー アクセス：</strong>「制御されたフォルダー アクセスでアプリを許可する」に本アプリを追加します。</li>
-              <li><strong>Defender の除外：</strong> 他の方法で解決しない場合の最終手段として、インストール先とプロジェクト保存先に限定した除外を検討してください。除外は保護を弱めるため、範囲は最小限とし、恒久的な設定にしないことを推奨します。</li>
+              <li><strong>WDAC・AppLocker：</strong> インストール済みパッケージまたはMSIXを参照し、PublisherとPackage nameが本アプリに一致するパッケージ規則を、組織のアプリケーション制御基準に従って作成してください。更新を許可するバージョン範囲も、組織の変更管理方針に従って設定してください。</li>
+              <li><strong>Microsoft Defender・ASR：</strong> 検知またはブロックが発生した場合は、検知名、対象ファイル、取得元、パッケージ署名および管理コンソールの記録を確認し、組織所定の手順に従って対応してください。保護機能の変更または例外設定が必要と判断した場合は、セキュリティ管理者の承認のもと、本アプリに限定した最小範囲かつ必要な期間にとどめてください。</li>
+              <li><strong>制御されたフォルダー アクセス：</strong> 保存が拒否された場合は、まず組織で許可された保存先を使用してください。本アプリの許可登録が必要な場合は、Microsoft Storeから取得したパッケージであることと署名を確認し、組織の承認手順に従ってください。</li>
               <li><strong>誤検知の報告：</strong> 検知が誤りと判断される場合は <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">Microsoft のサンプル送信フォーム</a> から報告できます。検知名、Defender のバージョンおよび本アプリのバージョンを問い合わせ先までお知らせいただければ、提供者側からも報告します。</li>
             </ul>
             <p>本アプリは Windows サービス、スタートアップ項目およびスケジュールタスクを作成しません（第2項）。検知が発生した場合はヒューリスティックによる誤検知の可能性がありますが、実際の取り扱いは組織のセキュリティ運用基準に従って判断してください。</p>
@@ -256,7 +255,7 @@
             <p><strong>プロジェクト：</strong> 利用者が指定した場所に <code>.ploto</code> ファイルとして保存します。形式は標準的な SQLite データベースです。タスク、担当者名、日程、ToDo、ノート、ホワイトボード、設定等が含まれます。テンプレート、取込元および Excel 等の出力ファイルも利用者が選択した場所で読み書きします。</p>
             <p><strong>作業コピー：</strong> プロジェクトを開いている間、プロジェクト全体の作業コピーを Windows のアプリ用ローカルデータ領域に作成します。正常に閉じた場合は削除し、異常終了で残ったコピーは次回起動時に削除を試みます。</p>
             <p><strong>ロックファイル：</strong> 編集時、プロジェクトと同じ場所に <code>対象の.plotoファイル名.lock</code> を作成します。Windows ユーザー名、コンピューター名、プロセスID、開始時刻および更新時刻を保存し、正常終了時に削除します。共有フォルダーでは、その場所にアクセスできる利用者または管理者から参照可能です。</p>
-            <p><strong>端末内設定：</strong> UI設定、ライセンスキー、案内表示状態、編集者設定、機能利用数等を Windows が管理する本アプリのローカルデータ領域に保存します。最近開いたファイルは <code>%USERPROFILE%\.ploto\recent-files.json</code> に最大10件のパスと最終アクセス日時を、機能利用数の控えは <code>%USERPROFILE%\.ploto\meta.json</code> に保存します。プロジェクト内部の作成元判定に用いるランダムな識別値を保存する場合があります。この値にOSの端末識別情報や個人情報は含まれず、外部へ送信しません。</p>
+            <p><strong>端末内設定：</strong> UI設定、ライセンスキー、案内表示状態、編集者設定等を Windows が管理する本アプリのローカルデータ領域に保存します。最近開いたファイルは <code>%USERPROFILE%\.ploto\recent-files.json</code> に最大10件のパスと最終アクセス日時を保存します。一部の補助設定ファイルは <code>%USERPROFILE%\.ploto</code> に保存します。プロジェクト内部の作成元判定に用いるランダムな識別値を保存する場合があります。この値にOSの端末識別情報や個人情報は含まれず、外部へ送信しません。</p>
 
           </div>
         </article>

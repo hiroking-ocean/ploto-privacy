@@ -25,7 +25,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const SITE_URL = 'https://hiroking-ocean.github.io/ploto-privacy/';
-const LP_URL = 'https://hiroking-ocean.github.io/ploto_LP/';
+const LP_URL = 'https://ploto-app.com/'; // fallback when a locale has no lpUrl
 const REPO_URL = 'https://github.com/hiroking-ocean/ploto-privacy';
 
 const LOCALES_DATA_PATH = join(__dirname, 'data', 'locales.json');

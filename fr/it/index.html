@@ -71,7 +71,7 @@
             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
           </svg>
         </button>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Site officiel</a>
+        <a href="https://ploto-app.com/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Site officiel</a>
       </div>
     </div>
   </header>
@@ -94,7 +94,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Dernière mise à jour: <strong>2026-09-03</strong></span>
+          <span>Dernière mise à jour: <strong>2026-09-04</strong></span>
         </div>
         <div class="meta-item">
           <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -232,13 +232,12 @@
               <li>SID du package (pour les règles de pare-feu) : <code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
             </ul>
             <p>Ces valeurs peuvent également être lues sur un poste où l'application est installée, en exécutant <code>Get-AppxPackage</code> dans PowerShell.</p>
-            <p><code>PackageFullName</code> (de la forme <code>hiroki.lab.Ploto_&lt;version&gt;_x64__va563q7jg714e</code>) et le chemin d'installation changent à chaque version. Si vous les utilisez dans des règles de pare-feu ou des exclusions par chemin, <strong>remplacez la partie version par un caractère générique</strong> (exemple : <code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>). Une règle figée sur une version cesse de correspondre dès la mise à jour suivante, et la communication ou le démarrage sont bloqués sans avertissement.</p>
-            <p><strong>Autorisation (droits d'administrateur requis) :</strong></p>
+            <p><code>PackageFullName</code> et le chemin d'installation changent à chaque version. Pour les règles d'autorisation du contrôle des applications, utilisez le nom du package, le PFN et les informations sur l'éditeur indiqués ci-dessus plutôt qu'un chemin.</p>
+            <p><strong>Si votre organisation envisage d'autoriser l'application :</strong></p>
             <ul class="content-list">
-              <li><strong>WDAC et AppLocker :</strong> ajoutez le signataire du Microsoft Store, ou le nom de famille du package, à vos règles d’autorisation.</li>
-              <li><strong>Règles ASR :</strong> basculez la règle concernée en mode audit ou ajoutez une exclusion. La prévalence augmente après la publication : le blocage peut donc se résorber de lui-même avec le temps.</li>
-              <li><strong>Accès contrôlé aux dossiers :</strong> ajoutez l’application sous « Autoriser une application via l’accès contrôlé aux dossiers ».</li>
-              <li><strong>Exclusions Defender :</strong> en dernier recours, lorsque rien d’autre ne résout le problème, envisagez des exclusions limitées à l’emplacement d’installation et à l’emplacement de stockage des projets. Les exclusions affaiblissent la protection : limitez leur portée au minimum et évitez de les rendre permanentes.</li>
+              <li><strong>WDAC et AppLocker :</strong> examinez le package installé ou le fichier MSIX et, conformément aux règles de contrôle des applications de votre organisation, créez une règle de package dont le Publisher et le Package name correspondent à cette application. Définissez également la plage de versions autorisée pour les mises à jour conformément à la politique de gestion des changements de votre organisation.</li>
+              <li><strong>Microsoft Defender et ASR :</strong> en cas de détection ou de blocage, vérifiez le nom de la détection, le fichier concerné, sa provenance, la signature du package et les enregistrements de la console d'administration, puis suivez les procédures de votre organisation. Si une modification de la protection ou une exception est jugée nécessaire, obtenez l'autorisation de l'administrateur de la sécurité et limitez-la à cette application, au périmètre minimal et à la durée nécessaire.</li>
+              <li><strong>Accès contrôlé aux dossiers :</strong> si l'enregistrement est refusé, utilisez d'abord un emplacement de stockage approuvé par votre organisation. S'il est nécessaire d'autoriser l'application, vérifiez que le package provient du Microsoft Store ainsi que sa signature, puis suivez la procédure d'approbation de votre organisation.</li>
               <li><strong>Signaler un faux positif :</strong> si vous concluez qu’une détection est erronée, vous pouvez la signaler via le <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">formulaire de soumission d’échantillons de Microsoft</a>. Si vous transmettez le nom de la détection, la version de Defender et la version de l’application au contact ci-dessous, le fournisseur effectuera également un signalement.</li>
             </ul>
             <p>Cette application ne crée ni service Windows, ni entrée de démarrage, ni tâche planifiée (voir la section 2). Une détection est donc probablement un faux positif heuristique, mais la conduite à tenir doit suivre les règles de sécurité opérationnelle de votre organisation.</p>
@@ -261,7 +260,7 @@
             <p><strong>Projets :</strong> enregistrés sous forme de fichier <code>.ploto</code> à l'emplacement choisi par l'utilisateur. Le format est une base de données SQLite standard contenant les tâches, les noms des personnes affectées, les plannings, les listes de tâches, les notes, les tableaux blancs, les réglages, etc. Les modèles, les sources d'import et les fichiers exportés (Excel par exemple) sont également lus et écrits aux emplacements choisis par l'utilisateur.</p>
             <p><strong>Copie de travail :</strong> tant qu'un projet est ouvert, une copie de travail du projet entier est créée dans l'espace de données local de l'application géré par Windows. Elle est supprimée à la fermeture normale, et une copie subsistant après un arrêt anormal est supprimée au démarrage suivant lorsque c'est possible.</p>
             <p><strong>Fichier de verrouillage :</strong> pendant l'édition, un fichier <code>&lt;nom du fichier .ploto&gt;.lock</code> est créé au même emplacement que le projet. Il enregistre le nom d'utilisateur Windows, le nom de l'ordinateur, l'identifiant de processus, l'heure de début et l'heure de mise à jour, et il est supprimé lors d'une fermeture normale. Dans un dossier partagé, il est lisible par tout utilisateur ou administrateur ayant accès à cet emplacement.</p>
-            <p><strong>Réglages locaux :</strong> les préférences d'interface, la clé de licence, l'état d'affichage des messages, les réglages d'éditeur, les compteurs d'utilisation des fonctions et autres valeurs similaires sont enregistrés dans l'espace de données local de l'application géré par Windows. Les fichiers récemment ouverts sont conservés dans <code>%USERPROFILE%\.ploto\recent-files.json</code> sous forme de 10 chemins au maximum avec leur date de dernier accès, et une copie des compteurs d'utilisation est conservée dans <code>%USERPROFILE%\.ploto\meta.json</code>. Une valeur d'identification aléatoire peut être enregistrée afin de déterminer quelle installation a créé un projet. Cette valeur ne contient ni identifiant matériel du système ni donnée personnelle et n'est pas transmise à l'extérieur.</p>
+            <p><strong>Réglages locaux :</strong> les préférences d'interface, la clé de licence, l'état d'affichage des messages, les réglages d'éditeur et autres valeurs similaires sont enregistrés dans l'espace de données local de l'application géré par Windows. Les fichiers récemment ouverts sont conservés dans <code>%USERPROFILE%\.ploto\recent-files.json</code> sous forme de 10 chemins au maximum avec leur date de dernier accès. Certains fichiers de réglages auxiliaires sont enregistrés dans <code>%USERPROFILE%\.ploto</code>. Une valeur d'identification aléatoire peut être enregistrée afin de déterminer quelle installation a créé un projet. Cette valeur ne contient ni identifiant matériel du système ni donnée personnelle et n'est pas transmise à l'extérieur.</p>
 
           </div>
         </article>
@@ -351,7 +350,7 @@
       <div>© 2026 Ploto. Tous droits réservés.</div>
       <div class="footer-links">
         <a href="../" class="footer-link">Confidentialité</a>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Site officiel de Ploto</a>
+        <a href="https://ploto-app.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Site officiel de Ploto</a>
         <a href="#top" class="back-to-top-btn" id="back-to-top-btn">Haut de page</a>
       </div>
     </div>

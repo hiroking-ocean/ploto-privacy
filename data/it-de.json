@@ -5,7 +5,7 @@
   "badge": "Für IT-Abteilungen",
   "heading": "Technische Informationen zu Ploto für die Freigabeprüfung",
   "lead": "Eine Übersicht über Ausführungsrechte, gespeicherte Daten, externe Kommunikation, Verschlüsselung und das Verhalten bei der Deinstallation von Ploto.",
-  "lastUpdated": "2026-09-03",
+  "lastUpdated": "2026-09-04",
   "contactEmail": "hiroki.lab@outlook.com",
   "tocTitle": "Inhalt",
   "reviewFactsTitle": "Zusammenfassung für die Prüfung",
@@ -90,13 +90,12 @@
           "Paket-SID (für Firewallregeln): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
         ],
         "Diese Werte lassen sich auch auf einem Gerät mit installierter App auslesen, indem Sie in PowerShell `Get-AppxPackage` ausführen.",
-        "`PackageFullName` (in der Form `hiroki.lab.Ploto_<Version>_x64__va563q7jg714e`) und der Installationspfad ändern sich mit jeder Version. Wenn Sie sie in Firewallregeln oder pfadbasierten Ausschlüssen verwenden, **ersetzen Sie den Versionsteil durch einen Platzhalter** (Beispiel: `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). Eine auf eine Version festgelegte Regel greift nach dem nächsten Update nicht mehr, und Kommunikation oder Start werden ohne Vorwarnung blockiert.",
-        "**Freigeben (Administratorrechte erforderlich):**",
+        "`PackageFullName` und Installationspfad ändern sich mit jeder Version. Verwenden Sie für Zulassungsregeln der Anwendungssteuerung nicht den Pfad, sondern den oben angegebenen Paketnamen, die PFN und die Herausgeberinformationen.",
+        "**Wenn eine Zulassung der App in Ihrer Organisation erwogen wird:**",
         [
-          "**WDAC und AppLocker:** Nehmen Sie den Signaturgeber des Microsoft Store oder den Paketfamiliennamen in Ihre Zulassungsregeln auf.",
-          "**ASR-Regeln:** Stellen Sie die betreffende Regel auf den Überwachungsmodus um oder fügen Sie eine Ausnahme hinzu. Die Verbreitung nimmt nach der Veröffentlichung zu, sodass sich die Sperre mit der Zeit von selbst auflösen kann.",
-          "**Überwachter Ordnerzugriff:** Fügen Sie die App unter „Eine App durch überwachten Ordnerzugriff zulassen“ hinzu.",
-          "**Defender-Ausschlüsse:** Als letztes Mittel, wenn sich das Problem anders nicht lösen lässt, kommen Ausschlüsse in Betracht, die auf den Installationsort und den Speicherort der Projekte begrenzt sind. Ausschlüsse schwächen den Schutz; halten Sie ihren Umfang daher minimal und richten Sie sie nicht dauerhaft ein.",
+          "**WDAC und AppLocker:** Prüfen Sie das installierte Paket oder die MSIX-Datei und erstellen Sie gemäß den Anwendungssteuerungsrichtlinien Ihrer Organisation eine Paketregel, deren Publisher und Package name mit dieser App übereinstimmen. Legen Sie auch den für Updates zulässigen Versionsbereich nach den Änderungsmanagementrichtlinien Ihrer Organisation fest.",
+          "**Microsoft Defender und ASR:** Wenn eine Erkennung oder Blockierung auftritt, prüfen Sie Erkennungsnamen, betroffene Datei, Bezugsquelle, Paketsignatur und die Einträge in der Verwaltungskonsole und verfahren Sie nach den festgelegten Abläufen Ihrer Organisation. Falls eine Schutzfunktion geändert oder eine Ausnahme eingerichtet werden muss, holen Sie die Genehmigung der Sicherheitsadministration ein und beschränken Sie die Maßnahme auf diese App, den kleinstmöglichen Umfang und den erforderlichen Zeitraum.",
+          "**Überwachter Ordnerzugriff:** Wenn das Speichern verweigert wird, verwenden Sie zunächst einen von Ihrer Organisation zugelassenen Speicherort. Muss die App zugelassen werden, prüfen Sie, dass das Paket aus dem Microsoft Store stammt, verifizieren Sie seine Signatur und befolgen Sie das Genehmigungsverfahren Ihrer Organisation.",
           "**Fehlalarm melden:** Wenn Sie zu dem Schluss kommen, dass eine Erkennung falsch ist, können Sie sie über das [Formular von Microsoft zur Übermittlung von Beispielen](https://www.microsoft.com/en-us/wdsi/filesubmission) melden. Wenn Sie den Erkennungsnamen, die Defender-Version und die App-Version an den unten genannten Kontakt senden, meldet der Anbieter dies ebenfalls."
         ],
         "Diese App erstellt keine Windows-Dienste, Autostart-Einträge oder geplanten Aufgaben (siehe Abschnitt 2). Eine Erkennung dürfte daher ein heuristischer Fehlalarm sein; wie Sie damit umgehen, sollte sich jedoch nach den Sicherheitsvorgaben Ihrer Organisation richten."
@@ -117,7 +116,7 @@
         "**Projekte:** Werden als `.ploto`-Datei an einem vom Benutzer gewählten Ort gespeichert. Das Format ist eine standardmäßige SQLite-Datenbank und enthält Aufgaben, Namen von Zuständigen, Termine, To-dos, Notizen, Whiteboards, Einstellungen und Ähnliches. Vorlagen, Importquellen und Ausgabedateien wie Excel-Dateien werden ebenfalls an vom Benutzer gewählten Orten gelesen und geschrieben.",
         "**Arbeitskopie:** Solange ein Projekt geöffnet ist, wird eine Arbeitskopie des gesamten Projekts im lokalen App-Datenbereich von Windows angelegt. Beim ordnungsgemäßen Schließen wird sie gelöscht; eine nach einem Programmabsturz verbliebene Kopie wird beim nächsten Start nach Möglichkeit entfernt.",
         "**Sperrdatei:** Während der Bearbeitung wird am Speicherort des Projekts eine Datei `<Name der .ploto-Datei>.lock` erstellt. Sie enthält den Windows-Benutzernamen, den Computernamen, die Prozess-ID sowie Start- und Aktualisierungszeit und wird beim ordnungsgemäßen Beenden gelöscht. In einem freigegebenen Ordner ist sie für alle Benutzer und Administratoren mit Zugriff auf diesen Ort lesbar.",
-        "**Lokale Einstellungen:** Oberflächeneinstellungen, Lizenzschlüssel, Anzeigestatus von Hinweisen, Bearbeitereinstellungen, Nutzungszähler von Funktionen und Ähnliches werden im lokalen App-Datenbereich von Windows gespeichert. Zuletzt geöffnete Dateien werden in `%USERPROFILE%\\.ploto\\recent-files.json` mit bis zu 10 Pfaden und dem letzten Zugriffszeitpunkt abgelegt, eine Kopie der Nutzungszähler in `%USERPROFILE%\\.ploto\\meta.json`. Zur Erkennung, welche Installation ein Projekt erstellt hat, kann ein zufälliger Kennwert gespeichert werden. Dieser Wert enthält keine Gerätekennungen des Betriebssystems und keine personenbezogenen Daten und wird nicht nach außen übertragen."
+        "**Lokale Einstellungen:** Oberflächeneinstellungen, Lizenzschlüssel, Anzeigestatus von Hinweisen, Bearbeitereinstellungen und Ähnliches werden im lokalen App-Datenbereich von Windows gespeichert. Zuletzt geöffnete Dateien werden in `%USERPROFILE%\\.ploto\\recent-files.json` mit bis zu 10 Pfaden und dem letzten Zugriffszeitpunkt abgelegt. Einige zusätzliche Einstellungsdateien werden in `%USERPROFILE%\\.ploto` gespeichert. Zur Erkennung, welche Installation ein Projekt erstellt hat, kann ein zufälliger Kennwert gespeichert werden. Dieser Wert enthält keine Gerätekennungen des Betriebssystems und keine personenbezogenen Daten und wird nicht nach außen übertragen."
       ]
     },
     {

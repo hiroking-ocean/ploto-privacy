@@ -5,7 +5,7 @@
   "badge": "For IT Departments",
   "heading": "Ploto Technical Information for Deployment Review",
   "lead": "A summary of Ploto's execution privileges, stored data, external communication, encryption and uninstall behavior.",
-  "lastUpdated": "2026-09-03",
+  "lastUpdated": "2026-09-04",
   "contactEmail": "hiroki.lab@outlook.com",
   "tocTitle": "Contents",
   "reviewFactsTitle": "Review Summary",
@@ -90,13 +90,12 @@
           "Package SID (for firewall rules): `S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193`"
         ],
         "These values can also be read on a device where the app is installed, by running `Get-AppxPackage` in PowerShell.",
-        "`PackageFullName` (of the form `hiroki.lab.Ploto_<version>_x64__va563q7jg714e`) and the installation path change with every version. If you use them in firewall rules or path-based exclusions, **replace the version with a wildcard** (for example `C:\\Program Files\\WindowsApps\\hiroki.lab.Ploto_*_x64__va563q7jg714e\\ploto_v2.exe`). A rule pinned to one version stops matching at the next update, and communication or startup is then blocked without warning.",
-        "**How to allow the app (administrator rights required):**",
+        "`PackageFullName` and the installation path change with every version. For application-control allow rules, use the package name, PFN and publisher information above rather than a path.",
+        "**When considering whether to allow the app in your organization:**",
         [
-          "**WDAC and AppLocker:** Add the Microsoft Store signer, or the package family name, to your allow rules.",
-          "**ASR rules:** Switch the relevant rule to audit mode, or add an exclusion. Prevalence accumulates after release, so the block may resolve on its own over time.",
-          "**Controlled folder access:** Add the app under \"Allow an app through Controlled folder access\".",
-          "**Defender exclusions:** As a last resort when nothing else resolves the issue, consider exclusions limited to the installation location and the project storage location. Exclusions weaken protection, so keep their scope minimal and avoid making them permanent.",
+          "**WDAC and AppLocker:** Refer to the installed package or MSIX and, in accordance with your organization's application-control standards, create a package rule whose Publisher and Package name match this app. Configure the range of versions allowed for updates in accordance with your organization's change-management policy as well.",
+          "**Microsoft Defender and ASR:** If a detection or block occurs, review the detection name, affected file, source, package signature and records in the management console, and respond according to your organization's procedures. If you determine that a protection setting must be changed or an exception is required, obtain approval from the security administrator and limit it to this app, the minimum scope and the necessary period.",
+          "**Controlled folder access:** If saving is denied, first use a storage location approved by your organization. If the app must be added to the allow list, verify that the package was obtained from the Microsoft Store and confirm its signature, then follow your organization's approval procedure.",
           "**Reporting a false positive:** If you conclude that a detection is incorrect, you can report it through [Microsoft’s sample submission form](https://www.microsoft.com/en-us/wdsi/filesubmission). If you send the detection name, the Defender version and the app version to the contact below, the provider will report it as well."
         ],
         "This app does not create Windows services, startup entries or scheduled tasks (see section 2). A detection is therefore likely to be a heuristic false positive, but how you handle it should follow your organization’s security operations standards."
@@ -117,7 +116,7 @@
         "**Projects:** Saved as a `.ploto` file in a location the user chooses. The format is a standard SQLite database containing tasks, assignee names, schedules, to-dos, notes, whiteboards, settings and similar data. Templates, import sources and exported files such as Excel workbooks are also read and written in locations the user selects.",
         "**Working copy:** While a project is open, a working copy of the entire project is created in the app's local data area managed by Windows. It is deleted when the project is closed normally, and a copy left behind by an abnormal termination is removed on the next startup where possible.",
         "**Lock file:** While a project is being edited, a `<name of the .ploto file>.lock` file is created in the same location as the project. It records the Windows user name, computer name, process ID, start time and update time, and is deleted on normal exit. On a shared folder it can be read by any user or administrator with access to that location.",
-        "**Local settings:** UI preferences, the license key, notice display state, editor settings, feature usage counts and similar values are stored in the app's local data area managed by Windows. Recently opened files are stored in `%USERPROFILE%\\.ploto\\recent-files.json` as up to 10 paths with their last access times, and a copy of the feature usage counts is stored in `%USERPROFILE%\\.ploto\\meta.json`. A random identifier may be stored so that the app can tell which installation created a project. This value contains no OS device identifiers or personal information and is not transmitted externally."
+        "**Local settings:** UI preferences, the license key, notice display state, editor settings and similar values are stored in the app's local data area managed by Windows. Recently opened files are stored in `%USERPROFILE%\\.ploto\\recent-files.json` as up to 10 paths with their last access times. Some auxiliary settings files are stored in `%USERPROFILE%\\.ploto`. A random identifier may be stored so that the app can tell which installation created a project. This value contains no OS device identifiers or personal information and is not transmitted externally."
       ]
     },
     {

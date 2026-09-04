@@ -155,6 +155,7 @@
     "name": "English",
     "slug": "en",
     "ogLocale": "en_US",
+    "lpUrl": "https://ploto-app.com/",
     "title": "Privacy Policy - Ploto",
     "description": "Privacy Policy for Ploto. Fully offline, local-first architecture, zero personal data collection.",
     "nav": {
@@ -332,6 +333,7 @@
     "name": "Deutsch",
     "slug": "de",
     "ogLocale": "de_DE",
+    "lpUrl": "https://ploto-app.com/",
     "title": "Datenschutzerklärung - Ploto",
     "description": "Datenschutzerklärung für Ploto. Vollständig offline nutzbar, Local-First-Architektur, keine Erfassung personenbezogener Daten.",
     "nav": {
@@ -509,6 +511,7 @@
     "name": "Français",
     "slug": "fr",
     "ogLocale": "fr_FR",
+    "lpUrl": "https://ploto-app.com/",
     "title": "Politique de confidentialité - Ploto",
     "description": "Politique de confidentialité de Ploto. Fonctionnement 100% hors ligne, architecture locale, aucune collecte de données personnelles.",
     "nav": {
@@ -686,6 +689,7 @@
     "name": "Español",
     "slug": "es",
     "ogLocale": "es_ES",
+    "lpUrl": "https://ploto-app.com/",
     "title": "Política de privacidad - Ploto",
     "description": "Política de privacidad de Ploto. Funcionamiento 100% sin conexión, arquitectura local-first, cero recopilación de datos personales.",
     "nav": {
@@ -863,6 +867,7 @@
     "name": "한국어",
     "slug": "ko",
     "ogLocale": "ko_KR",
+    "lpUrl": "https://ploto-app.com/",
     "title": "개인정보 처리방침 - Ploto",
     "description": "Ploto 개인정보 처리방침. 완전 오프라인 작동, 로컬 우선(Local-First) 설계, 개인정보 수집 제로 원칙.",
     "nav": {
@@ -1040,6 +1045,7 @@
     "name": "Português (Brasil)",
     "slug": "pt-br",
     "ogLocale": "pt_BR",
+    "lpUrl": "https://ploto-app.com/",
     "title": "Política de Privacidade - Ploto",
     "description": "Política de Privacidade do Ploto. Funcionamento offline, arquitetura local-first, zero coleta de dados pessoais.",
     "nav": {

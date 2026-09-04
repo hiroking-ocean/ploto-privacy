@@ -71,7 +71,7 @@
             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
           </svg>
         </button>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Offizielle Website</a>
+        <a href="https://ploto-app.com/" class="lp-link-btn" target="_blank" rel="noopener noreferrer">Offizielle Website</a>
       </div>
     </div>
   </header>
@@ -94,7 +94,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Zuletzt aktualisiert: <strong>2026-09-03</strong></span>
+          <span>Zuletzt aktualisiert: <strong>2026-09-04</strong></span>
         </div>
         <div class="meta-item">
           <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -232,13 +232,12 @@
               <li>Paket-SID (für Firewallregeln): <code>S-1-15-2-1517193112-901780427-1522304721-281083616-2611253276-1887865729-3282081193</code></li>
             </ul>
             <p>Diese Werte lassen sich auch auf einem Gerät mit installierter App auslesen, indem Sie in PowerShell <code>Get-AppxPackage</code> ausführen.</p>
-            <p><code>PackageFullName</code> (in der Form <code>hiroki.lab.Ploto_&lt;Version&gt;_x64__va563q7jg714e</code>) und der Installationspfad ändern sich mit jeder Version. Wenn Sie sie in Firewallregeln oder pfadbasierten Ausschlüssen verwenden, <strong>ersetzen Sie den Versionsteil durch einen Platzhalter</strong> (Beispiel: <code>C:\Program Files\WindowsApps\hiroki.lab.Ploto_*_x64__va563q7jg714e\ploto_v2.exe</code>). Eine auf eine Version festgelegte Regel greift nach dem nächsten Update nicht mehr, und Kommunikation oder Start werden ohne Vorwarnung blockiert.</p>
-            <p><strong>Freigeben (Administratorrechte erforderlich):</strong></p>
+            <p><code>PackageFullName</code> und Installationspfad ändern sich mit jeder Version. Verwenden Sie für Zulassungsregeln der Anwendungssteuerung nicht den Pfad, sondern den oben angegebenen Paketnamen, die PFN und die Herausgeberinformationen.</p>
+            <p><strong>Wenn eine Zulassung der App in Ihrer Organisation erwogen wird:</strong></p>
             <ul class="content-list">
-              <li><strong>WDAC und AppLocker:</strong> Nehmen Sie den Signaturgeber des Microsoft Store oder den Paketfamiliennamen in Ihre Zulassungsregeln auf.</li>
-              <li><strong>ASR-Regeln:</strong> Stellen Sie die betreffende Regel auf den Überwachungsmodus um oder fügen Sie eine Ausnahme hinzu. Die Verbreitung nimmt nach der Veröffentlichung zu, sodass sich die Sperre mit der Zeit von selbst auflösen kann.</li>
-              <li><strong>Überwachter Ordnerzugriff:</strong> Fügen Sie die App unter „Eine App durch überwachten Ordnerzugriff zulassen“ hinzu.</li>
-              <li><strong>Defender-Ausschlüsse:</strong> Als letztes Mittel, wenn sich das Problem anders nicht lösen lässt, kommen Ausschlüsse in Betracht, die auf den Installationsort und den Speicherort der Projekte begrenzt sind. Ausschlüsse schwächen den Schutz; halten Sie ihren Umfang daher minimal und richten Sie sie nicht dauerhaft ein.</li>
+              <li><strong>WDAC und AppLocker:</strong> Prüfen Sie das installierte Paket oder die MSIX-Datei und erstellen Sie gemäß den Anwendungssteuerungsrichtlinien Ihrer Organisation eine Paketregel, deren Publisher und Package name mit dieser App übereinstimmen. Legen Sie auch den für Updates zulässigen Versionsbereich nach den Änderungsmanagementrichtlinien Ihrer Organisation fest.</li>
+              <li><strong>Microsoft Defender und ASR:</strong> Wenn eine Erkennung oder Blockierung auftritt, prüfen Sie Erkennungsnamen, betroffene Datei, Bezugsquelle, Paketsignatur und die Einträge in der Verwaltungskonsole und verfahren Sie nach den festgelegten Abläufen Ihrer Organisation. Falls eine Schutzfunktion geändert oder eine Ausnahme eingerichtet werden muss, holen Sie die Genehmigung der Sicherheitsadministration ein und beschränken Sie die Maßnahme auf diese App, den kleinstmöglichen Umfang und den erforderlichen Zeitraum.</li>
+              <li><strong>Überwachter Ordnerzugriff:</strong> Wenn das Speichern verweigert wird, verwenden Sie zunächst einen von Ihrer Organisation zugelassenen Speicherort. Muss die App zugelassen werden, prüfen Sie, dass das Paket aus dem Microsoft Store stammt, verifizieren Sie seine Signatur und befolgen Sie das Genehmigungsverfahren Ihrer Organisation.</li>
               <li><strong>Fehlalarm melden:</strong> Wenn Sie zu dem Schluss kommen, dass eine Erkennung falsch ist, können Sie sie über das <a href="https://www.microsoft.com/en-us/wdsi/filesubmission" target="_blank" rel="noopener noreferrer">Formular von Microsoft zur Übermittlung von Beispielen</a> melden. Wenn Sie den Erkennungsnamen, die Defender-Version und die App-Version an den unten genannten Kontakt senden, meldet der Anbieter dies ebenfalls.</li>
             </ul>
             <p>Diese App erstellt keine Windows-Dienste, Autostart-Einträge oder geplanten Aufgaben (siehe Abschnitt 2). Eine Erkennung dürfte daher ein heuristischer Fehlalarm sein; wie Sie damit umgehen, sollte sich jedoch nach den Sicherheitsvorgaben Ihrer Organisation richten.</p>
@@ -261,7 +260,7 @@
             <p><strong>Projekte:</strong> Werden als <code>.ploto</code>-Datei an einem vom Benutzer gewählten Ort gespeichert. Das Format ist eine standardmäßige SQLite-Datenbank und enthält Aufgaben, Namen von Zuständigen, Termine, To-dos, Notizen, Whiteboards, Einstellungen und Ähnliches. Vorlagen, Importquellen und Ausgabedateien wie Excel-Dateien werden ebenfalls an vom Benutzer gewählten Orten gelesen und geschrieben.</p>
             <p><strong>Arbeitskopie:</strong> Solange ein Projekt geöffnet ist, wird eine Arbeitskopie des gesamten Projekts im lokalen App-Datenbereich von Windows angelegt. Beim ordnungsgemäßen Schließen wird sie gelöscht; eine nach einem Programmabsturz verbliebene Kopie wird beim nächsten Start nach Möglichkeit entfernt.</p>
             <p><strong>Sperrdatei:</strong> Während der Bearbeitung wird am Speicherort des Projekts eine Datei <code>&lt;Name der .ploto-Datei&gt;.lock</code> erstellt. Sie enthält den Windows-Benutzernamen, den Computernamen, die Prozess-ID sowie Start- und Aktualisierungszeit und wird beim ordnungsgemäßen Beenden gelöscht. In einem freigegebenen Ordner ist sie für alle Benutzer und Administratoren mit Zugriff auf diesen Ort lesbar.</p>
-            <p><strong>Lokale Einstellungen:</strong> Oberflächeneinstellungen, Lizenzschlüssel, Anzeigestatus von Hinweisen, Bearbeitereinstellungen, Nutzungszähler von Funktionen und Ähnliches werden im lokalen App-Datenbereich von Windows gespeichert. Zuletzt geöffnete Dateien werden in <code>%USERPROFILE%\.ploto\recent-files.json</code> mit bis zu 10 Pfaden und dem letzten Zugriffszeitpunkt abgelegt, eine Kopie der Nutzungszähler in <code>%USERPROFILE%\.ploto\meta.json</code>. Zur Erkennung, welche Installation ein Projekt erstellt hat, kann ein zufälliger Kennwert gespeichert werden. Dieser Wert enthält keine Gerätekennungen des Betriebssystems und keine personenbezogenen Daten und wird nicht nach außen übertragen.</p>
+            <p><strong>Lokale Einstellungen:</strong> Oberflächeneinstellungen, Lizenzschlüssel, Anzeigestatus von Hinweisen, Bearbeitereinstellungen und Ähnliches werden im lokalen App-Datenbereich von Windows gespeichert. Zuletzt geöffnete Dateien werden in <code>%USERPROFILE%\.ploto\recent-files.json</code> mit bis zu 10 Pfaden und dem letzten Zugriffszeitpunkt abgelegt. Einige zusätzliche Einstellungsdateien werden in <code>%USERPROFILE%\.ploto</code> gespeichert. Zur Erkennung, welche Installation ein Projekt erstellt hat, kann ein zufälliger Kennwert gespeichert werden. Dieser Wert enthält keine Gerätekennungen des Betriebssystems und keine personenbezogenen Daten und wird nicht nach außen übertragen.</p>
 
           </div>
         </article>
@@ -351,7 +350,7 @@
       <div>© 2026 Ploto. Alle Rechte vorbehalten.</div>
       <div class="footer-links">
         <a href="../" class="footer-link">Datenschutz</a>
-        <a href="https://hiroking-ocean.github.io/ploto_LP/" class="footer-link" target="_blank" rel="noopener noreferrer">Offizielle Website</a>
+        <a href="https://ploto-app.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Offizielle Website</a>
         <a href="#top" class="back-to-top-btn" id="back-to-top-btn">Nach oben</a>
       </div>
     </div>
